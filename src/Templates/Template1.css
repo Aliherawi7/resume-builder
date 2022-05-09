@@ -1,0 +1,77 @@
+.a4{
+    width: 595px;
+    height: 842px;
+}
+.template1{
+    display: flex;
+
+}
+.template1 .container-A{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    width: 35%;
+    height: 100%;
+    background-color: #f46464;
+    color: #fff;
+}
+.template1 .container-B{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 80px;
+    width: 65%;
+    height: 100%;
+    background-color: #fff;
+
+}
+.template1  h1, .template1  h2{
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.template1 h1{
+    font-size: 24px;
+    line-height: 28px;
+}
+.template1 .section{
+    padding-bottom: 20px;
+}
+.template1 i{
+    margin-right: 6px;
+}
+
+.template1 .subtitle h2{
+    font-size: 14px;
+    line-height: 19px;
+}
+.template1 .normal-title{
+    font-size: 11px;
+    letter-spacing: 2.2px;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: block;
+}
+.template1 .normal-text{
+    font-size: 10px;
+    font-family: 'Merriweather';
+    font-weight: 300;
+    fill: #808080;
+    display: block;
+}
+.template1 p{
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+
+.template1 ul{
+    margin-left: 20px;
+    font-size: 13px;
+    font-family: 'Merriweather';
+    font-weight: 400;
+    fill: #fff;
+}
