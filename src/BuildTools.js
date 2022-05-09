@@ -193,140 +193,140 @@ export function ExperienceInfo() {
 }
 export function Experience() {
     const [state, dispatch] = useStateValue();
-    const jobTitleChangeHandler = (e)=>{
+    const jobTitleChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_EXPERIENCE,
-            item:{
+            item: {
                 jobTitle: e.target.value,
                 employer: state.experience.employer,
                 city: state.experience.city,
-                state:state.experience.state,
+                state: state.experience.state,
                 startDate: state.experience.stateDate,
                 endDate: state.experience.endDate
 
             }
         })
     }
-    const employerChangeHandler = (e)=>{
+    const employerChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_EXPERIENCE,
-            item:{
+            item: {
                 jobTitle: state.experience.jobTitle,
                 employer: e.target.value,
                 city: state.experience.city,
-                state:state.experience.state,
+                state: state.experience.state,
                 startDate: state.experience.stateDate,
                 endDate: state.experience.endDate
 
             }
         })
     }
-    const cityChangeHandler = (e)=>{
+    const cityChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_EXPERIENCE,
-            item:{
+            item: {
                 jobTitle: state.experience.jobTitle,
                 employer: state.experience.employer,
                 city: e.target.value,
-                state:state.experience.state,
+                state: state.experience.state,
                 startDate: state.experience.stateDate,
                 endDate: state.experience.endDate
 
             }
         })
     }
-    const stateChangeHandler = (e)=>{
+    const stateChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_EXPERIENCE,
-            item:{
+            item: {
                 jobTitle: state.experience.jobTitle,
                 employer: state.experience.employer,
                 city: state.experience.city,
-                state:e.target.value,
+                state: e.target.value,
                 startDate: state.experience.stateDate,
                 endDate: state.experience.endDate
 
             }
         })
     }
-    const startDateChangeHandler = (e)=>{
+    const startDateChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_EXPERIENCE,
-            item:{
+            item: {
                 jobTitle: state.experience.jobTitle,
                 employer: state.experience.employer,
                 city: state.experience.city,
-                state:state.experience.state,
+                state: state.experience.state,
                 startDate: e.target.value,
                 endDate: state.experience.endDate
 
             }
         })
     }
-    const endDateChangeHandler = (e)=>{
+    const endDateChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_EXPERIENCE,
-            item:{
+            item: {
                 jobTitle: state.experience.jobTitle,
                 employer: state.experience.employer,
                 city: state.experience.city,
-                state:state.experience.state,
+                state: state.experience.state,
                 startDate: state.experience.startDate,
                 endDate: e.target.value
 
             }
         })
     }
-    const checkBoxChangeHandler = ()=>{
+    const checkBoxChangeHandler = () => {
         dispatch({
             type: actions.ADD_EXPERIENCE,
-             item:{
-                 jobTitle: state.experience.jobTitle,
-                 employer: state.experience.employer,
-                 city: state.experience.city,
-                 state:state.experience.state,
-                 startDate: state.experience.startDate,
-                 endDate: state.experience.endDate != 'current'?'current': ''
-             }
+            item: {
+                jobTitle: state.experience.jobTitle,
+                employer: state.experience.employer,
+                city: state.experience.city,
+                state: state.experience.state,
+                startDate: state.experience.startDate,
+                endDate: state.experience.endDate != 'current' ? 'current' : ''
+            }
         })
     }
-    
+
     return (
         <div className="experience  common-input-style animation">
             <h1>Work Experience</h1>
             <p>Start with your most recent work experience.</p>
             <div className="input-group">
                 <label >Job Title</label>
-                <input type="text" value={state.experience?.jobTitle} onChange={(e)=> jobTitleChangeHandler(e)} />
+                <input type="text" value={state.experience?.jobTitle} onChange={(e) => jobTitleChangeHandler(e)} />
             </div>
             <div className="input-group">
                 <label >Employer</label>
-                <input type="text" value={state.experience.employer} onChange={(e)=> employerChangeHandler(e)}/>
+                <input type="text" value={state.experience.employer} onChange={(e) => employerChangeHandler(e)} />
             </div>
             <div className="input-row">
                 <div className="input-group half-width">
                     <label >City</label>
-                    <input type="text" value={state.experience.city} onChange={(e)=> cityChangeHandler(e)}/>
+                    <input type="text" value={state.experience.city} onChange={(e) => cityChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input half-width">
                     <label >State</label>
-                    <input type="text" value={state.experience.state} onChange={(e)=> stateChangeHandler(e)}/>
+                    <input type="text" value={state.experience.state} onChange={(e) => stateChangeHandler(e)} />
                 </div>
             </div>
 
             <div className="input-row">
                 <div className="input-group half-width">
                     <label >start date</label>
-                    <input type="date" value={state.experience.startDate} onChange={(e)=> startDateChangeHandler(e)}/>
+                    <input type="date" value={state.experience.startDate} onChange={(e) => startDateChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input half-width position-relative">
-                    <span className={state.experience.endDate=='current'? 'deactive':''}></span>
+                    <span className={state.experience.endDate == 'current' ? 'deactive' : ''}></span>
                     <label >end date</label>
-                    <input type="date" value={state.experience.endDate} onChange={(e)=> endDateChangeHandler(e)}/>
+                    <input type="date" value={state.experience.endDate} onChange={(e) => endDateChangeHandler(e)} />
                 </div>
             </div>
             <div className="input-check">
-                <input type="checkbox"  onChange={checkBoxChangeHandler}/>
+                <input type="checkbox" onChange={checkBoxChangeHandler} />
                 <span>I currently work here</span>
             </div>
         </div>
@@ -334,41 +334,70 @@ export function Experience() {
 }
 export function ReviewExperience() {
     const [state, dispatch] = useStateValue()
+
     useEffect(() => {
-        if(!state.experiences.find((item)=>{
-            return item === state.experience
-        })){
+        const holder = [...state.experiences];
+        
+        console.log(holder.includes(state.experience))
+        if (!holder.includes(state.experience)) {
             dispatch({
                 type: actions.ADD_EXPERIENCES,
                 item: state.experience
             })
         }
     }, [])
-    const addAnotherExperience =()=>{
+    const addAnotherExperience = () => {
         dispatch({
             type: actions.ADD_EXPERIENCES,
             item: state.experience
         })
-        console.log(state)
-    } 
+    }
+
+    const deleteButtonHandler = (item) => {
+        const itemIndex = state.experiences.findIndex((el) => {
+            return el == item
+        })
+        if (itemIndex >= 0) {
+            let holder = state.experiences;
+            holder.splice(itemIndex, 1);
+            dispatch({
+                type: actions.REMOVE_FROM_EXPERIENCES,
+                item: holder
+            })
+
+        }
+        if (item == state.experience) {
+            dispatch({
+                type: actions.ADD_EXPERIENCE,
+                item: {}
+            })
+        }
+    }
     return (
         <div className="build-tool-review common-input-style">
             <h1>Review work experience</h1>
             <p>Add, edit or remove your work experience.</p>
             <div className="build-tool-history">
-                {state.experiences.map((item)=>{
-                    return(
-                        <div className="">
-                            <div className="review-buttons">
-                                <span><i className="bi bi-pen-fill"></i></span>
-                                <span><i className="bi bi-trash-fill"></i></span>
-                                <span><i className="bi bi-pen-fill"></i></span>
+                {state.experiences.length > 0 ? state.experiences?.map((item) => {
+                    let holder;
+                    console.log(item)
+                    if (item.jobTitle) {
+                        holder = (
+                            <div className="review position-relative">
+                                <div className="review-buttons">
+                                    <span><i className="bi bi-pencil-fill"></i></span>
+                                    <span onClick={() => (deleteButtonHandler(item))}><i className="bi bi-trash-fill"></i></span>
+                                    <span><i className="bi bi-arrows-move"></i></span>
+                                </div>
+                                <h2 className="normal-text">{item?.jobTitle ? item.jobTitle : "" + ", " + item.employer ? item.employer : ""}</h2>
+                                <p className="normal-text">{(item?.startDate ? item.startDate + " - " : '') + (item.endDate ? item.endDate : '')}</p>
                             </div>
-                            <h2 className="normal-text">{item.jobTitle+", "+ item.employer}</h2>
-                            <p className="normal-text">{item.startDate+" - "+item.endDate}</p>
-                        </div>
-                    )
-                })}
+                        )
+                    }
+                    console.log(item)
+                    return holder
+
+                }) : ""}
             </div>
             <button className="build-tool-review-button" onClick={addAnotherExperience}>add another experience</button>
         </div>
@@ -388,6 +417,89 @@ export function EducationInfo() {
     )
 }
 export function Education() {
+    const [state, dispatch] = useStateValue();
+
+    const schoolNameChangeHandler = (e) => {
+        dispatch({
+            type: actions.ADD_EDUCATION,
+            item: {
+                schoolName: e.target.value,
+                city: state.education.city,
+                country: state.education.country,
+                degree: state.education.degree,
+                fieldOfStudy: state.education.study,
+                graduationDate: state.education.graduationDate
+            }
+        })
+    }
+    const cityChangeHandler = (e) => {
+        dispatch({
+            type: actions.ADD_EDUCATION,
+            item: {
+                schoolName: state.education.schoolName,
+                city: e.target.value,
+                country: state.education.country,
+                degree: state.education.degree,
+                fieldOfStudy: state.education.study,
+                graduationDate: state.education.graduationDate
+            }
+        })
+    }
+    const countryChangeHandler = (e) => {
+        dispatch({
+            type: actions.ADD_EDUCATION,
+            item: {
+                schoolName: state.education.schoolName,
+                city: state.education.city,
+                country: e.target.value,
+                degree: state.education.degree,
+                fieldOfStudy: state.education.study,
+                graduationDate: state.education.graduationDate
+            }
+        })
+    }
+    const degreeChangeHandler = (e) => {
+        dispatch({
+            type: actions.ADD_EDUCATION,
+            item: {
+                schoolName: state.education.schoolName,
+                city: state.education.city,
+                country: state.education.country,
+                degree: e.target.value,
+                fieldOfStudy: state.education.study,
+                graduationDate: state.education.graduationDate
+            }
+        })
+    }
+    const fieldOfStudyChangeHandler = (e) => {
+        console.log(e)
+        dispatch({
+            type: actions.ADD_EDUCATION,
+            item: {
+                schoolName: state.education.schoolName,
+                city: state.education.city,
+                country: state.education.country,
+                degree: state.education.degree,
+                fieldOfStudy: e.target.value,
+                graduationDate: state.education.graduationDate
+            }
+        })
+    }
+    const graduationDateChangeHandler = (e) => {
+        console.log(e)
+        dispatch({
+            type: actions.ADD_EDUCATION,
+            item: {
+                schoolName: state.education.schoolName,
+                city: state.education.city,
+                country: state.education.country,
+                degree: state.education.degree,
+                fieldOfStudy: state.education.fieldOfStudy,
+                graduationDate: e.target.value
+            }
+        })
+
+    }
 
     return (
         <div className="education common-input-style animation">
@@ -395,21 +507,21 @@ export function Education() {
             <p>Where did you go to school?</p>
             <div className="input-group">
                 <label >School Name</label>
-                <input type="text" />
+                <input type="text" value={state.education?.schoolName} onChange={(e) => schoolNameChangeHandler(e)} />
             </div>
             <div className="input-row">
                 <div className="input-group ">
                     <label >City</label>
-                    <input type="text" />
+                    <input type="text" value={state.education?.city} onChange={(e) => cityChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input">
-                    <label >State</label>
-                    <input type="text" />
+                    <label >Country</label>
+                    <input type="text" value={state.education?.country} onChange={(e) => countryChangeHandler(e)} />
                 </div>
             </div>
             <div className="input-group">
                 <label >Degree</label>
-                <select>
+                <select onChange={(e) => degreeChangeHandler(e)}>
                     <option>Select Your Degree</option>
                     <option>High School Diploma</option>
                     <option>GED</option>
@@ -430,11 +542,11 @@ export function Education() {
             </div>
             <div className="input-group">
                 <label >Field of Study</label>
-                <input type="text" />
+                <input type="text" value={state.education?.fieldOfStudy} onChange={(e) => fieldOfStudyChangeHandler(e)} />
             </div>
             <div className="input-row ">
                 <label className="multi-input">Graduation Date</label>
-                <select className="multi-input">
+                <select className="multi-input" onChange={(e) => graduationDateChangeHandler(e)}>
                     <option>Month</option>
                     <option>Jan</option>
                     <option>Feb</option>

@@ -14,6 +14,7 @@ export const actions = {
         ADD_EXPERIENCES: 'ADD_EXPERIENCES',
         ADD_EDUCATION: 'ADD_EDUCATION',
         ADD_EDUCATIONS: 'ADD_EDUCATIONS',
+        REMOVE_FROM_EXPERIENCES: 'REMOVE_FROM_EXPERIENCES',
         ADD_SKILLS: 'ADD_SKILLS',
         ADD_SUMMERY: 'ADD_SUMMERY'
 }
@@ -53,6 +54,11 @@ const reducer = (state, action) =>{
             return{
                 ...state,
                 summery: action.item
+            }
+        case actions.REMOVE_FROM_EXPERIENCES:
+            return{
+                ...state,
+                experiences: action.item
             }
         default :
             return state

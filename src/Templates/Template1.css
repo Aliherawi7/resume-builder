@@ -29,6 +29,12 @@
     background-color: #fff;
 
 }
+.template1 .mb-5{
+    margin-bottom: 5px !important;
+}
+.template1 .experience-container{
+    margin-bottom: 15px;
+}
 .template1  h1, .template1  h2{
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -56,12 +62,16 @@
     text-transform: uppercase;
     display: block;
 }
-.template1 .normal-text{
+.template1 .normal-text,
+.template1 .normal-paragraph{
     font-size: 10px;
     font-family: 'Merriweather';
     font-weight: 300;
     fill: #808080;
     display: block;
+}
+.template1 .normal-paragraph{
+    margin-bottom: 5px;
 }
 .template1 p{
     font-size: 10px;

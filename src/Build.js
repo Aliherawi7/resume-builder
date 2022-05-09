@@ -11,7 +11,6 @@ function Build() {
     const [showPage, setShowPage] = useState(false)
     const [state, dispatch] = useStateValue()
     console.log(state)
-    
     const [BuildComponent, setBuildComponent] = useState({component:buildTools[0]})
     const handleNextButton = ()=>{
         if(counter >= buildTools.length-1) return
@@ -38,10 +37,10 @@ function Build() {
                 <ul className="links">
                     <li className={counter>=0 ? "active":""} onClick={()=>(pathLinkHandler(0))}><span>get started</span></li>
                     <li className={counter>=1 ? "active":""} onClick={()=>(pathLinkHandler(1))}><span>Contact</span></li>
-                    <li className={counter>=2 ? "active":""} onClick={()=>(pathLinkHandler(3))}><span>Experience</span></li>
+                    <li className={counter>=3 ? "active":""} onClick={()=>(pathLinkHandler(3))}><span>Experience</span></li>
                     <li className={counter>=4 ? "active":""} onClick={()=>(pathLinkHandler(6))}> <span>Education</span></li>
-                    <li className={counter>=6 ? "active":""} onClick={()=>(pathLinkHandler(9))}><span>Skills</span></li>
-                    <li className={counter>=8 ? "active":""} onClick={()=>(pathLinkHandler(11))}> <span>Summery</span></li>
+                    <li className={counter>=9 ? "active":""} onClick={()=>(pathLinkHandler(9))}><span>Skills</span></li>
+                    <li className={counter>=11 ? "active":""} onClick={()=>(pathLinkHandler(11))}> <span>Summery</span></li>
                 </ul>
             </div>
 
@@ -69,6 +68,7 @@ function Build() {
                             skills={state.skills}
                             summery={state.summery}
                             experience={state.experience}
+                            education={state.education}
                         />
                     </div>
                 </div>
@@ -82,6 +82,7 @@ function Build() {
                             skills={state.skills}
                             summery={state.summery}
                             experience={state.experience}
+                            education={state.education}
                         />
                 </div>
             </Modal>

@@ -188,16 +188,40 @@
     border: 3px solid #74a534;
 }
 .build-tool-history{
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ddd;;
+}
+.review{
     border-bottom: 1px solid #ddd;
-    padding: 10px;
+    padding: 10px 0;
 }
 .build-tool-history h2{
     font-size: 20px;
     font-weight: 700;
     color: #000;
 }
+.review-buttons{
+    position: absolute;
+    right: 0;
+    top: 2px;
+    display: flex;
 
+}
+.review-buttons span{
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #000;
+    display: flex;
+    border: 1px solid #ddd;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin: 2px;
+}
+.review-buttons span:hover{
+    background-color: #8cc63e;
+}
 
 /* entering animation */
 @keyframes buildToolsEntering{

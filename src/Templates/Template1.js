@@ -1,15 +1,18 @@
 import React from 'react'
 import "./Template1.css"
 
-function Template1({ contactInformation, experiences,experience, educations, skills, summery }) {
+function Template1({ contactInformation, experiences, experience, educations, education, skills, summery }) {
     return (
         <div className="template1 a4">
             <div className="container-A">
                 <div className="contact-info section">
                     <h1>{contactInformation?.name}</h1>
-                    <p><i className="bi bi-telephone-fill"></i>{contactInformation?.phone} </p>
-                    <p><i className="bi bi-envelope-fill"></i>{contactInformation?.email}</p>
-                    <p><i className="bi bi-geo-alt-fill"></i>{contactInformation?.address + ", " + contactInformation?.city + ", " + contactInformation?.country}</p>
+                    <p><i className="bi bi-telephone-fill"></i>{contactInformation?.phone ? contactInformation.phone : ''} </p>
+                    <p><i className="bi bi-envelope-fill"></i>{contactInformation?.email ? contactInformation.email : ''}</p>
+                    <p><i className="bi bi-geo-alt-fill"></i>
+                        {(contactInformation?.address ? contactInformation.address + ", " : '') +
+                            (contactInformation?.city ? contactInformation.city + ", " : '') +
+                            (contactInformation?.country ? contactInformation.country : '')}</p>
                 </div>
                 <div className="skills subtitle section">
                     <h2>Skills</h2>
@@ -30,27 +33,47 @@ function Template1({ contactInformation, experiences,experience, educations, ski
                     <p className="normal-text">{summery}</p>
                 </div>
                 <div className="experience subtitle section">
-                    <h2>Experience</h2>{experiences.length > 0 ? experiences?.map((item) => {
+                    <h2>Experience</h2>
+                    {experiences.length > 0 ? experiences?.map((item) => {
                         return (
-                            <div key={item}>
-                                <p className="normal-title">{item?.jobTitle}</p>
-                                <p className="normal-text">{item?.employer}</p>
-                                <p className="normal-text">{item?.city + ", " + item?.state}</p>
-                                <p className="normal-text">{item?.startDate + " - " + item?.endDate}</p>
-                                <p className="normal-text">{'this is test'}</p>
+                            <div key={item} className="experience-container">
+                                <p className="normal-title mb-5">{item?.jobTitle ? item.jobTitle : ''}</p>
+                                <p className="normal-paragraph">{item?.employer ? item.employer : ''}</p>
+                                <p className="normal-paragraph">{(item?.city ? item.city + ", " : "") + (item?.state ? item?.state : '')}</p>
+                                <p className="normal-paragraph">{item?.startDate ? item.startDate : '' + " - " + item?.endDate ? item.endDate : ''}</p>
+                                <p className="normal-paragraph">{' '}</p>
                             </div>
                         )
                     }) : <div>
-                            <p className="normal-title">{experience?.jobTitle}</p>
-                            <p className="normal-text">{experience?.employer}</p>
-                            <p className="normal-text">{experience?.city + ", " + experience?.state}</p>
-                            <p className="normal-text">{experience?.startDate + " - " + experience?.endDate}</p>
-                            <p className="normal-text">{'this is test'}</p>
+                            <p className="normal-title mb-5">{experience?.jobTitle ? experience.jobTitle : ''}</p>
+                            <p className="normal-paragraph">{experience?.employer ? experience.employer : ''}</p>
+                            <p className="normal-paragraph">{experience?.city ? experience.city : "" + ", " + experience?.state ? experience.state : ''}</p>
+                            <p className="normal-paragraph">{(experience?.startDate ? experience.startDate + " - " : '') + (experience?.endDate ? experience.endDate : '')}</p>
+                            <p className="normal-paragraph">{' '}</p>
                         </div>}
                 </div>
                 <div className="education subtitle section">
                     <h2>Education</h2>
+                    {educations.length > 0 ? educations?.map((item) => {
+                        return (
+                            <div key={item} className="experience-container">
+                                <p className="normal-title mb-5">{(item?.degree ? item.degree+' : ':'') +item?.fieldOfStudy? item.fieldOfStudy : ''}</p>
+                                <p className="normal-paragraph">{item?.schoolName ? item.schoolName : ''}</p>
+                                <p className="normal-paragraph">{(item?.city ? item.city + ", " : "") + (item?.state ? item?.state : '')}</p>
+                                <p className="normal-paragraph">{item?.startDate ? item.startDate : '' + " - " + item?.endDate ? item.endDate : ''}</p>
+                                <p className="normal-paragraph">{' '}</p>
+                            </div>
+                        )
+                    }) :
+                        <div className="experience-container">
+                            <p className="normal-title mb-5">{(education?.degree ? education.degree+" : ":'') + (education?.fieldOfStudy ? education.fieldOfStudy : '')}</p>
+                            <p className="normal-paragraph">{education?.schoolName ? education.schoolName : ''}</p>
+                            <p className="normal-paragraph">{(education?.city ? education.city + ", " : "") + (education?.state ? education?.state : '')}</p>
+                            <p className="normal-paragraph">{education?.graduationDate ? education.graduationDate : '' }</p>
+                            <p className="normal-paragraph">{' '}</p>
+                        </div>
 
+                    }
                 </div>
             </div>
         </div>
