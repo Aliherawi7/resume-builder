@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createElement, Suspense } from 'react'
 import './BuildTools.css'
 import { useStateValue } from './StateProvider'
 import { actions } from './reducer'
@@ -10,6 +10,7 @@ export function GetStarted() {
         </div>
     )
 }
+// contact component
 export function Contact() {
     const [state, dispatch] = useStateValue();
     const nameChangeHandler = (e) => {
@@ -178,6 +179,9 @@ export function Contact() {
         </div>
     )
 }
+// end contact component
+
+// Experience components
 export function ExperienceInfo() {
     return (
         <div className="info animation">
@@ -332,27 +336,18 @@ export function Experience() {
         </div>
     )
 }
-export function ReviewExperience() {
+export function ReviewExperience({addNewExperience}) {
     const [state, dispatch] = useStateValue()
 
     useEffect(() => {
         const holder = [...state.experiences];
-        
-        console.log(holder.includes(state.experience))
-        if (!holder.includes(state.experience)) {
+        if (!holder.includes(state.experience) || state.education != {}) {
             dispatch({
                 type: actions.ADD_EXPERIENCES,
                 item: state.experience
             })
         }
     }, [])
-    const addAnotherExperience = () => {
-        dispatch({
-            type: actions.ADD_EXPERIENCES,
-            item: state.experience
-        })
-    }
-
     const deleteButtonHandler = (item) => {
         const itemIndex = state.experiences.findIndex((el) => {
             return el == item
@@ -394,15 +389,17 @@ export function ReviewExperience() {
                             </div>
                         )
                     }
-                    console.log(item)
                     return holder
 
                 }) : ""}
             </div>
-            <button className="build-tool-review-button" onClick={addAnotherExperience}>add another experience</button>
+            <button className="build-tool-review-button" onClick={addNewExperience}>add another experience</button>
         </div>
     )
 }
+// end Experience components
+
+// Education components
 export function EducationInfo() {
     return (
         <div className="info animation">
@@ -427,8 +424,9 @@ export function Education() {
                 city: state.education.city,
                 country: state.education.country,
                 degree: state.education.degree,
-                fieldOfStudy: state.education.study,
-                graduationDate: state.education.graduationDate
+                fieldOfStudy: state.education.fieldOfStudy,
+                graduationMonth: state.education.graduationMonth,
+                graduationYear: state.education.graduationYear
             }
         })
     }
@@ -440,8 +438,9 @@ export function Education() {
                 city: e.target.value,
                 country: state.education.country,
                 degree: state.education.degree,
-                fieldOfStudy: state.education.study,
-                graduationDate: state.education.graduationDate
+                fieldOfStudy: state.education.fieldOfStudy,
+                graduationMonth: state.education.graduationMonth,
+                graduationYear: state.education.graduationYear
             }
         })
     }
@@ -453,8 +452,9 @@ export function Education() {
                 city: state.education.city,
                 country: e.target.value,
                 degree: state.education.degree,
-                fieldOfStudy: state.education.study,
-                graduationDate: state.education.graduationDate
+                fieldOfStudy: state.education.fieldOfStudy,
+                graduationMonth: state.education.graduationMonth,
+                graduationYear: state.education.graduationYear
             }
         })
     }
@@ -466,13 +466,13 @@ export function Education() {
                 city: state.education.city,
                 country: state.education.country,
                 degree: e.target.value,
-                fieldOfStudy: state.education.study,
-                graduationDate: state.education.graduationDate
+                fieldOfStudy: state.education.fieldOfStudy,
+                graduationMonth: state.education.graduationMonth,
+                graduationYear: state.education.graduationYear
             }
         })
     }
     const fieldOfStudyChangeHandler = (e) => {
-        console.log(e)
         dispatch({
             type: actions.ADD_EDUCATION,
             item: {
@@ -481,12 +481,12 @@ export function Education() {
                 country: state.education.country,
                 degree: state.education.degree,
                 fieldOfStudy: e.target.value,
-                graduationDate: state.education.graduationDate
+                graduationMonth: state.education.graduationMonth,
+                graduationYear: state.education.graduationYear
             }
         })
     }
-    const graduationDateChangeHandler = (e) => {
-        console.log(e)
+    const graduationMonthChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_EDUCATION,
             item: {
@@ -495,10 +495,24 @@ export function Education() {
                 country: state.education.country,
                 degree: state.education.degree,
                 fieldOfStudy: state.education.fieldOfStudy,
-                graduationDate: e.target.value
+                graduationMonth: e.target.value,
+                graduationYear: state.education.graduationYear
             }
         })
-
+    }
+    const graduationYearChangeHandler = (e) => {
+        dispatch({
+            type: actions.ADD_EDUCATION,
+            item: {
+                schoolName: state.education.schoolName,
+                city: state.education.city,
+                country: state.education.country,
+                degree: state.education.degree,
+                fieldOfStudy: state.education.fieldOfStudy,
+                graduationMonth: state.education.graduationMonth,
+                graduationYear: e.target.value
+            }
+        })
     }
 
     return (
@@ -507,7 +521,7 @@ export function Education() {
             <p>Where did you go to school?</p>
             <div className="input-group">
                 <label >School Name</label>
-                <input type="text" value={state.education?.schoolName} onChange={(e) => schoolNameChangeHandler(e)} />
+                <input type="text" required value={state.education?.schoolName} onChange={(e) => schoolNameChangeHandler(e)} />
             </div>
             <div className="input-row">
                 <div className="input-group ">
@@ -546,7 +560,7 @@ export function Education() {
             </div>
             <div className="input-row ">
                 <label className="multi-input">Graduation Date</label>
-                <select className="multi-input" onChange={(e) => graduationDateChangeHandler(e)}>
+                <select className="multi-input" required value={state.education.graduationMonth} onChange={(e) => graduationMonthChangeHandler(e)}>
                     <option>Month</option>
                     <option>Jan</option>
                     <option>Feb</option>
@@ -561,7 +575,7 @@ export function Education() {
                     <option>Nov</option>
                     <option>Dec</option>
                 </select>
-                <select className="multi-input">
+                <select className="multi-input" required value={state.education.graduationYear} onChange={(e) => graduationYearChangeHandler(e)}>
                     <option>Year</option>
                     <option>2030</option>
                     <option>2029</option>
@@ -619,19 +633,79 @@ export function Education() {
         </div>
     )
 }
-export function ReviewEducation() {
+export function ReviewEducation({addNewEducation}) {
+    const [state, dispatch] = useStateValue()
+
+    useEffect(() => {
+        const holder = [...state.educations];
+        if (!holder.includes(state.education) && state.education != {}) {
+            dispatch({
+                type: actions.ADD_EDUCATIONS,
+                item: state.education
+            })
+            dispatch({
+                type: actions.ADD_EDUCATION,
+                item: {}
+            })
+        }
+    }, [])
+
+    const deleteButtonHandler = (item) => {
+        const itemIndex = state.educations.findIndex((el) => {
+            return el == item
+        })
+        if (itemIndex >= 0) {
+            let holder = state.educations;
+            holder.splice(itemIndex, 1);
+            dispatch({
+                type: actions.REMOVE_FROM_EXPERIENCES,
+                item: holder
+            })
+
+        }
+        if (item == state.education) {
+            dispatch({
+                type: actions.ADD_EDUCATION,
+                item: {}
+            })
+        }
+    }
     return (
         <div className="build-tool-review common-input-style">
             <h1>Review Education</h1>
             <p>Add, edit or remove your education history.</p>
             <div className="build-tool-history">
+                {state.educations.length > 0 ? state.educations?.map((item) => {
+                    let holder;
+                    console.log(item)
+                    if (item.schoolName) {
+                        holder = (
+                            <div className="review position-relative">
+                                <div className="review-buttons">
+                                    <span><i className="bi bi-pencil-fill"></i></span>
+                                    <span onClick={() => (deleteButtonHandler(item))}><i className="bi bi-trash-fill"></i></span>
+                                    <span><i className="bi bi-arrows-move"></i></span>
+                                </div>
+                                <h2 className="normal-text">{item?.schoolName ? item.schoolName : "" + ", " + item.fieldOfStudy ? item.fieldOfStudy : ""}</h2>
+                                <p className="normal-text">{(item?.graduationMonth ? item.graduationMonth + " - " : '') + (item.graduationYear ? item.graduationYear : '')}</p>
+                            </div>
+                        )
+                    }
+                    console.log(item)
+                    return holder
 
+                }) : ""}
             </div>
-            <button className="build-tool-review-button">add another degree</button>
+            <button className="build-tool-review-button" onClick={addNewEducation}>add another degree</button>
         </div>
     )
 }
+// end Education components
+
+// skill components
+
 export function SkillsInfo() {
+
     return (
         <div className="info animation">
             <h2>Next Section:</h2>
@@ -643,20 +717,41 @@ export function SkillsInfo() {
         </div>
     )
 }
+
 export function Skills() {
+    const [state, dispatch] = useStateValue()
+    const [skill, setSkill] = useState('')
+    useEffect(() => {
+        let s = state.skills.toString().replaceAll(',', '\n')
+        setSkill(s)
+    }, [])
+    const textAreaHandler = (e) => {
+        setSkill(e.target.value)
+        let skills = e.target.value.split('\n')
+        dispatch({
+            type: actions.ADD_SKILLS,
+            item: skills
+        })
+    }
     return (
         <div className="skills common-input-style animation">
             <h1>Skills</h1>
             <p>Highlight 6-8 of your top skills.</p>
             <div className="input-group">
-                <label >Skills</label>
-                <textarea placeholder="Click here to write your skills. Insert our pre-written examples with the Add Button.">
+                <label >Skills:</label>
+                <textarea 
+                placeholder="Click here to write your skills." 
+                value={skill} 
+                onChange={e => textAreaHandler(e)}>
 
                 </textarea>
             </div>
         </div>
     )
 }
+//end skill components
+
+// summery components
 export function SummeryInfo() {
     return (
         <div className="info animation">
@@ -670,19 +765,37 @@ export function SummeryInfo() {
     )
 }
 export function Summery() {
+    const [state, dispatch] = useStateValue()
+    const [summery, setSummery] = useState()
+    useEffect(() => {
+        let s = state.summery.toString().replaceAll(',', '\n')
+        setSummery(s)
+    }, [])
+    const textAreaHandler = e =>{
+        setSummery(e.target.value)
+        dispatch({
+            type: actions.ADD_SUMMERY,
+            item: e.target.value.split('\n')
+        })
+    }
     return (
         <div className="summery common-input-style animation">
             <h1>Professional Summary</h1>
             <p>Finish your resume with short summary</p>
             <div className="input-group">
-                <label >Skills</label>
-                <textarea placeholder="Click here to write your professional summary. Insert our pre-written examples with the Add Button.">
+                <label >summery:</label>
+                <textarea 
+                placeholder="Click here to write your professional summary."
+                value={summery}
+                onChange={e => textAreaHandler(e)}
+                >
 
                 </textarea>
             </div>
         </div>
     )
 }
+//end summery components
 const buildTools = [GetStarted, Contact, ExperienceInfo, Experience, ReviewExperience, EducationInfo, Education, ReviewEducation, SkillsInfo, Skills, SummeryInfo, Summery]
 
 export default buildTools

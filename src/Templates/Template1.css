@@ -56,9 +56,9 @@
     line-height: 19px;
 }
 .template1 .normal-title{
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: 2.2px;
-    font-weight: 300;
+    font-weight: 400;
     text-transform: uppercase;
     display: block;
 }
@@ -76,12 +76,14 @@
 .template1 p{
     font-size: 10px;
     margin-bottom: 10px;
+    display: block;
 }
 
-.template1 ul{
-    margin-left: 20px;
+.template1 .skill-list{
+    margin-left: 16px;
     font-size: 13px;
     font-family: 'Merriweather';
     font-weight: 400;
     fill: #fff;
+    text-transform: capitalize;
 }

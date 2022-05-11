@@ -105,6 +105,11 @@
 .input-check input:checked{
     background-color:#3aac5d;
 }
+.common-input-style .text-area{
+    resize: none;
+    border:1px solid #3aac5d;
+
+}
  .position-relative{
      position: relative;
  }

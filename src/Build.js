@@ -10,44 +10,52 @@ function Build() {
     const navigate = useNavigate()
     const [showPage, setShowPage] = useState(false)
     const [state, dispatch] = useStateValue()
-    console.log(state)
-    const [BuildComponent, setBuildComponent] = useState({component:buildTools[0]})
-    const handleNextButton = ()=>{
-        if(counter >= buildTools.length-1) return
+    const [BuildComponent, setBuildComponent] = useState({ component: buildTools[0] })
+
+    const handleNextButton = () => {
+        if (counter >= buildTools.length - 1) return // we will do more here e.g : going to the download page
         counter++
-        setBuildComponent({component:buildTools[counter]})
-        
+        setBuildComponent({ component: buildTools[counter] })
+        console.log(state)
     }
-    const handleBackButton = ()=> {
-        if(counter <= 0 ){
+    const handleBackButton = () => {
+        if (counter <= 0) {
             navigate('/')
             return
         }
         counter--
-        setBuildComponent({component:buildTools[counter]})
+        setBuildComponent({ component: buildTools[counter] })
     }
-    const pathLinkHandler = (x)=>{
+    const pathLinkHandler = (x) => {
         counter = x
-        setBuildComponent({component:buildTools[counter]})
+        setBuildComponent({ component: buildTools[counter] })
+    }
+    const addNewExperience = () => {
+        counter = 3;
+        pathLinkHandler(counter)
+    }
+    const addNewEducation = () => {
+        counter = 6;
+        pathLinkHandler(counter)
     }
 
     return (
         <div className="build">
             <div className="build-path">
                 <ul className="links">
-                    <li className={counter>=0 ? "active":""} onClick={()=>(pathLinkHandler(0))}><span>get started</span></li>
-                    <li className={counter>=1 ? "active":""} onClick={()=>(pathLinkHandler(1))}><span>Contact</span></li>
-                    <li className={counter>=3 ? "active":""} onClick={()=>(pathLinkHandler(3))}><span>Experience</span></li>
-                    <li className={counter>=4 ? "active":""} onClick={()=>(pathLinkHandler(6))}> <span>Education</span></li>
-                    <li className={counter>=9 ? "active":""} onClick={()=>(pathLinkHandler(9))}><span>Skills</span></li>
-                    <li className={counter>=11 ? "active":""} onClick={()=>(pathLinkHandler(11))}> <span>Summery</span></li>
+                    <li className={counter >= 0 ? "active" : ""} onClick={() => (pathLinkHandler(0))}><span>get started</span></li>
+                    <li className={counter >= 1 ? "active" : ""} onClick={() => (pathLinkHandler(1))}><span>Contact</span></li>
+                    <li className={counter >= 2 ? "active" : ""} onClick={() => (pathLinkHandler(3))}><span>Experience</span></li>
+                    <li className={counter >= 5 ? "active" : ""} onClick={() => (pathLinkHandler(6))}> <span>Education</span></li>
+                    <li className={counter >= 8 ? "active" : ""} onClick={() => (pathLinkHandler(9))}><span>Skills</span></li>
+                    <li className={counter >= 10 ? "active" : ""} onClick={() => (pathLinkHandler(11))}> <span>Summery</span></li>
                 </ul>
             </div>
 
             <div className="build-container">
                 <div className="build-tools">
                     <div className="build-form">
-                        {<BuildComponent.component />}
+                        {<BuildComponent.component addNewExperience={addNewExperience} addNewEducation={addNewEducation} />}
                     </div>
                     <div className="control-buttons">
                         <button className="back" onClick={handleBackButton}>Back</button>
@@ -56,12 +64,12 @@ function Build() {
                 </div>
                 <div className="page-preview">
                     <div className="expand">
-                        <span onClick={()=> setShowPage(!showPage)}>
+                        <span onClick={() => setShowPage(!showPage)}>
                             <i className="bi bi-arrows-angle-expand"></i>
                         </span>
                     </div>
                     <div className="document">
-                        <Template1 
+                        <Template1
                             contactInformation={state.contactInformation}
                             experiences={state.experiences}
                             educations={state.educations}
@@ -73,17 +81,17 @@ function Build() {
                     </div>
                 </div>
             </div>
-            <Modal show={showPage} close={()=> setShowPage(!showPage)}>
+            <Modal show={showPage} close={() => setShowPage(!showPage)}>
                 <div className="document">
-                <Template1 
-                            contactInformation={state.contactInformation}
-                            experiences={state.experiences}
-                            educations={state.educations}
-                            skills={state.skills}
-                            summery={state.summery}
-                            experience={state.experience}
-                            education={state.education}
-                        />
+                    <Template1
+                        contactInformation={state.contactInformation}
+                        experiences={state.experiences}
+                        educations={state.educations}
+                        skills={state.skills}
+                        summery={state.summery}
+                        experience={state.experience}
+                        education={state.education}
+                    />
                 </div>
             </Modal>
         </div>
