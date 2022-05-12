@@ -22,7 +22,6 @@ function GettingStarted() {
                             <span style={"--color: #000"} onMouseOver={(e)=>console.log(e)}></span>
                             <span style={"--color: #000"} onMouseOver={(e)=>console.log(e)}></span>
                         </div>
-
                     </div>
                 </di>
             </div>
