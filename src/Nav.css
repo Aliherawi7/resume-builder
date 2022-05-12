@@ -3,10 +3,6 @@ nav{
     display: flex;
     padding: 10px;
     background-color: rgb(46, 46, 46);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
 }
 
 .nav-links{

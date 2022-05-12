@@ -1,7 +1,6 @@
 .build{
     display: flex;
     flex-direction: column;
-    margin-top: 85px;
 }
 
 /* build path */

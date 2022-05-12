@@ -9,7 +9,7 @@ function Home() {
                     BUILD A RESUME
                     THAT WILL GET YOU HIRED
                 </h2>
-                <Link to="/build"><button>Let's Build A Resume</button>
+                <Link to="/build/getting-started"><button>Let's Build A Resume</button>
                 </Link>
             </div>
         </div>
