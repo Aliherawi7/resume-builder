@@ -6,6 +6,7 @@ import Loading from './Loading';
 
 const Home = React.lazy(() => import('./Home'))
 const Build = React.lazy(() => import('./Build'))
+const GettingStarted = React.lazy(()=> import('./GettingStarted'))
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Build" element={<Build />} />
+          <Route path="/build" element={<Build />} />
+          <Route path="/build/getting-started" element={<GettingStarted />} />
         </Routes>
       </Router>
     </Suspense>
