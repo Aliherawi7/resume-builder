@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Modal from './Modal'
 import buildTools from './BuildTools'
 import Template1 from './Templates/Template1'
+import Template2 from './Templates/Template2'
 import { useStateValue } from './StateProvider'
 let counter = 0;
 function Build() {
@@ -69,7 +70,7 @@ function Build() {
                         </span>
                     </div>
                     <div className="document">
-                        <Template1
+                        <Template2
                             contactInformation={state.contactInformation}
                             experiences={state.experiences}
                             educations={state.educations}
@@ -83,7 +84,7 @@ function Build() {
             </div>
             <Modal show={showPage} close={() => setShowPage(!showPage)}>
                 <div className="document">
-                    <Template1
+                    <Template2
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
                         educations={state.educations}
