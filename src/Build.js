@@ -7,20 +7,20 @@ import Template1 from './Templates/Template1'
 import Template2 from './Templates/Template2'
 import { useStateValue } from './StateProvider'
 let counter = 0;
+const templates = [Template1, Template2]
 function Build() {
+    const {color, template} = useParams()
     const navigate = useNavigate()
     const [showPage, setShowPage] = useState(false)
     const [state, dispatch] = useStateValue()
     const [BuildComponent, setBuildComponent] = useState({ component: buildTools[0] })
-     const {color} = useParams()
-     console.log(color)
-
+    const [TemplateComponent, setTemplateComponent] = useState({ component:templates[template]  })
+    
 
     const handleNextButton = () => {
         if (counter >= buildTools.length - 1) return // we will do more here e.g : going to the download page
         counter++
         setBuildComponent({ component: buildTools[counter] })
-        console.log(state)
     }
     const handleBackButton = () => {
         if (counter <= 0) {
@@ -73,7 +73,7 @@ function Build() {
                         </span>
                     </div>
                     <div className="document">
-                        <Template2
+                        <TemplateComponent.component
                             contactInformation={state.contactInformation}
                             experiences={state.experiences}
                             educations={state.educations}
@@ -88,7 +88,7 @@ function Build() {
             </div>
             <Modal show={showPage} close={() => setShowPage(!showPage)}>
                 <div className="document">
-                    <Template2
+                    <TemplateComponent.component
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
                         educations={state.educations}

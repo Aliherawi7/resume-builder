@@ -18,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/build/template/color=:color&template=:template" element={<Build />} />
           <Route path="/build/getting-started" element={<GettingStarted />} />
+          <Route path="/templates" element={<GettingStarted />}/>
         </Routes>
       </Router>
     </Suspense>
