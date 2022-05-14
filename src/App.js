@@ -4,25 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Nav from './Nav'
 import Loading from './Loading';
 
-<<<<<<< HEAD
-//const Home = React.lazy(() => import('./Home'))
-const Home = React.lazy(() => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve(import("./Home")), 300);
-  });
-});
-
-//const Build = React.lazy(() => import('./Build'))
-const Build = React.lazy(() => {
-  return new Promise(resolve => {
-    setTimeout(() => resolve(import("./Build")), 300);
-  });
-});
-=======
 const Home = React.lazy(() => import('./Home'))
 const Build = React.lazy(() => import('./Build'))
 const GettingStarted = React.lazy(()=> import('./GettingStarted'))
->>>>>>> templateChooser
 
 
 function App() {

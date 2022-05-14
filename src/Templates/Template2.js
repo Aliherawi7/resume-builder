@@ -2,12 +2,6 @@ import React from 'react'
 import "./Template.css"
 import "./Template2.css"
 
-<<<<<<< HEAD
-function Template2({ contactInformation, experiences, experience, educations, education, skills, summery }) {
-    return (
-        <div className="template1 a4">
-            
-=======
 
 function Template2({ contactInformation, experiences, experience, educations, education, skills, summery, color }) {
     const backgroundColor = {
@@ -108,7 +102,6 @@ function Template2({ contactInformation, experiences, experience, educations, ed
                 </div>
 
             </div>
->>>>>>> templateChooser
         </div>
     )
 }

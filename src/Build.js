@@ -73,11 +73,7 @@ function Build() {
                         </span>
                     </div>
                     <div className="document">
-<<<<<<< HEAD
-                        <Template2
-=======
                         <TemplateComponent.component
->>>>>>> templateChooser
                             contactInformation={state.contactInformation}
                             experiences={state.experiences}
                             educations={state.educations}
@@ -92,11 +88,7 @@ function Build() {
             </div>
             <Modal show={showPage} close={() => setShowPage(!showPage)}>
                 <div className="document">
-<<<<<<< HEAD
-                    <Template2
-=======
                     <TemplateComponent.component
->>>>>>> templateChooser
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
                         educations={state.educations}
