@@ -1,18 +1,121 @@
-.a4{
-    width: 595px;
-    height: 842px;
+
+.container-bg1{
+    background-color: #000;
+    background-color: var(--backgroundColor);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
 }
-.template1{
+
+.container-bg2 .section{
+    margin-bottom: 15px;
+}
+
+.container-bg2{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-top-left-radius: 280px;
+}
+.container-bg2 .right-corner{
+    position: absolute;
+    background-color: var(--backgroundColor);
+    z-index: 10;
+    width: 150px;
+    height: 150px;
+    top: -1px;
+    left: -1px;
+    border-bottom-right-radius: 80px;
+}
+.container-bg2 .top-right-corner{
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+    width: 170px;
+    height: 60px;
+    left: 149px;
+    background-color: #fff;
+    border-top-left-radius: 30px;
+}
+.container-bg2 .bottom-right-corner{
+    position: absolute;
+    z-index: 10;
+    width: 176px;
+    height: 140px;
+    background-color: #fff;
+    left: 0;
+    top: 149px;
+    border-top-left-radius: 35px;
+}
+.container-bg2 .profile-picture{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    z-index: 1000;
+    overflow: hidden;
+    background-color: #fff;
     display: flex;
+    justify-content: center;
 
 }
-.template1 .container-A{
-    width: 35%;
-    height: 100%;
-    background-color: #f46464;
+.container-bg2 .profile-picture img{
+    width: 85%;
+    margin: auto;
+    object-fit: contain;
 }
-.template1 .container-B{
-    width: 65%;
-    height: 100%;
-    background-color: #fff;
+
+.container-bg2 .contact-info{
+    display: flex;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 405px;
+    height: 90px;
+    z-index: 100;
+}
+.template2 .contact-name{
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 190px;
+    color: var(--color);
+}
+.container-bg2 .contact-info .contact{
+    border-left: 1px dotted ;
+    margin-left: 10px;
+    padding: 10px;
+}
+.template2 i{
+    margin-right: 6px;
+    color: var(--color);
+}
+
+.container-bg2 .information-container{
+    padding: 10px;
+    position: absolute;
+    top: 190px;
+    width: 100%;
+    height: 77.5%;
+    z-index: 100;
+    display: flex;
+}
+.information-container .part-a{
+    border-right: 1px dotted;
+    width: 50%;
+}
+.information-container .part-b{
+    padding-left: 40px;
+    width: 50%;
+}
+.template2 .container-bg2 .summery{
+    width: 220px;
 }

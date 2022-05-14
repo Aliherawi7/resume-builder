@@ -1,27 +1,30 @@
 import React, { useState } from 'react'
 import "./Build.css"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import Modal from './Modal'
 import buildTools from './BuildTools'
 import Template1 from './Templates/Template1'
 import Template2 from './Templates/Template2'
 import { useStateValue } from './StateProvider'
 let counter = 0;
+const templates = [Template1, Template2]
 function Build() {
+    const {color, template} = useParams()
     const navigate = useNavigate()
     const [showPage, setShowPage] = useState(false)
     const [state, dispatch] = useStateValue()
     const [BuildComponent, setBuildComponent] = useState({ component: buildTools[0] })
+    const [TemplateComponent, setTemplateComponent] = useState({ component:templates[template]  })
+    
 
     const handleNextButton = () => {
         if (counter >= buildTools.length - 1) return // we will do more here e.g : going to the download page
         counter++
         setBuildComponent({ component: buildTools[counter] })
-        console.log(state)
     }
     const handleBackButton = () => {
         if (counter <= 0) {
-            navigate('/')
+            navigate('/build/getting-started')
             return
         }
         counter--
@@ -70,7 +73,11 @@ function Build() {
                         </span>
                     </div>
                     <div className="document">
+<<<<<<< HEAD
                         <Template2
+=======
+                        <TemplateComponent.component
+>>>>>>> templateChooser
                             contactInformation={state.contactInformation}
                             experiences={state.experiences}
                             educations={state.educations}
@@ -78,13 +85,18 @@ function Build() {
                             summery={state.summery}
                             experience={state.experience}
                             education={state.education}
+                            color={"#"+color}
                         />
                     </div>
                 </div>
             </div>
             <Modal show={showPage} close={() => setShowPage(!showPage)}>
                 <div className="document">
+<<<<<<< HEAD
                     <Template2
+=======
+                    <TemplateComponent.component
+>>>>>>> templateChooser
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
                         educations={state.educations}
@@ -92,6 +104,7 @@ function Build() {
                         summery={state.summery}
                         experience={state.experience}
                         education={state.education}
+                        color={"#"+color}
                     />
                 </div>
             </Modal>

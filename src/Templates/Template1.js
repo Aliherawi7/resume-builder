@@ -1,24 +1,31 @@
 import React from 'react'
 import "./Template1.css"
+import "./Template.css"
 
-function Template1({ contactInformation, experiences, experience, educations, education, skills, summery }) {
+function Template1({ contactInformation, experiences, experience, educations, education, skills, summery, color }) {
+    const backgroundColor ={
+        "--backgroundColor": color
+    }
+    const Fontcolor ={
+        "--color": color
+    }
     return (
-        <div className="template1 a4">
-            <div className="container-A">
+        <div className="template template1 a4" >
+            <div className="container-A" style={backgroundColor}>
                 <div className="contact-info section">
                     <h1>{contactInformation?.name}</h1>
-                    <p><i className="bi bi-telephone-fill"></i>{contactInformation?.phone ? contactInformation.phone : ''} </p>
-                    <p><i className="bi bi-envelope-fill"></i>{contactInformation?.email ? contactInformation.email : ''}</p>
-                    <p><i className="bi bi-geo-alt-fill"></i>
+                    <p className='normal-text'><i className="bi bi-telephone-fill"></i>{contactInformation?.phone ? contactInformation.phone : ''} </p>
+                    <p className='normal-text'><i className="bi bi-envelope-fill"></i>{contactInformation?.email ? contactInformation.email : ''}</p>
+                    <p className='normal-text'><i className="bi bi-geo-alt-fill"></i>
                         {(contactInformation?.address ? contactInformation.address + ", " : '') +
                             (contactInformation?.city ? contactInformation.city + ", " : '') +
                             (contactInformation?.country ? contactInformation.country : '')}</p>
                 </div>
-                <div className="skills subtitle section">
+                <div className="skills section">
                     <h2>Skills</h2>
                     <ul className="skill-list">
                         {skills?.map((item) => {
-                            return item !="" ? <li>{item}</li>:null
+                            return item !="" ? <li key={item}>{item}</li>:null
                             
                         })}
                     </ul>
@@ -26,17 +33,17 @@ function Template1({ contactInformation, experiences, experience, educations, ed
             </div>
             <div className="container-B">
                 <div className="professional-summary subtitle section">
-                    <h2>professional summary</h2>
-                    <div>
+                    <h2 style={Fontcolor}>professional summary</h2>
+                    <div >
                         {summery?.map((item) => {
-                            return item !="" ? <p className="summery">{item}</p>:null
+                            return item !="" ? <p className="summery normal-paragraph" key={item}>{item}</p>:null
                             
                         })}
                     </div>
                 </div>
                 <div className="experience subtitle section">
-                    <h2>Experience</h2>
-                    {experiences.length > 0 ? experiences?.map((item) => {
+                    <h2 style={Fontcolor}>Experience</h2>
+                    {experiences?.length > 0 ? experiences?.map((item) => {
                         return (
                             <div key={item} className="experience-container">
                                 <p className="normal-title mb-5">{item?.jobTitle ? item.jobTitle : ''}</p>
@@ -54,8 +61,8 @@ function Template1({ contactInformation, experiences, experience, educations, ed
                         </div>}
                 </div>
                 <div className="education subtitle section">
-                    <h2>Education</h2>
-                    {educations.length > 0 ? educations?.map((item) => {
+                    <h2 style={Fontcolor}>Education</h2>
+                    {educations?.length > 0 ? educations?.map((item) => {
                         return (
                             <div key={item} className="experience-container">
                                 <p className="normal-title mb-5">{(item?.degree ? item.degree :'') +(item?.fieldOfStudy? ' : '+item.fieldOfStudy : '')}</p>
