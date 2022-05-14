@@ -16,7 +16,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/build" element={<Build />} />
+          <Route path="/build/template/color=:color&template=:template" element={<Build />} />
           <Route path="/build/getting-started" element={<GettingStarted />} />
         </Routes>
       </Router>

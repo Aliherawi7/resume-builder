@@ -51,6 +51,7 @@
     border: none;
     outline: none;
     justify-self: center;
+    text-align: center;
 }
 .btn-select-template:hover{
     background-color: #059470;
@@ -63,5 +64,31 @@
     margin-top: -65px;
     box-shadow: 1px 1px 46px 10px rgb(0 0 0 / 25%);
     transform: scale(.84);
+}
 
+.template-slider{
+    position: relative;
+}
+.template-slider button{
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 6px 1px rgba(114, 114, 114, 0.479);
+    z-index: 100;
+    font-size: 25px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.template-slider .btn-left{
+    top: 45%;
+    left: 24px
+}
+.template-slider .btn-right{
+    top: 45%;
+    right: 24px;
 }

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import "./Build.css"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import Modal from './Modal'
 import buildTools from './BuildTools'
 import Template1 from './Templates/Template1'
+import Template2 from './Templates/Template2'
 import { useStateValue } from './StateProvider'
 let counter = 0;
 function Build() {
@@ -11,6 +12,9 @@ function Build() {
     const [showPage, setShowPage] = useState(false)
     const [state, dispatch] = useStateValue()
     const [BuildComponent, setBuildComponent] = useState({ component: buildTools[0] })
+     const {color} = useParams()
+     console.log(color)
+
 
     const handleNextButton = () => {
         if (counter >= buildTools.length - 1) return // we will do more here e.g : going to the download page
@@ -20,7 +24,7 @@ function Build() {
     }
     const handleBackButton = () => {
         if (counter <= 0) {
-            navigate('/')
+            navigate('/build/getting-started')
             return
         }
         counter--
@@ -69,7 +73,7 @@ function Build() {
                         </span>
                     </div>
                     <div className="document">
-                        <Template1
+                        <Template2
                             contactInformation={state.contactInformation}
                             experiences={state.experiences}
                             educations={state.educations}
@@ -77,13 +81,14 @@ function Build() {
                             summery={state.summery}
                             experience={state.experience}
                             education={state.education}
+                            color={"#"+color}
                         />
                     </div>
                 </div>
             </div>
             <Modal show={showPage} close={() => setShowPage(!showPage)}>
                 <div className="document">
-                    <Template1
+                    <Template2
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
                         educations={state.educations}
@@ -91,6 +96,7 @@ function Build() {
                         summery={state.summery}
                         experience={state.experience}
                         education={state.education}
+                        color={"#"+color}
                     />
                 </div>
             </Modal>

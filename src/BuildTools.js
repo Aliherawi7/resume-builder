@@ -281,7 +281,7 @@ export function Experience() {
             }
         })
     }
-    const checkBoxChangeHandler = () => {
+    const checkBoxChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_EXPERIENCE,
             item: {
@@ -290,7 +290,7 @@ export function Experience() {
                 city: state.experience.city,
                 state: state.experience.state,
                 startDate: state.experience.startDate,
-                endDate: state.experience.endDate != 'current' ? 'current' : ''
+                endDate: e.target.checked ? 'current' : ''
             }
         })
     }
@@ -330,7 +330,7 @@ export function Experience() {
                 </div>
             </div>
             <div className="input-check">
-                <input type="checkbox" onChange={checkBoxChangeHandler} />
+                <input type="checkbox" onChange={e => checkBoxChangeHandler(e)} />
                 <span>I currently work here</span>
             </div>
         </div>
@@ -341,10 +341,14 @@ export function ReviewExperience({addNewExperience}) {
 
     useEffect(() => {
         const holder = [...state.experiences];
-        if (!holder.includes(state.experience) || state.education != {}) {
+        if (!holder.includes(state.experience) && state.education != {}) {
             dispatch({
                 type: actions.ADD_EXPERIENCES,
                 item: state.experience
+            })
+            dispatch({
+                type: actions.ADD_EDUCATION,
+                item: {}
             })
         }
     }, [])
@@ -375,7 +379,6 @@ export function ReviewExperience({addNewExperience}) {
             <div className="build-tool-history">
                 {state.experiences.length > 0 ? state.experiences?.map((item) => {
                     let holder;
-                    console.log(item)
                     if (item.jobTitle) {
                         holder = (
                             <div className="review position-relative">

@@ -85,7 +85,7 @@
 }
 
 /* page preview */
-.page-preview{
+.build-container .page-preview{
     position: relative;
     flex-shrink: 0;
     box-shadow: 1px 1px 46px 10px rgb(0 0 0 / 25%);
@@ -114,7 +114,7 @@
     right: 0;
     left: 0;
     height: 100%;
-    z-index: 1;
+    z-index: 200;
 }
 .expand span{
     display: flex;
@@ -127,7 +127,7 @@
     transform: scale(0);
     transition: transform 0.3s;
     cursor: pointer;
-    z-index: 101;
+    z-index: 201;
 }
 .expand:hover span{
     transform: scale(1.8);
