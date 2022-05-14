@@ -11,7 +11,7 @@ export function GetStarted() {
     )
 }
 // contact component
-export function Contact() {
+export function Contact() {   
     const [state, dispatch] = useStateValue();
     const nameChangeHandler = (e) => {
         dispatch({

@@ -13,6 +13,6 @@ ReactDOM.render(
     </StateProvider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+); 
 
 

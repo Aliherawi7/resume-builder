@@ -6,7 +6,7 @@ export const initialState = {
     educations: [],
     skills: [],
     summery: []
-}
+} 
 
 export const actions = {
     ADD_CONTACT_INFROMATION: 'ADD_CONTACT_INFROMATION',

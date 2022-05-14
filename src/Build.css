@@ -59,6 +59,7 @@
     z-index: -1;
     transition:background-color 0.4s ;
 }
+
 .links li:first-child::after{
     display: none;
 }

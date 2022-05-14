@@ -22,6 +22,7 @@ const example = {
         degree: 'degree',
         fieldOfStudy: 'field of study',
         graduationMonth: 'granduation date'
+        
     },
     skills: ['react', 'spring boot', 'java', 'javascript', 'html', 'css', 'git'],
     summery: ['Successful sales professional with 10+ years experience in large-scale food and retail environments.']

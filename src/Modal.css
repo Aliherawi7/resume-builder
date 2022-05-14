@@ -14,7 +14,7 @@
 .modal span{
     cursor: pointer;
     background-color: #d40e0e;
-    width: 40px;
+    width: 40px; 
     height: 40px;
     border-radius: 50%;
     display: flex;

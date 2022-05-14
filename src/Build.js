@@ -8,6 +8,7 @@ import Template2 from './Templates/Template2'
 import { useStateValue } from './StateProvider'
 let counter = 0;
 const templates = [Template1, Template2]
+
 function Build() {
     const {color, template} = useParams()
     const navigate = useNavigate()

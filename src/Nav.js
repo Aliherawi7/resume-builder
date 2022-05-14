@@ -14,7 +14,7 @@ function Nav() {
                 <Link to="/home">Home</Link>
                 <Link to="/about">About</Link>
             </div>
-        </nav>
+        </nav> 
     )
 }
 
