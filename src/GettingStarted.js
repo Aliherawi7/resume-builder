@@ -13,7 +13,7 @@ function GettingStarted() {
     const spanColor = e => {
         let selectedColor = "#" + (e.target.outerHTML.split('#')[1].split(';')[0])
         setColor(selectedColor)
-    } 
+    }  
     const nextHandler = ()=>{
         if(counter >= templates.length-1) counter = -1
         counter++;

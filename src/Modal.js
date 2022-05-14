@@ -10,7 +10,7 @@ function Modal(props) {
                 <span onClick={props.close}><i className="bi bi-x-lg"></i></span>
             </div>
         </div>
-    )
+    ) 
 }
 
 export default Modal 

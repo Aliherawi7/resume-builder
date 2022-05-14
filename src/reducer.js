@@ -18,7 +18,7 @@ export const actions = {
     REMOVE_FROM_EDUCATIONS: 'REMOVE_FROM_EXPERIENCES',
     ADD_SKILLS: 'ADD_SKILLS',
     ADD_SUMMERY: 'ADD_SUMMERY'
-}
+} 
 const reducer = (state, action) => {
     switch (action.type) {
         case actions.ADD_CONTACT_INFROMATION:

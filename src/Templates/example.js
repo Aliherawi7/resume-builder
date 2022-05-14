@@ -27,4 +27,5 @@ const example = {
     skills: ['react', 'spring boot', 'java', 'javascript', 'html', 'css', 'git'],
     summery: ['Successful sales professional with 10+ years experience in large-scale food and retail environments.']
 }
+
 export default example

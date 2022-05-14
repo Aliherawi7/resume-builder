@@ -20,7 +20,7 @@
             margin: -0.625rem 0 0 -1.875rem; /* is width and height divided by two */ 
             text-align: center;
         }
-
+ 
         .spinner > div {
             display: inline-block;
             width: 1rem;

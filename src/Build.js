@@ -17,7 +17,6 @@ function Build() {
     const [BuildComponent, setBuildComponent] = useState({ component: buildTools[0] })
     const [TemplateComponent, setTemplateComponent] = useState({ component:templates[template]  })
     
-
     const handleNextButton = () => {
         if (counter >= buildTools.length - 1) return // we will do more here e.g : going to the download page
         counter++

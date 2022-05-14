@@ -10,7 +10,6 @@ function Template2({ contactInformation, experiences, experience, educations, ed
     const Fontcolor = {
         "--color": color
     }
-    
     return (
         <div className="template template2 a4">
             <div className="container-bg1" style={backgroundColor}>

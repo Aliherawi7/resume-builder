@@ -17,6 +17,7 @@
     padding: 5px 10px;
     counter-reset: step;
 }
+
 .links li {
     float: left;
     width: 20%;

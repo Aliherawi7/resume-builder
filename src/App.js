@@ -7,7 +7,7 @@ const Home = React.lazy(() => import('./Home'))
 const Build = React.lazy(() => import('./Build'))
 const GettingStarted = React.lazy(()=> import('./GettingStarted'))
 
-
+ 
 function App() {
   return (
     <Suspense fallback={<Loading />}>

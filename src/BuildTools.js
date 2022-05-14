@@ -9,7 +9,7 @@ export function GetStarted() {
             <h1>This is first step </h1>
         </div>
     )
-}
+} 
 // contact component
 export function Contact() {   
     const [state, dispatch] = useStateValue();
