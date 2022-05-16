@@ -282,6 +282,7 @@ export function Experience() {
         })
     }
     const checkBoxChangeHandler = (e) => {
+        console.log(e)
         dispatch({
             type: actions.ADD_EXPERIENCE,
             item: {
@@ -347,7 +348,7 @@ export function ReviewExperience({addNewExperience}) {
                 item: state.experience
             })
             dispatch({
-                type: actions.ADD_EDUCATION,
+                type: actions.ADD_EXPERIENCE,
                 item: {}
             })
         }
