@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import ReactDOMServer from 'react-dom/server'
+import jsPDF from 'jspdf'
 import "./Build.css"
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import Modal from './Modal'
@@ -6,19 +8,22 @@ import buildTools from './BuildTools'
 import Template1 from './Templates/Template1'
 import Template2 from './Templates/Template2'
 import { useStateValue } from './StateProvider'
+import bootsrapIcon from './assets/fonts/bootstrap-icons.woff'
 let counter = 0;
 const templates = [Template1, Template2]
 
 function Build() {
-    const {color, template} = useParams()
+    const { color, template } = useParams()
     const navigate = useNavigate()
     const [showPage, setShowPage] = useState(false)
     const [state, dispatch] = useStateValue()
     const [BuildComponent, setBuildComponent] = useState({ component: buildTools[0] })
-    const [TemplateComponent, setTemplateComponent] = useState({ component:templates[template]  })
-    
+    const [TemplateComponent, setTemplateComponent] = useState({ component: templates[template] })
+
     const handleNextButton = () => {
-        if (counter >= buildTools.length - 1) return // we will do more here e.g : going to the download page
+        if (counter >= buildTools.length - 1) {
+            return
+        }  // we will do more here e.g : going to the download page
         counter++
         setBuildComponent({ component: buildTools[counter] })
     }
@@ -42,6 +47,27 @@ function Build() {
         counter = 6;
         pathLinkHandler(counter)
     }
+    const save = ()=>{
+        const doc = new jsPDF('portrait','pt', 'a4');
+            const component = <TemplateComponent.component
+                contactInformation={state.contactInformation}
+                experiences={state.experiences}
+                educations={state.educations}
+                skills={state.skills}
+                summery={state.summery}
+                experience={state.experience}
+                education={state.education}
+                color={"#" + color}
+            />
+            doc.addFont('bootstrap-icons.woff', "bootsrap-icon",'normal')
+            doc.html(ReactDOMServer.renderToStaticMarkup(component),{
+                callback:()=>{
+                    doc.save("myResume.pdf")
+                    console.log("dowload area")
+                }
+            })
+            console.log("dowload area 1")
+    }
 
     return (
         <div className="build">
@@ -63,6 +89,7 @@ function Build() {
                     </div>
                     <div className="control-buttons">
                         <button className="back" onClick={handleBackButton}>Back</button>
+                        <button className="save-next" onClick={save}>Save</button>
                         <button className="save-next" onClick={handleNextButton}>Save & Next</button>
                     </div>
                 </div>
@@ -72,7 +99,7 @@ function Build() {
                             <i className="bi bi-arrows-angle-expand"></i>
                         </span>
                     </div>
-                    <div className="document">
+                    <div className="document" id='document'>
                         <TemplateComponent.component
                             contactInformation={state.contactInformation}
                             experiences={state.experiences}
@@ -81,7 +108,7 @@ function Build() {
                             summery={state.summery}
                             experience={state.experience}
                             education={state.education}
-                            color={"#"+color}
+                            color={"#" + color}
                         />
                     </div>
                 </div>
@@ -96,7 +123,7 @@ function Build() {
                         summery={state.summery}
                         experience={state.experience}
                         education={state.education}
-                        color={"#"+color}
+                        color={"#" + color}
                     />
                 </div>
             </Modal>
