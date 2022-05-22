@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import ReactDOMServer from 'react-dom/server'
-import jsPDF from 'jspdf'
 import "./Build.css"
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Modal from './Modal'
 import buildTools from './BuildTools'
 import templates from './Templates/Templates'
@@ -11,7 +9,7 @@ import { useStateValue } from './StateProvider'
 //this step next and back controller
 let counter = 0;
 function Build() {
-    const { color, template } = useParams()
+    const { color, template,font } = useParams()
     const navigate = useNavigate()
     const [showPage, setShowPage] = useState(false)
     const [state, dispatch] = useStateValue()
@@ -46,27 +44,7 @@ function Build() {
         counter = 6;
         pathLinkHandler(counter)
     }
-    const save = ()=>{
-        const doc = new jsPDF('portrait','pt', 'a4');
-            const component = <TemplateComponent.component
-                contactInformation={state.contactInformation}
-                experiences={state.experiences}
-                educations={state.educations}
-                skills={state.skills}
-                summery={state.summery}
-                experience={state.experience}
-                education={state.education}
-                color={"#" + color}
-            />
-            doc.addFont('bootstrap-icons.woff', "bootsrap-icon",'normal')
-            doc.html(ReactDOMServer.renderToStaticMarkup(component),{
-                callback:()=>{
-                    doc.save("myResume.pdf")
-                    console.log("dowload area")
-                }
-            })
-            console.log("dowload area 1")
-    }
+    
 
     return (
         <div className="build">
@@ -107,6 +85,7 @@ function Build() {
                             experience={state.experience}
                             education={state.education}
                             color={"#" + color}
+                            font={font}
                         />
                     </div>
                 </div>
@@ -122,6 +101,7 @@ function Build() {
                         experience={state.experience}
                         education={state.education}
                         color={"#" + color}
+                        font={font}
                     />
                 </div>
             </Modal>
