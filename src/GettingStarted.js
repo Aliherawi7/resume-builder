@@ -1,31 +1,30 @@
 import React,{useState, useEffect} from 'react'
 import './GettingStarted.css'
-import Template1 from './Templates/Template1'
-import Template2 from './Templates/Template2'
+import Templates from './Templates/Templates'
 import example from './Templates/example'
 import { Link } from 'react-router-dom'
 import ColorBox from './UI/ColorBox'
-const templates = [Template1, Template2]
+import Fonts from './UI/Fonts'
+
 let counter = 0
 function GettingStarted() {
 
-    const [Template, setTemplate] = useState({component:templates[0]})
+    const [Template, setTemplate] = useState({component:Templates[0]})
+    const [font, setFont] = useState('AlegreyaSans');
     const [color, setColor] = useState('#000')
     const spanColor = e => {
         let selectedColor = "#" + (e.target.outerHTML.split('#')[1].split(';')[0])
         setColor(selectedColor)
     }  
     const nextHandler = ()=>{
-        if(counter >= templates.length-1) counter = -1
+        if(counter >= Templates.length-1) counter = -1
         counter++;
-        console.log(templates.length)
-        setTemplate({component:templates[counter]})
+        setTemplate({component:Templates[counter]})
     }
     const prevHandler = ()=>{
-        if(counter <= 0) counter = templates.length
+        if(counter <= 0) counter = Templates.length
         counter--;
-        console.log(counter)
-        setTemplate({component:templates[counter]})
+        setTemplate({component:Templates[counter]})
     }
     return (
         <div className="getting-started">
@@ -35,7 +34,8 @@ function GettingStarted() {
                     <p className='template-description'></p>
                     <div className='color-box'>
                         {<ColorBox spanColor={spanColor} />}
-                        <Link to={"/build/template&&color=" + color.slice(1) + "&template=" + counter} className='btn-select-template'>
+                        <Fonts fontChange={(fontName)=> setFont(fontName)} />
+                        <Link to={"/build/template&&color=" + color.slice(1)+"&&font="+ font + "&&template=" + counter} className='btn-select-template'>
                             SELECT THIS TEMPLATE
                         </Link>
                         <p><b>Can’t decide?</b> Don’t sweat it, you can always change your template later.</p>
@@ -53,6 +53,7 @@ function GettingStarted() {
                             experience={example.experience}
                             education={example.education}
                             color ={color}
+                            font={font}
                         />}
                     </div>
                     <button className='btn-right' onClick={prevHandler}><i className='bi bi-chevron-right'></i></button>
