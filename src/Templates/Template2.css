@@ -63,7 +63,7 @@
 
 }
 .container-bg2 .profile-picture img{
-    width: 85%;
+    width: 100%;
     margin: auto;
     object-fit: contain;
 }

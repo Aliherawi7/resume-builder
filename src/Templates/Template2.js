@@ -3,7 +3,7 @@ import "./Template.css"
 import "./Template2.css"
 
 
-function Template2({ contactInformation, experiences, experience, educations, education, skills, summery, color,font }) {
+function Template2({image, contactInformation, experiences, experience, educations, education, skills, summery, color,font }) {
     const backgroundColor = {
         "--backgroundColor": color
     }
@@ -21,7 +21,7 @@ function Template2({ contactInformation, experiences, experience, educations, ed
                     <div className='top-right-corner'></div>
                     <div className='bottom-right-corner'></div>
                     <div className='profile-picture' >
-                        <img src="/image/yyyy.jpg" />
+                        <img src="/image/yyyy.png" />
                     </div>
 
                     <div className='contact-info'>

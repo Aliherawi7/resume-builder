@@ -1,6 +1,7 @@
 
 .template1{
     display: flex;
+    position: relative;
 }
 .template1 .container-A{
     display: flex;
@@ -31,7 +32,28 @@
 .template1 .experience-container{
     margin-bottom: 15px;
 }
+.template1 .profile-picture{
+    position: absolute;
+    top: 15px;
+    left: 37px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    z-index: 1000;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
 
+}
+.template1 .profile-picture img{
+    width: 100%;
+    margin: auto;
+    object-fit: contain;
+}
+.template1 .contact-name{
+    margin-top: 150px;
+}
 .template1 .section{
     padding-bottom: 20px;
 }
