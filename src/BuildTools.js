@@ -13,10 +13,28 @@ export function GetStarted() {
 // contact component
 export function Contact() {   
     const [state, dispatch] = useStateValue();
+    const imageChangeHandler =(e)=>{
+        console.log(e.target.value)
+        dispatch({
+            type: actions.ADD_CONTACT_INFROMATION,
+            item: {
+                image: e.target.value,
+                name: state.contactInformation?.name,
+                address: state.contactInformation?.address,
+                city: state.contactInformation?.city,
+                state: state.contactInformation?.state,
+                zipCode: state.contactInformation?.zipCode,
+                country: state.contactInformation?.country,
+                email: state.contactInformation?.email,
+                phone: state.contactInformation?.phone
+            }
+        })
+    }
     const nameChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_CONTACT_INFROMATION,
             item: {
+                image: state.contactInformation?.image,
                 name: e.target.value,
                 address: state.contactInformation?.address,
                 city: state.contactInformation?.city,
@@ -32,6 +50,7 @@ export function Contact() {
         dispatch({
             type: actions.ADD_CONTACT_INFROMATION,
             item: {
+                image: state.contactInformation?.image,
                 name: state.contactInformation?.name,
                 address: e.target.value,
                 city: state.contactInformation?.city,
@@ -47,6 +66,7 @@ export function Contact() {
         dispatch({
             type: actions.ADD_CONTACT_INFROMATION,
             item: {
+                image: state.contactInformation?.image,
                 name: state.contactInformation?.name,
                 address: state.contactInformation?.address,
                 city: e.target.value,
@@ -62,6 +82,7 @@ export function Contact() {
         dispatch({
             type: actions.ADD_CONTACT_INFROMATION,
             item: {
+                image: state.contactInformation?.image,
                 name: state.contactInformation?.name,
                 address: state.contactInformation?.address,
                 city: state.contactInformation?.city,
@@ -77,6 +98,7 @@ export function Contact() {
         dispatch({
             type: actions.ADD_CONTACT_INFROMATION,
             item: {
+                image: state.contactInformation?.image,
                 name: state.contactInformation?.name,
                 address: state.contactInformation?.address,
                 city: state.contactInformation?.city,
@@ -93,6 +115,7 @@ export function Contact() {
         dispatch({
             type: actions.ADD_CONTACT_INFROMATION,
             item: {
+                image: state.contactInformation?.image,
                 name: state.contactInformation?.name,
                 address: state.contactInformation?.address,
                 city: state.contactInformation?.city,
@@ -108,6 +131,7 @@ export function Contact() {
         dispatch({
             type: actions.ADD_CONTACT_INFROMATION,
             item: {
+                image: state.contactInformation?.image,
                 name: state.contactInformation?.name,
                 address: state.contactInformation?.address,
                 city: state.contactInformation?.city,
@@ -123,6 +147,7 @@ export function Contact() {
         dispatch({
             type: actions.ADD_CONTACT_INFROMATION,
             item: {
+                image: state.contactInformation?.image,
                 name: state.contactInformation?.name,
                 address: state.contactInformation?.address,
                 city: state.contactInformation?.city,
@@ -140,6 +165,10 @@ export function Contact() {
         <div className="contact common-input-style animation">
             <h1>Let's complete your Resume Heading</h1>
             <p>How do you want employers to contact you?</p>
+            <div className="input-group">
+                <label >photo</label>
+                <input type="file"  onChange={(e) => (imageChangeHandler(e))} />
+            </div>
             <div className="input-group">
                 <label >Name</label>
                 <input type="text" value={state.contactInformation?.name} onChange={(e) => (nameChangeHandler(e))} />

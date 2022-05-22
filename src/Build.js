@@ -9,7 +9,7 @@ import { useStateValue } from './StateProvider'
 //this step next and back controller
 let counter = 0;
 function Build() {
-    const { color, template,font } = useParams()
+    const { color, template, font } = useParams()
     const navigate = useNavigate()
     const [showPage, setShowPage] = useState(false)
     const [state, dispatch] = useStateValue()
@@ -18,7 +18,7 @@ function Build() {
 
     const handleNextButton = () => {
         if (counter >= buildTools.length - 1) {
-            navigate("/download-resume&&template="+template+"&color="+color)
+            navigate("/download-resume&&template=" + template + "&color=" + color)
             return
         }  // we will do more here e.g : going to the download page
         counter++
@@ -44,7 +44,7 @@ function Build() {
         counter = 6;
         pathLinkHandler(counter)
     }
-    
+
 
     return (
         <div className="build">
@@ -93,6 +93,7 @@ function Build() {
             <Modal show={showPage} close={() => setShowPage(!showPage)}>
                 <div className="document">
                     <TemplateComponent.component
+                        image={state.image}
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
                         educations={state.educations}
