@@ -4,6 +4,32 @@
     padding: 20px;
     background-color: #edf1f3;
 }
+/* edit panel */
+.download-resume .edit-panel{
+    height: 100%;
+    width: 200px;
+}
+.edit-panel .download-button button{
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #05daa4;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    padding: 10px 15px;
+
+}
+.edit-panel .download-button button:hover{
+    background-color: #00c293;
+}
+
+
+
+/* styling panel */
 
 .download-resume .style-panel {
     width: 420px;
@@ -69,6 +95,7 @@
     width: 100%;
     padding: 25px 30px;
     border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
 }
 .change-templates-container .header h3{
     margin-top: 5px;
