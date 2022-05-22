@@ -30,6 +30,7 @@ function GettingStarted() {
         <div className="getting-started">
             <div className='container'>
                 <div className="template-tools">
+                    
                     <h2>Template name</h2>
                     <p className='template-description'></p>
                     <div className='color-box'>
