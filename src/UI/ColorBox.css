@@ -1,0 +1,39 @@
+.color-box {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.color-box label {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+.color-box .colors {
+    width: 100%;
+    border: 1px solid #ebebeb;
+    padding: 8px;
+    margin: 5px 0 40px;
+    border-radius: 3px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.color-box .colors span {
+    border-radius: 3px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color);
+    transition: transform 0.3s;
+}
+
+.color-box .colors span:hover {
+    transform: scale(1.1);
+}

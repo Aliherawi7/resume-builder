@@ -1,0 +1,41 @@
+.fonts-box{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.fonts-box label{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+.fonts{
+    border: 1px solid #ebebeb;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    margin: 5px 0 40px;
+}
+.fonts span{
+    border-radius: 3px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 10px;
+    width: 64px;
+    height: 64px;
+    border: 1px solid #c7d8e0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.fonts span:hover{
+    border-color: #8f9ca1;
+}
+.fonts span p{
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+}
