@@ -5,13 +5,11 @@ import "./Build.css"
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import Modal from './Modal'
 import buildTools from './BuildTools'
-import Template1 from './Templates/Template1'
-import Template2 from './Templates/Template2'
+import templates from './Templates/Templates'
 import { useStateValue } from './StateProvider'
-import bootsrapIcon from './assets/fonts/bootstrap-icons.woff'
-let counter = 0;
-const templates = [Template1, Template2]
 
+//this step next and back controller
+let counter = 0;
 function Build() {
     const { color, template } = useParams()
     const navigate = useNavigate()
@@ -22,6 +20,7 @@ function Build() {
 
     const handleNextButton = () => {
         if (counter >= buildTools.length - 1) {
+            navigate("/download-resume&&template="+template+"&color="+color)
             return
         }  // we will do more here e.g : going to the download page
         counter++
@@ -89,7 +88,6 @@ function Build() {
                     </div>
                     <div className="control-buttons">
                         <button className="back" onClick={handleBackButton}>Back</button>
-                        <button className="save-next" onClick={save}>Save</button>
                         <button className="save-next" onClick={handleNextButton}>Save & Next</button>
                     </div>
                 </div>

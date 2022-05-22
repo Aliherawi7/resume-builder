@@ -2,16 +2,20 @@ import React from 'react'
 import "./Template1.css"
 import "./Template.css"
 
-function Template1({ contactInformation, experiences, experience, educations, education, skills, summery, color }) {
+function Template1({ contactInformation, experiences, experience, educations, education, skills, summery, color,font }) {
+    console.log(font)
     const backgroundColor ={
         "--backgroundColor": color
     }
     const Fontcolor ={
         "--color": color
     }
+    const fontFamily ={
+        "--font": font
+    }
       
     return (
-        <div className="template template1 a4" >
+        <div className="template template1 a4" style={fontFamily}>
             <div className="container-A" style={backgroundColor}>
                 <div className="contact-info section">
                     <h1>{contactInformation?.name}</h1>

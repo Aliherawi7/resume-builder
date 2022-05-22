@@ -1,3 +1,34 @@
+@font-face {
+  font-family: 'AlegreyaSans';
+  src: url('./assets/fonts/AlegreyaSans-Regular.ttf');
+  src: url('./assets/fonts/AlegreyaSans-Bold.ttf');
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url('./assets/fonts/OpenSans-Regular-webfont.woff');
+}
+@font-face {
+  font-family: 'Dosis';
+  src: url('./assets/fonts/Dosis-Medium.ttf');
+}
+@font-face {
+  font-family: 'Titillium';
+  src: url('./assets/fonts/TitilliumWeb-Regular.ttf');
+  src: url('./assets/fonts/TitilliumWeb-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./assets/fonts/TitilliumWeb-Regular.ttf');
+  src: url('./assets/fonts/helvetica_neue_ce_55_roman-webfont.woff');
+}
+@font-face {
+  font-family: 'Nexa';
+  src: url('./assets/fonts/NexaTextDemo-Light.woff');
+  src: url('./assets/fonts/NexaTextDemo-Bold.woff');
+}
+
+
+
 *{
   margin: 0;
   padding: 0;

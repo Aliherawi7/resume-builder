@@ -1,7 +1,6 @@
 
 .template1{
     display: flex;
-    ont-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 .template1 .container-A{
     display: flex;
@@ -43,11 +42,11 @@
 .template1 .normal-title{
     font-size: 13px;
     letter-spacing: 2.2px;
-    font-family: inherit;
     font-weight: 400;
     text-transform: uppercase;
     display: block;
 }
 .template1 .normal-paragraph{
     margin-bottom: 5px;
+    
 }

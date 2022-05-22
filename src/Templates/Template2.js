@@ -3,15 +3,18 @@ import "./Template.css"
 import "./Template2.css"
 
 
-function Template2({ contactInformation, experiences, experience, educations, education, skills, summery, color }) {
+function Template2({ contactInformation, experiences, experience, educations, education, skills, summery, color,font }) {
     const backgroundColor = {
         "--backgroundColor": color
     }
     const Fontcolor = {
         "--color": color
     }
+    const fontFamily = {
+        "--font":font
+    }
     return (
-        <div className="template template2 a4">
+        <div className="template template2 a4" style={fontFamily}>
             <div className="container-bg1" style={backgroundColor}>
                 <div className="container-bg2">
                     <div className='right-corner'></div>
