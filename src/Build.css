@@ -1,6 +1,8 @@
 .build{
     display: flex;
     flex-direction: column;
+    animation-name: right-to-left;
+    animation-duration: .4s;
 }
 
 /* build path */
@@ -9,6 +11,7 @@
     z-index: 1;
     border-bottom: 1px solid #d9d9d9;
     padding: 5px 20px;
+    margin-top: 10px;
 }
 .build-path .links {
     display: flex;
@@ -81,7 +84,7 @@
 .build-container{
     position: relative;
     display: flex;
-    padding-top: 40px;
+    padding-top: 30px;
     justify-content: space-around;
     color : #333;
 }
@@ -147,6 +150,7 @@
     height: max-content;
     margin-left: 30px;
     flex-direction: column;
+    overflow: hidden;
 }
 .control-buttons{
     margin-top: 40px;

@@ -5,6 +5,7 @@ import Modal from './Modal'
 import buildTools from './BuildTools'
 import templates from './Templates/Templates'
 import { useStateValue } from './StateProvider'
+import { actions } from './reducer'
 
 //this step next and back controller
 let counter = 0;
@@ -19,6 +20,7 @@ function Build() {
     const handleNextButton = () => {
         if (counter >= buildTools.length - 1) {
             navigate("/download-resume&&template=" + template + "&color=" + color)
+            counter = 0
             return
         }  // we will do more here e.g : going to the download page
         counter++
@@ -34,6 +36,7 @@ function Build() {
     }
     const pathLinkHandler = (x) => {
         counter = x
+        console.log(state, "in path link func")
         setBuildComponent({ component: buildTools[counter] })
     }
     const addNewExperience = () => {
@@ -44,8 +47,7 @@ function Build() {
         counter = 6;
         pathLinkHandler(counter)
     }
-
-
+    console.log(state)
     return (
         <div className="build">
             <div className="build-path">
@@ -62,7 +64,7 @@ function Build() {
             <div className="build-container">
                 <div className="build-tools">
                     <div className="build-form">
-                        {<BuildComponent.component addNewExperience={addNewExperience} addNewEducation={addNewEducation} />}
+                        {<BuildComponent.component addNewExperience={addNewExperience} pathLinkHandler={pathLinkHandler} addNewEducation={addNewEducation} />}
                     </div>
                     <div className="control-buttons">
                         <button className="back" onClick={handleBackButton}>Back</button>
