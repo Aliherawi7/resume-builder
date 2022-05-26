@@ -43,7 +43,11 @@
     fill: #fff;
     text-transform: capitalize;
 }
-.template i{
+.template svg{
     margin-right: 6px;
-    color: inherit;
+    /* fill: var(--color); */
+    width: 13px;
+}
+.template svg path{
+    fill: #000
 }
