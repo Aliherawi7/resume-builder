@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import ReactDOMServer from 'react-dom/server'
 import jsPDF from 'jspdf'
+import html2canvas from 'html2canvas'
+import { PDFExport } from '@progress/kendo-react-pdf'
 import { useParams } from 'react-router-dom'
 import './DownloadResume.css'
 import templates from './Templates/Templates'
@@ -8,6 +10,7 @@ import { useStateValue } from './StateProvider'
 import ColorBox from './UI/ColorBox'
 import Fonts from './UI/Fonts'
 import example from './Templates/example'
+
 
 
 function DownloadResume() {
@@ -23,6 +26,7 @@ function DownloadResume() {
         let selectedColor = "#" + (e.target.outerHTML.split('#')[1].split(';')[0])
         setColor(selectedColor)
     }
+    let resume = useRef()
     // download button handler
     const download = () => {
         const doc = new jsPDF('portrait', 'pt', 'a4');
@@ -43,16 +47,41 @@ function DownloadResume() {
             }
         })
     }
+    const download2 = () => {
+        html2canvas(document.querySelector(".template")).then(canvas => {
+            document.body.appendChild(canvas);
+            const imgData = canvas.toDataURL('document/pdf');
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, 'pdf', 0, 0);
+            pdf.save("resume.pdf")
+        })
+    }
+    const download3 = () => {
+        resume.save();
+    }
 
 
     return (
         <div className="download-resume">
             <div className='edit-panel'>
                 <div className='download-button'>
-                    <button onClick={download}><i className='bi bi-download'></i> Download</button>
+                    <button onClick={download3}><i className='bi bi-download'></i> Download</button>
                 </div>
             </div>
             <div className='document-preview'>
+                {/* <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r)=> resume=r}>
+                    {<Template.component
+                        contactInformation={state.contactInformation}
+                        experiences={state.experiences}
+                        educations={state.educations}
+                        skills={state.skills}
+                        summery={state.summery}
+                        experience={state.experience}
+                        education={state.education}
+                        color={stateColor}
+                        font={font}
+                    />}
+                </PDFExport> */}
                 {<Template.component
                     contactInformation={state.contactInformation}
                     experiences={state.experiences}
@@ -103,7 +132,7 @@ function DownloadResume() {
                     {<ColorBox spanColor={spanColor} />}
                 </div>
                 <div className='font-component styling-component'>
-                    {<Fonts fontChange={(fontName)=> setFont(fontName)} />}
+                    {<Fonts fontChange={(fontName) => setFont(fontName)} />}
                 </div>
             </div>
         </div>

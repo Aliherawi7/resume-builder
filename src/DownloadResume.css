@@ -1,11 +1,14 @@
 .download-resume {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 20px;
     background-color: #edf1f3;
+    min-height: 100vh;
 }
 /* edit panel */
 .download-resume .edit-panel{
+    margin-top: 30px;
     height: 100%;
     width: 200px;
 }
@@ -32,11 +35,16 @@
 /* styling panel */
 
 .download-resume .style-panel {
+    margin:0 30px;
+    margin-top: 30px;
     width: 420px;
 }
 
 .download-resume .document-preview {
-    box-shadow: 1px 1px 46px 10px rgb(0 0 0 / 25%);
+    margin:0 30px;
+    margin-top: 30px;
+    box-shadow: 1px 1px 46px 10px rgba(0, 0, 0, 0.25);
+    height: min-content;   
 }
 
 .download-resume .change-template {
@@ -46,6 +54,9 @@
     border-radius: 3px;
     margin-bottom: 20px;
     background-color: #fff;
+    animation-name: top-bottom-animate;
+    animation-duration: .9s;
+    animation-delay: .1s;
 }
 
 .download-resume .choose-template {
@@ -73,6 +84,14 @@
     background-color: #fff;
     padding: 5px 20px;
 
+}
+.download-resume .color-component{
+    animation-name: right-to-left;
+    animation-duration: .9s;
+}
+.download-resume .font-component{
+    animation-name: bottom-top-animate;
+    animation-duration: .9s;
 }
 
 /* templatess container */
