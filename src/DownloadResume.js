@@ -27,9 +27,14 @@ function DownloadResume() {
         setColor(selectedColor)
     }
     let resume = useRef()
+
     // download button handler
     const download = () => {
         const doc = new jsPDF('portrait', 'pt', 'a4');
+        //doc.addFont(font, font, 'normal')
+        doc.setFont("Times-Roman","TImes-Roman","normal")
+        console.log(doc.getFont())
+
         const component = <Template.component
             contactInformation={state.contactInformation}
             experiences={state.experiences}
@@ -53,6 +58,7 @@ function DownloadResume() {
             const imgData = canvas.toDataURL('document/pdf');
             const pdf = new jsPDF();
             pdf.addImage(imgData, 'pdf', 0, 0);
+            pdf.addFont(font, font, 'normal');
             pdf.save("resume.pdf")
         })
     }
@@ -69,7 +75,7 @@ function DownloadResume() {
                 </div>
             </div>
             <div className='document-preview'>
-                {/* <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r)=> resume=r}>
+                <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r)=> resume=r}>
                     {<Template.component
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
@@ -81,8 +87,8 @@ function DownloadResume() {
                         color={stateColor}
                         font={font}
                     />}
-                </PDFExport> */}
-                {<Template.component
+                </PDFExport>
+                {/* {<Template.component
                     contactInformation={state.contactInformation}
                     experiences={state.experiences}
                     educations={state.educations}
@@ -92,7 +98,7 @@ function DownloadResume() {
                     education={state.education}
                     color={stateColor}
                     font={font}
-                />}
+                />} */}
 
             </div>
             <div className='style-panel'>
