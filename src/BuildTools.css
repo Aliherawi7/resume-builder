@@ -23,6 +23,39 @@
 .half-width{
     width:50%;
 }
+.file-input{
+    position: relative;
+    margin-bottom: 18px;
+}
+.file-input span{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    z-index: -1;
+    top: 19px;
+}
+.file-input span p{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px 30px;
+}
+.file-input input:hover + span p{
+    background-color: #ddd;
+}
+.file-input span i{
+    margin-right: 10px;
+    font-size: 30px;
+    color: #8cc63e;
+}
+.file-input input{
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    height: 21px;
+    margin-left: -60px;
+}
 .common-input-style input[type=text],
 .common-input-style input[type=email],
 .common-input-style input[type=date]{
@@ -124,6 +157,10 @@
 
 
 /* info  */
+.info{
+    animation-name: info-animate;
+    animation-duration: .4s
+}
 .info h2{
     line-height: 38px;
     font-size: 18px;
@@ -173,6 +210,10 @@
 }
 
 /* review component */
+.build-tool-review{
+    animation-name: review-animate;
+    animation-duration: .4s;
+}
 .build-tool-review-button{
     cursor: pointer;
     height: 40px;
@@ -230,10 +271,26 @@
 /* entering animation */
 @keyframes buildToolsEntering{
     from{
-        opacity: 0;
+        transform: translateX(100vh);
 
     }
     to{
-        opacity: 1;
+        transform: translateX(0vh);
+    }
+}
+@keyframes info-animate{
+    from{
+        transform: translateX(-100vh);
+    }
+    to{
+        transform: translateX(0vh);
+    }
+}
+@keyframes review-animate{
+    from{
+        transform: translateY(-100vh);
+    }
+    to{
+        transform: translateY(0vh);
     }
 }
