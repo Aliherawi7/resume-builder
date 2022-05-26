@@ -3,7 +3,14 @@
     display: flex;
     justify-content: space-between;
 }
-
+.getting-started .container .template-tools{
+    animation-name: right-to-left;
+    animation-duration: .9s;
+}
+.getting-started .container .template-slider{
+    animation-name: left-to-right;
+    animation-duration: .9s;
+}
 .color-box {
     max-width: 400px;
     display: flex;
@@ -67,3 +74,4 @@
     top: 45%;
     right: 24px;
 }
+
