@@ -3,24 +3,29 @@
   src: url('./assets/fonts/AlegreyaSans-Regular.ttf');
   src: url('./assets/fonts/AlegreyaSans-Bold.ttf');
 }
+
 @font-face {
   font-family: 'OpenSans';
   src: url('./assets/fonts/OpenSans-Regular-webfont.woff');
 }
+
 @font-face {
   font-family: 'Dosis';
   src: url('./assets/fonts/Dosis-Medium.ttf');
 }
+
 @font-face {
   font-family: 'Titillium';
   src: url('./assets/fonts/TitilliumWeb-Regular.ttf');
   src: url('./assets/fonts/TitilliumWeb-SemiBold.ttf');
 }
+
 @font-face {
   font-family: 'Helvetica';
   src: url('./assets/fonts/TitilliumWeb-Regular.ttf');
   src: url('./assets/fonts/helvetica_neue_ce_55_roman-webfont.woff');
 }
+
 @font-face {
   font-family: 'Nexa';
   src: url('./assets/fonts/NexaTextDemo-Light.woff');
@@ -29,7 +34,7 @@
 
 
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -43,6 +48,59 @@
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; 
+    monospace;
 }
- 
+
+/* all the aniations */
+@keyframes top-bottom-animate {
+  from {
+    transform: translateY(-100vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bottom-top-animate {
+  from {
+    transform: translateY(100vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes right-to-left {
+  from {
+    transform: translateX(100vh);
+  }
+
+  to {
+    transform: translateX(0vh);
+  }
+}
+
+@keyframes left-to-right {
+  from {
+    transform: translateX(-100vh);
+  }
+
+  to {
+    transform: translateX(0vh);
+  }
+}
+
+@keyframes scaleX-top-to-bottom {
+  from {
+    transform-origin: top;
+    transform: scale(0);
+
+  }
+
+  to {
+    transform-origin: top;
+    transform: scale(1);
+  }
+}
