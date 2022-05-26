@@ -9,16 +9,15 @@ export function GetStarted() {
             <h1>This is first step </h1>
         </div>
     )
-} 
+}
 // contact component
-export function Contact() {   
+export function Contact() {
     const [state, dispatch] = useStateValue();
-    const imageChangeHandler =(e)=>{
-        console.log(e.target.value)
+    const imageChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_CONTACT_INFROMATION,
             item: {
-                image: e.target.value,
+                image: e.target.files[0],
                 name: state.contactInformation?.name,
                 address: state.contactInformation?.address,
                 city: state.contactInformation?.city,
@@ -26,7 +25,10 @@ export function Contact() {
                 zipCode: state.contactInformation?.zipCode,
                 country: state.contactInformation?.country,
                 email: state.contactInformation?.email,
-                phone: state.contactInformation?.phone
+                phone: state.contactInformation?.phone,
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
             }
         })
     }
@@ -42,7 +44,10 @@ export function Contact() {
                 zipCode: state.contactInformation?.zipCode,
                 country: state.contactInformation?.country,
                 email: state.contactInformation?.email,
-                phone: state.contactInformation?.phone
+                phone: state.contactInformation?.phone,
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
             }
         })
     }
@@ -58,7 +63,10 @@ export function Contact() {
                 zipCode: state.contactInformation?.zipCode,
                 country: state.contactInformation?.country,
                 email: state.contactInformation?.email,
-                phone: state.contactInformation?.phone
+                phone: state.contactInformation?.phone,
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
             }
         })
     }
@@ -74,7 +82,10 @@ export function Contact() {
                 zipCode: state.contactInformation?.zipCode,
                 country: state.contactInformation?.country,
                 email: state.contactInformation?.email,
-                phone: state.contactInformation?.phone
+                phone: state.contactInformation?.phone,
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
             }
         })
     }
@@ -90,7 +101,10 @@ export function Contact() {
                 zipCode: state.contactInformation?.zipCode,
                 country: state.contactInformation?.country,
                 email: state.contactInformation?.email,
-                phone: state.contactInformation?.phone
+                phone: state.contactInformation?.phone,
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
             }
         })
     }
@@ -106,7 +120,10 @@ export function Contact() {
                 zipCode: e.target.value,
                 country: state.contactInformation?.country,
                 email: state.contactInformation?.email,
-                phone: state.contactInformation?.phone
+                phone: state.contactInformation?.phone,
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
 
             }
         })
@@ -123,7 +140,10 @@ export function Contact() {
                 zipCode: state.contactInformation?.zipCode,
                 email: state.contactInformation?.email,
                 phone: state.contactInformation?.phone,
-                country: e.target.value
+                country: e.target.value,
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
             }
         })
     }
@@ -140,6 +160,9 @@ export function Contact() {
                 phone: state.contactInformation?.phone,
                 country: state.contactInformation?.country,
                 email: e.target.value,
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
             }
         })
     }
@@ -153,21 +176,81 @@ export function Contact() {
                 city: state.contactInformation?.city,
                 state: state.contactInformation?.state,
                 zipCode: state.contactInformation?.zipCode,
-                phone: state.contactInformation?.phone,
+                phone: e.target.value,
                 country: state.contactInformation?.country,
                 email: state.contactInformation?.email,
-                phone: e.target.value
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
             }
         })
     }
-
+    const githubChangeHandler = (e) => {
+        dispatch({
+            type: actions.ADD_CONTACT_INFROMATION,
+            item: {
+                image: state.contactInformation?.image,
+                name: state.contactInformation?.name,
+                address: state.contactInformation?.address,
+                city: state.contactInformation?.city,
+                state: state.contactInformation?.state,
+                zipCode: state.contactInformation?.zipCode,
+                phone: state.contactInformation?.phone,
+                country: state.contactInformation?.country,
+                email: state.contactInformation?.email,
+                github: e.target.value,
+                linkedin: state.contactInformation.linkedin,
+                twitter: state.contactInformation.twitter
+            }
+        })
+    }
+    const linkedinChangeHandler = (e) => {
+        dispatch({
+            type: actions.ADD_CONTACT_INFROMATION,
+            item: {
+                image: state.contactInformation?.image,
+                name: state.contactInformation?.name,
+                address: state.contactInformation?.address,
+                city: state.contactInformation?.city,
+                state: state.contactInformation?.state,
+                zipCode: state.contactInformation?.zipCode,
+                phone: state.contactInformation?.phone,
+                country: state.contactInformation?.country,
+                email: state.contactInformation?.email,
+                github: state.contactInformation.github,
+                linkedin: e.target.value,
+                twitter: state.contactInformation.twitter
+            }
+        })
+    }
+    const twitterChangeHandler = (e) => {
+        dispatch({
+            type: actions.ADD_CONTACT_INFROMATION,
+            item: {
+                image: state.contactInformation?.image,
+                name: state.contactInformation?.name,
+                address: state.contactInformation?.address,
+                city: state.contactInformation?.city,
+                state: state.contactInformation?.state,
+                zipCode: state.contactInformation?.zipCode,
+                phone: state.contactInformation?.phone,
+                country: state.contactInformation?.country,
+                email: state.contactInformation?.email,
+                github: state.contactInformation.github,
+                linkedin: state.contactInformation.linkedin,
+                twitter: e.target.value
+            }
+        })
+    }
     return (
         <div className="contact common-input-style animation">
             <h1>Let's complete your Resume Heading</h1>
             <p>How do you want employers to contact you?</p>
-            <div className="input-group">
-                <label >photo</label>
-                <input type="file"  onChange={(e) => (imageChangeHandler(e))} />
+            <div className="input-group file-input">
+                <label>photo</label>
+                <br />
+                <input type="file" accept='image/*' onChange={(e) => imageChangeHandler(e)} />
+                <span><i className='bi bi-image'></i> <p>choose a picture</p></span>
             </div>
             <div className="input-group">
                 <label >Name</label>
@@ -205,6 +288,20 @@ export function Contact() {
                     <input type="text" value={state.contactInformation?.phone} onChange={(e) => phoneChangeHandler(e)} />
                 </div>
             </div>
+            <div className="input-row">
+                <div className="input-group ">
+                    <label >Github</label>
+                    <input type="text" placeholder='profile name' value={state.contactInformation?.github} onChange={(e) => githubChangeHandler(e)} />
+                </div>
+                <div className="input-group multi-input">
+                    <label >Linkedin</label>
+                    <input type="text" placeholder='profile name' value={state.contactInformation?.linkedin} onChange={(e) => linkedinChangeHandler(e)} />
+                </div>
+                <div className="input-group multi-input">
+                    <label >Twitter</label>
+                    <input type="text" placeholder='profile name' value={state.contactInformation?.twitter} onChange={(e) => twitterChangeHandler(e)} />
+                </div>
+            </div>
         </div>
     )
 }
@@ -213,7 +310,7 @@ export function Contact() {
 // Experience components
 export function ExperienceInfo() {
     return (
-        <div className="info animation">
+        <div className="info">
             <h2>Next Section:</h2>
             <h1>Work Experience</h1>
             <ul className="tips-list">
@@ -231,11 +328,11 @@ export function Experience() {
             type: actions.ADD_EXPERIENCE,
             item: {
                 jobTitle: e.target.value,
-                employer: state.experience.employer,
-                city: state.experience.city,
-                state: state.experience.state,
-                startDate: state.experience.stateDate,
-                endDate: state.experience.endDate
+                employer: state.experience?.employer,
+                city: state.experience?.city,
+                state: state.experience?.state,
+                startDate: state.experience?.stateDate,
+                endDate: state.experience?.endDate
 
             }
         })
@@ -244,12 +341,12 @@ export function Experience() {
         dispatch({
             type: actions.ADD_EXPERIENCE,
             item: {
-                jobTitle: state.experience.jobTitle,
-                employer: e.target.value,
-                city: state.experience.city,
-                state: state.experience.state,
-                startDate: state.experience.stateDate,
-                endDate: state.experience.endDate
+                jobTitle: state.experience?.jobTitle,
+                employer: e.target?.value,
+                city: state.experience?.city,
+                state: state.experience?.state,
+                startDate: state.experience?.stateDate,
+                endDate: state.experience?.endDate
 
             }
         })
@@ -258,12 +355,12 @@ export function Experience() {
         dispatch({
             type: actions.ADD_EXPERIENCE,
             item: {
-                jobTitle: state.experience.jobTitle,
-                employer: state.experience.employer,
+                jobTitle: state.experience?.jobTitle,
+                employer: state.experience?.employer,
                 city: e.target.value,
-                state: state.experience.state,
-                startDate: state.experience.stateDate,
-                endDate: state.experience.endDate
+                state: state.experience?.state,
+                startDate: state.experience?.stateDate,
+                endDate: state.experience?.endDate
 
             }
         })
@@ -272,12 +369,12 @@ export function Experience() {
         dispatch({
             type: actions.ADD_EXPERIENCE,
             item: {
-                jobTitle: state.experience.jobTitle,
-                employer: state.experience.employer,
-                city: state.experience.city,
+                jobTitle: state.experience?.jobTitle,
+                employer: state.experience?.employer,
+                city: state.experience?.city,
                 state: e.target.value,
-                startDate: state.experience.stateDate,
-                endDate: state.experience.endDate
+                startDate: state.experience?.stateDate,
+                endDate: state.experience?.endDate
 
             }
         })
@@ -286,12 +383,12 @@ export function Experience() {
         dispatch({
             type: actions.ADD_EXPERIENCE,
             item: {
-                jobTitle: state.experience.jobTitle,
-                employer: state.experience.employer,
-                city: state.experience.city,
-                state: state.experience.state,
-                startDate: e.target.value,
-                endDate: state.experience.endDate
+                jobTitle: state.experience?.jobTitle,
+                employer: state.experience?.employer,
+                city: state.experience?.city,
+                state: state.experience?.state,
+                startDate: e.target?.value,
+                endDate: state.experienc?.endDate
 
             }
         })
@@ -300,12 +397,12 @@ export function Experience() {
         dispatch({
             type: actions.ADD_EXPERIENCE,
             item: {
-                jobTitle: state.experience.jobTitle,
-                employer: state.experience.employer,
-                city: state.experience.city,
-                state: state.experience.state,
-                startDate: state.experience.startDate,
-                endDate: e.target.value
+                jobTitle: state.experience?.jobTitle,
+                employer: state.experience?.employer,
+                city: state.experience?.city,
+                state: state.experience?.state,
+                startDate: state.experience?.startDate,
+                endDate: e.target?.value
 
             }
         })
@@ -315,11 +412,11 @@ export function Experience() {
         dispatch({
             type: actions.ADD_EXPERIENCE,
             item: {
-                jobTitle: state.experience.jobTitle,
-                employer: state.experience.employer,
-                city: state.experience.city,
-                state: state.experience.state,
-                startDate: state.experience.startDate,
+                jobTitle: state.experience?.jobTitle,
+                employer: state.experience?.employer,
+                city: state.experience?.city,
+                state: state.experience?.state,
+                startDate: state.experience?.startDate,
                 endDate: e.target.checked ? 'current' : ''
             }
         })
@@ -335,28 +432,28 @@ export function Experience() {
             </div>
             <div className="input-group">
                 <label >Employer</label>
-                <input type="text" value={state.experience.employer} onChange={(e) => employerChangeHandler(e)} />
+                <input type="text" value={state.experience?.employer} onChange={(e) => employerChangeHandler(e)} />
             </div>
             <div className="input-row">
                 <div className="input-group half-width">
                     <label >City</label>
-                    <input type="text" value={state.experience.city} onChange={(e) => cityChangeHandler(e)} />
+                    <input type="text" value={state.experience?.city} onChange={(e) => cityChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input half-width">
                     <label >State</label>
-                    <input type="text" value={state.experience.state} onChange={(e) => stateChangeHandler(e)} />
+                    <input type="text" value={state.experience?.state} onChange={(e) => stateChangeHandler(e)} />
                 </div>
             </div>
 
             <div className="input-row">
                 <div className="input-group half-width">
                     <label >start date</label>
-                    <input type="date" value={state.experience.startDate} onChange={(e) => startDateChangeHandler(e)} />
+                    <input type="date" value={state.experience?.startDate} onChange={(e) => startDateChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input half-width position-relative">
                     <span className={state.experience.endDate == 'current' ? 'deactive' : ''}></span>
                     <label >end date</label>
-                    <input type="date" value={state.experience.endDate} onChange={(e) => endDateChangeHandler(e)} />
+                    <input type="date" value={state.experience?.endDate} onChange={(e) => endDateChangeHandler(e)} />
                 </div>
             </div>
             <div className="input-check">
@@ -366,12 +463,13 @@ export function Experience() {
         </div>
     )
 }
-export function ReviewExperience({addNewExperience}) {
+export function ReviewExperience({ addNewExperience, pathLinkHandler }) {
     const [state, dispatch] = useStateValue()
-
     useEffect(() => {
         const holder = [...state.experiences];
-        if (!holder.includes(state.experience) && state.education != {}) {
+        const isNotEmpty = Object.getOwnPropertyNames(state.experience).length > 0 ? true:false;
+        console.log(isNotEmpty)
+        if (!holder.includes(state.experience) && isNotEmpty) {
             dispatch({
                 type: actions.ADD_EXPERIENCES,
                 item: state.experience
@@ -383,37 +481,35 @@ export function ReviewExperience({addNewExperience}) {
         }
     }, [])
     const deleteButtonHandler = (item) => {
-        const itemIndex = state.experiences.findIndex((el) => {
-            return el == item
+        dispatch({
+            type: actions.REMOVE_FROM_EXPERIENCES,
+            item: item
         })
-        if (itemIndex >= 0) {
-            let holder = state.experiences;
-            holder.splice(itemIndex, 1);
-            dispatch({
-                type: actions.REMOVE_FROM_EXPERIENCES,
-                item: holder
-            })
-
-        }
-        if (item == state.experience) {
-            dispatch({
-                type: actions.ADD_EXPERIENCE,
-                item: {}
-            })
-        }
+    }
+    const editInformations = (item) => {
+        //take the user to experience component
+        pathLinkHandler(3);
+        // send the information the to data layer
+        dispatch({
+            type: actions.EDIT_EXPERIENCE,
+            item: item
+        })
+        window.setTimeout(() => {
+            deleteButtonHandler(item)
+        }, 200)
     }
     return (
         <div className="build-tool-review common-input-style">
             <h1>Review work experience</h1>
             <p>Add, edit or remove your work experience.</p>
-            <div className="build-tool-history">
+            <div className="build-tool-history" draggable>
                 {state.experiences.length > 0 ? state.experiences?.map((item) => {
                     let holder;
                     if (item.jobTitle) {
                         holder = (
-                            <div className="review position-relative">
+                            <div className="review position-relative" draggable key={Math.random()+item}>
                                 <div className="review-buttons">
-                                    <span><i className="bi bi-pencil-fill"></i></span>
+                                    <span onClick={() => editInformations(item)}><i className="bi bi-pencil-fill"></i></span>
                                     <span onClick={() => (deleteButtonHandler(item))}><i className="bi bi-trash-fill"></i></span>
                                     <span><i className="bi bi-arrows-move"></i></span>
                                 </div>
@@ -435,7 +531,7 @@ export function ReviewExperience({addNewExperience}) {
 // Education components
 export function EducationInfo() {
     return (
-        <div className="info animation">
+        <div className="info">
             <h2>Next Section:</h2>
             <h1>Education</h1>
             <ul className="tips-list">
@@ -568,7 +664,7 @@ export function Education() {
             </div>
             <div className="input-group">
                 <label >Degree</label>
-                <select onChange={(e) => degreeChangeHandler(e)}>
+                <select value={state.education?.degree} onChange={(e) => degreeChangeHandler(e)}>
                     <option>Select Your Degree</option>
                     <option>High School Diploma</option>
                     <option>GED</option>
@@ -593,7 +689,7 @@ export function Education() {
             </div>
             <div className="input-row ">
                 <label className="multi-input">Graduation Date</label>
-                <select className="multi-input" required value={state.education.graduationMonth} onChange={(e) => graduationMonthChangeHandler(e)}>
+                <select className="multi-input" required value={state.education?.graduationMonth} onChange={(e) => graduationMonthChangeHandler(e)}>
                     <option>Month</option>
                     <option>Jan</option>
                     <option>Feb</option>
@@ -608,7 +704,7 @@ export function Education() {
                     <option>Nov</option>
                     <option>Dec</option>
                 </select>
-                <select className="multi-input" required value={state.education.graduationYear} onChange={(e) => graduationYearChangeHandler(e)}>
+                <select className="multi-input" required value={state.education?.graduationYear} onChange={(e) => graduationYearChangeHandler(e)}>
                     <option>Year</option>
                     <option>2030</option>
                     <option>2029</option>
@@ -666,15 +762,17 @@ export function Education() {
         </div>
     )
 }
-export function ReviewEducation({addNewEducation}) {
+
+export function ReviewEducation({ addNewEducation, pathLinkHandler }) {
     const [state, dispatch] = useStateValue()
 
     useEffect(() => {
         const holder = [...state.educations];
-        if (!holder.includes(state.education) && state.education != {}) {
+        const isNotEmpty = Object.getOwnPropertyNames(state.education).length > 0 ? true:false;;
+        if (!holder.includes(state.education) && isNotEmpty) {
             dispatch({
                 type: actions.ADD_EDUCATIONS,
-                item: state.education
+                item: {...state.education}
             })
             dispatch({
                 type: actions.ADD_EDUCATION,
@@ -684,25 +782,24 @@ export function ReviewEducation({addNewEducation}) {
     }, [])
 
     const deleteButtonHandler = (item) => {
-        const itemIndex = state.educations.findIndex((el) => {
-            return el == item
+        dispatch({
+            type: actions.REMOVE_FROM_EDUCATIONS,
+            item: item
         })
-        if (itemIndex >= 0) {
-            let holder = state.educations;
-            holder.splice(itemIndex, 1);
-            dispatch({
-                type: actions.REMOVE_FROM_EXPERIENCES,
-                item: holder
-            })
-
-        }
-        if (item == state.education) {
-            dispatch({
-                type: actions.ADD_EDUCATION,
-                item: {}
-            })
-        }
     }
+    const editInformations = (item) => {
+        //take the user to education component
+        pathLinkHandler(6);
+        // send the information the to data layer
+        dispatch({
+            type: actions.EDIT_EDUCATION,
+            item: item
+        })
+        window.setTimeout(() => {
+            deleteButtonHandler(item);
+        }, 200)
+    }
+
     return (
         <div className="build-tool-review common-input-style">
             <h1>Review Education</h1>
@@ -710,13 +807,12 @@ export function ReviewEducation({addNewEducation}) {
             <div className="build-tool-history">
                 {state.educations.length > 0 ? state.educations?.map((item) => {
                     let holder;
-                    console.log(item)
                     if (item.schoolName) {
                         holder = (
-                            <div className="review position-relative">
+                            <div className="review position-relative" key={Math.random()+item}>
                                 <div className="review-buttons">
-                                    <span><i className="bi bi-pencil-fill"></i></span>
-                                    <span onClick={() => (deleteButtonHandler(item))}><i className="bi bi-trash-fill"></i></span>
+                                    <span onClick={() => editInformations(item)}><i className="bi bi-pencil-fill"></i></span>
+                                    <span onClick={() => deleteButtonHandler(item)}><i className="bi bi-trash-fill"></i></span>
                                     <span><i className="bi bi-arrows-move"></i></span>
                                 </div>
                                 <h2 className="normal-text">{item?.schoolName ? item.schoolName : "" + ", " + item.fieldOfStudy ? item.fieldOfStudy : ""}</h2>
@@ -724,7 +820,6 @@ export function ReviewEducation({addNewEducation}) {
                             </div>
                         )
                     }
-                    console.log(item)
                     return holder
 
                 }) : ""}
@@ -737,10 +832,15 @@ export function ReviewEducation({addNewEducation}) {
 
 // skill components
 
+
+
+
+
+
 export function SkillsInfo() {
 
     return (
-        <div className="info animation">
+        <div className="info ">
             <h2>Next Section:</h2>
             <h1>Skills</h1>
             <ul className="tips-list">
@@ -761,6 +861,8 @@ export function Skills() {
     const textAreaHandler = (e) => {
         setSkill(e.target.value)
         let skills = e.target.value.split('\n')
+        console.log(skills, 'state rducer')
+        console.log(skill, 'local state')
         dispatch({
             type: actions.ADD_SKILLS,
             item: skills
@@ -772,10 +874,10 @@ export function Skills() {
             <p>Highlight 6-8 of your top skills.</p>
             <div className="input-group">
                 <label >Skills:</label>
-                <textarea 
-                placeholder="Click here to write your skills." 
-                value={skill} 
-                onChange={e => textAreaHandler(e)}>
+                <textarea
+                    placeholder="Click here to write your skills."
+                    value={skill}
+                    onChange={e => textAreaHandler(e)}>
 
                 </textarea>
             </div>
@@ -787,7 +889,7 @@ export function Skills() {
 // summery components
 export function SummeryInfo() {
     return (
-        <div className="info animation">
+        <div className="info">
             <h2>Next Section:</h2>
             <h1>Professional Summary</h1>
             <ul className="tips-list">
@@ -804,7 +906,7 @@ export function Summery() {
         let s = state.summery.toString().replaceAll(',', '\n')
         setSummery(s)
     }, [])
-    const textAreaHandler = e =>{
+    const textAreaHandler = e => {
         setSummery(e.target.value)
         dispatch({
             type: actions.ADD_SUMMERY,
@@ -817,10 +919,10 @@ export function Summery() {
             <p>Finish your resume with short summary</p>
             <div className="input-group">
                 <label >summery:</label>
-                <textarea 
-                placeholder="Click here to write your professional summary."
-                value={summery}
-                onChange={e => textAreaHandler(e)}
+                <textarea
+                    placeholder="Click here to write your professional summary."
+                    value={summery}
+                    onChange={e => textAreaHandler(e)}
                 >
 
                 </textarea>
