@@ -1,8 +1,10 @@
 nav{
+    position: fixed;
     width: 100%;
     display: flex;
     padding: 10px;
     background-color: #2e2e2e;
+    z-index: 500;
 }
 
 .nav-links{

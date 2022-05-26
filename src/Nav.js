@@ -11,11 +11,11 @@ function Nav() {
             <div className="nav-links">
                 <Link to="/">Home</Link>
                 <Link to="/templates">Templates</Link>
-                <Link to="/home">Home</Link>
+                <Link to="/contact">contact</Link>
                 <Link to="/about">About</Link>
             </div>
         </nav> 
     )
 }
- 
+
 export default Nav
