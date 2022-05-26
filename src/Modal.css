@@ -7,7 +7,7 @@
     background-color: rgba(0, 0, 0, 0.89);
     display: flex;
     justify-content: center;
-    z-index: 100;
+    z-index: 1000;
     padding-top: 160px;
     overflow-y: auto;
 } 

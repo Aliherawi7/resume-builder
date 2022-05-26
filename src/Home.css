@@ -4,7 +4,9 @@
     align-items: center;
     flex-direction: column;
     background-color: #dfab4b;
-    height: 100vh;
+    animation-name: top-bottom-animate;
+    animation-duration: .4s;
+    height: 100%;
 }
 .intro{
     margin-top: 50px;
@@ -36,3 +38,4 @@
 .intro button:hover{
     background-color: #79ac37;
 }
+
