@@ -3,7 +3,7 @@ import "./Template.css"
 import "./Template2.css"
 
 
-function Template2({image, contactInformation, experiences, experience, educations, education, skills, summery, color,font }) {
+function Template2({ contactInformation, experiences, experience, educations, education, skills, summery, color, font }) {
     const backgroundColor = {
         "--backgroundColor": color
     }
@@ -11,7 +11,7 @@ function Template2({image, contactInformation, experiences, experience, educatio
         "--color": color
     }
     const fontFamily = {
-        "--font":font
+        "--font": font
     }
     return (
         <div className="template template2 a4" style={fontFamily}>
@@ -21,7 +21,7 @@ function Template2({image, contactInformation, experiences, experience, educatio
                     <div className='top-right-corner'></div>
                     <div className='bottom-right-corner'></div>
                     <div className='profile-picture' >
-                        <img src="/image/yyyy.png" />
+                        <img src={contactInformation.image ? URL.createObjectURL(contactInformation.image) : "/image/yyyy.png"} />
                     </div>
 
                     <div className='contact-info'>
@@ -72,7 +72,7 @@ function Template2({image, contactInformation, experiences, experience, educatio
                                 <h2 style={Fontcolor}>Skills</h2>
                                 <ul className="skill-list">
                                     {skills?.map((item) => {
-                                        return item != "" ? <li key={item}>{item}</li> : null
+                                        return item != "" ? <li key={Math.random()}>{item}</li> : null
 
                                     })}
                                 </ul>
@@ -99,6 +99,12 @@ function Template2({image, contactInformation, experiences, experience, educatio
                                     </div>
 
                                 }
+                            </div>
+                            <div className='social-network subtitle section'>
+                                <h2 style={Fontcolor}>Social Network</h2>
+                                <p className='normal-text'><i style={Fontcolor} className="bi bi-github"></i>{contactInformation?.github}</p>
+                                <p className='normal-text'><i style={Fontcolor} className="bi bi-linkedin"></i>{contactInformation?.linkedin}</p>
+                                <p className='normal-text'><i style={Fontcolor} className="bi bi-twitter"></i>{contactInformation?.twitter}</p>
                             </div>
                         </div>
                     </div>

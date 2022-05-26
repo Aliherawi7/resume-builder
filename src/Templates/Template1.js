@@ -2,7 +2,7 @@ import React from 'react'
 import "./Template1.css"
 import "./Template.css"
 
-function Template1({contactInformation, experiences, experience, educations, education, skills, summery, color, font }) {
+function Template1({ contactInformation, experiences, experience, educations, education, skills, summery, color, font }) {
     const backgroundColor = {
         "--backgroundColor": color
     }
@@ -17,7 +17,7 @@ function Template1({contactInformation, experiences, experience, educations, edu
             <div className="container-A" style={backgroundColor}>
                 <div className="contact-info section">
                     <div className='profile-picture' >
-                        <img src={contactInformation.image? contactInformation.image:"/image/yyyy.png"} />
+                        <img src={contactInformation.image ? URL.createObjectURL(contactInformation.image) : "/image/yyyy.png"} />
                     </div>
                     <h1 className='contact-name'>{contactInformation?.name}</h1>
                     <p className='normal-text'><i className="bi bi-telephone-fill"></i>{contactInformation?.phone ? contactInformation.phone : ''} </p>
@@ -30,11 +30,16 @@ function Template1({contactInformation, experiences, experience, educations, edu
                 <div className="skills section">
                     <h2>Skills</h2>
                     <ul className="skill-list">
-                        {skills?.map((item) => {
-                            return item != "" ? <li key={item}>{item}</li> : null
-
-                        })}
+                        {skills?.length > 0 ? skills.map((item) => {
+                            return item != "" ? <li key={Math.random()+item}>{item}</li> : null
+                        }) : null}
                     </ul>
+                </div>
+                <div className='social-network section'>
+                    <h2 style={Fontcolor}>Social Network</h2>
+                    <p className='normal-text'><i style={Fontcolor} className="bi bi-github"></i>{contactInformation?.github}</p>
+                    <p className='normal-text'><i style={Fontcolor} className="bi bi-linkedin"></i>{contactInformation?.linkedin}</p>
+                    <p className='normal-text'><i style={Fontcolor} className="bi bi-twitter"></i>{contactInformation?.twitter}</p>
                 </div>
             </div>
             <div className="container-B">
@@ -42,7 +47,7 @@ function Template1({contactInformation, experiences, experience, educations, edu
                     <h2 style={Fontcolor}>professional summary</h2>
                     <div >
                         {summery?.map((item) => {
-                            return item != "" ? <p className="summery normal-paragraph" key={item}>{item}</p> : null
+                            return item != "" ? <p className="summery normal-paragraph" key={Math.random()}>{item}</p> : null
 
                         })}
                     </div>
@@ -51,7 +56,7 @@ function Template1({contactInformation, experiences, experience, educations, edu
                     <h2 style={Fontcolor}>Experience</h2>
                     {experiences?.length > 0 ? experiences?.map((item) => {
                         return (
-                            <div key={item} className="experience-container">
+                            <div key={Math.random()} className="experience-container">
                                 <p className="normal-title mb-5">{item?.jobTitle ? item.jobTitle : ''}</p>
                                 <p className="normal-paragraph">{item?.employer ? item.employer : ''}</p>
                                 <p className="normal-paragraph">{(item?.city ? item.city : "") + (item?.state ? ", " + item?.state : '')}</p>
@@ -70,7 +75,7 @@ function Template1({contactInformation, experiences, experience, educations, edu
                     <h2 style={Fontcolor}>Education</h2>
                     {educations?.length > 0 ? educations?.map((item) => {
                         return (
-                            <div key={item} className="experience-container">
+                            <div key={Math.random()+item} className="experience-container">
                                 <p className="normal-title mb-5">{(item?.degree ? item.degree : '') + (item?.fieldOfStudy ? ' : ' + item.fieldOfStudy : '')}</p>
                                 <p className="normal-paragraph">{item?.schoolName ? item.schoolName : ''}</p>
                                 <p className="normal-paragraph">{(item?.city ? item.city : "") + (item?.state ? ", " + item?.state : '')}</p>
