@@ -9,7 +9,6 @@ const Build = React.lazy(() => import('./Build'))
 const GettingStarted = React.lazy(() => import('./GettingStarted'))
 const DownloadResume = React.lazy(() => import('./DownloadResume'))
 
-//download-resume?template=0&color=e80505
 function App() {
   return (
     <Suspense fallback={<Loading />}>
