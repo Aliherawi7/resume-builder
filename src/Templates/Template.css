@@ -9,8 +9,8 @@
     font-family: var(--font);
     font-weight: 400;
     margin-bottom: 5px;
-    fill: #808080;
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
 .template .normal-paragraph{
