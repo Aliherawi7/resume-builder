@@ -30,7 +30,7 @@ function DownloadResume() {
     const download = () => {
         resume.save();
     }
-    const go = ()=>{
+    const backToBuildPage = ()=>{
         const templateIndex = templates.findIndex(item =>{
             return item == Template.component
         })
@@ -44,7 +44,7 @@ function DownloadResume() {
             <div className='edit-panel'>
                 <div className='button-container'>
                     <button onClick={download}><i className='bi bi-download'></i> Download</button>
-                    <button onClick={go}><i className='bi bi-pencil-fill'></i> edit information</button>
+                    <button onClick={backToBuildPage}><i className='bi bi-pencil-fill'></i> edit information</button>
                 </div>
 
             </div>
