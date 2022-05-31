@@ -6,16 +6,19 @@
 .template .normal-text,
 .template .normal-paragraph{
     font-size: 10px;
-    font-family: var(--font);
     font-weight: 400;
     margin-bottom: 7px;
     display: flex;
     align-items: center;
 }
+.template .normal-title{
+    font-size: 14px;
+    margin-left: 5px;
+}
 
 .template .normal-paragraph{
     font-size: 12px;
-    font-family: var(--font);
+    margin-left: 5px;
 }
 .template h1{
     font-size: 25px;
@@ -24,11 +27,9 @@
 .template .subtitle h2{
     font-size: 14px;
     line-height: 19px;
-    color: var(--color);
 }
 .template  h1, .template  h2{
-    font-family: var(--font);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -36,16 +37,21 @@
     margin-bottom: 5px !important;
 }
 .template .skill-list{
-    margin-left: 18px;
+    margin-left: 4px;
     font-size: 12px;
-    font-family: var(--font);
     font-weight: 400;
     fill: #fff;
     text-transform: capitalize;
+    list-style: none;
+}
+.template .skill-list li{
+    display: flex;
+    margin-bottom: 3px;
+    align-items: center;
+    justify-content: flex-start;
 }
 .template svg{
     margin-right: 6px;
-    /* fill: var(--color); */
-    width: 13px;
+    width: 12px;
 }
 

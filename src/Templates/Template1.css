@@ -13,16 +13,16 @@
     width: 35%;
     height: 100%;
     background-color: var(--backgroundColor);
-    color: #fff;
-    fill: #fff;
+}
+.template1 .container-A h1,
+.template1 .container-A h2,
+.template1 .container-A p,
+.template1 .container-A li{
+    color: #fff !important;
 }
 .template1 svg{
     margin-right: 6px;
     width: 15px;
-}
-.template1 svg path{
-    fill: #fff !important;
-    color: #fff !important;
 }
 .template1 .section h2{
     font-size : 18px;
