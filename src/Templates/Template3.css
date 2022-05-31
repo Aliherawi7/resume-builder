@@ -1,0 +1,115 @@
+.main-container{
+    background-color: #002b34;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.main-container h1,
+.main-container p,
+.main-container h2{
+    color: #fff;
+    margin: 0;
+}
+.main-container .contact .image-container{
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.411);
+    width: 170px;
+    height: 170px;
+    display: flex;
+    margin-left: -35px;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.main-container .contact img{
+    width: 195px;
+    height: 195px;
+    z-index: 100;
+    transform: rotate(-45deg);
+}
+.main-container .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border: 10px solid;
+    width: 140px;
+    height: 140px;
+    border-radius: 25px;
+    transform: rotate(45deg);
+    background: transparent;
+    left: 19px;
+    top: 40px;
+    z-index: 101;
+    overflow: hidden;
+}
+.main-container .info-container{
+    position: relative;
+    min-height: 300px;
+    margin: 0 30px;
+    padding-left: 185px;
+}
+.main-container .column{
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-color: aqua;
+    z-index: 10;
+    left: 40px;
+    padding: 20px 0;
+    overflow: hidden;
+}
+.main-container .info-container .contact-information{
+    padding-top: 15px;
+    display: flex;
+}
+.main-container .profesion-summery{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.main-container .section-label{
+    position: absolute;
+    left: 22px;
+    background-color: #ddd;
+    width: 160px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    top: 10px;
+    border-top-right-radius: 50px;
+    z-index: 100
+}
+.main-container .section-label::after{
+    content: " ";
+    position: absolute;
+    bottom: 37px;
+    left: 7%;
+    margin-left: -12px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #97979788 #8b8b8b88 transparent;
+    transform: scaleY(.5);
+}
+.main-container .section-label + span{
+    content: " ";
+    position: absolute;
+    bottom: 237px;
+    left: 97px;
+    margin-left: -200px;
+    border-width: 10px;
+    border-style: solid;
+    width: 39px;
+    border-color: transparent #07070767 transparent transparent;
+    height: 0px;
+    z-index: 20;
+    transform: scaleX(11.5);
+}
