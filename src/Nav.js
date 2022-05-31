@@ -9,10 +9,10 @@ function Nav() {
             <img className="nav-brand" src="/image/logo2.png" alt="logo" />
             </Link>
             <div className="nav-links">
-                <Link to="/">Home</Link>
-                <Link to="/templates">Templates</Link>
-                <Link to="/contact">contact</Link>
-                <Link to="/about">About</Link>
+                <Link to="/"><i className='bi bi-house-fill'></i> Home</Link>
+                <Link to="/templates"><i className='bi bi-file-text-fill'></i> Templates</Link>
+                <Link to="/contact"><i className='bi bi-telephone-fill'></i> contact</Link>
+                <Link to="/about"><i className='bi bi-person-fill'></i> About</Link>
             </div>
         </nav> 
     )
