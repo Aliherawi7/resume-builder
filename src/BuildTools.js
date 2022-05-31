@@ -254,38 +254,61 @@ export function Contact() {
             </div>
             <div className="input-group">
                 <label >Name</label>
-                <input type="text" value={state.contactInformation?.name} onChange={(e) => (nameChangeHandler(e))} />
+                <input type="text" value={state.contactInformation?.name}
+                    placeholder="e.g john"
+                    onChange={(e) => (nameChangeHandler(e))} />
             </div>
             <div className="input-group">
                 <label >Address</label>
-                <input type="text" value={state.contactInformation?.address} onChange={(e) => (addressChangeHandler(e))} />
+                <input type="text"
+                    value={state.contactInformation?.address}
+                    placeholder="e.g Taraqi street"
+                    onChange={(e) => (addressChangeHandler(e))} />
             </div>
             <div className="input-row">
                 <div className="input-group ">
                     <label >City</label>
-                    <input type="text" value={state.contactInformation?.city} onChange={(e) => (cityChangeHandler(e))} />
+                    <input type="text"
+                        value={state.contactInformation?.city}
+                        placeholder="e.g herat"
+                        onChange={(e) => (cityChangeHandler(e))} />
                 </div>
                 <div className="input-group multi-input">
                     <label >State</label>
-                    <input type="text" value={state.contactInformation?.state} onChange={(e) => (stateChangeHandler(e))} />
+                    <input type="text"
+                        value={state.contactInformation?.state}
+                        placeholder="e.g "
+                        onChange={(e) => (stateChangeHandler(e))} />
                 </div>
                 <div className="input-group multi-input">
                     <label >ZIP code</label>
-                    <input type="text" value={state.contactInformation?.zipCode} onChange={(e) => (zipCodeChangeHandler(e))} />
+                    <input type="text"
+                        value={state.contactInformation?.zipCode}
+                        placeholder="e.g "
+                        onChange={(e) => (zipCodeChangeHandler(e))} />
                 </div>
             </div>
             <div className="input-group">
                 <label >Country</label>
-                <input type="text" value={state.contactInformation?.country} onChange={(e) => (countryChangeHandler(e))} />
+                <input type="text"
+                    value={state.contactInformation?.country}
+                    placeholder="e.g Afghanistan"
+                    onChange={(e) => (countryChangeHandler(e))} />
             </div>
             <div className="input-row">
                 <div className="input-group min-width">
                     <label >Email</label>
-                    <input type="email" value={state.contactInformation?.email} onChange={(e) => emailChangeHandler(e)} />
+                    <input type="email"
+                        value={state.contactInformation?.email}
+                        placeholder="e.g john@gmail.com"
+                        onChange={(e) => emailChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input">
                     <label >Phone</label>
-                    <input type="text" value={state.contactInformation?.phone} onChange={(e) => phoneChangeHandler(e)} />
+                    <input type="text"
+                        value={state.contactInformation?.phone}
+                        placeholder="e.g +93797608705"
+                        onChange={(e) => phoneChangeHandler(e)} />
                 </div>
             </div>
             <div className="input-row">
@@ -428,16 +451,23 @@ export function Experience() {
             <p>Start with your most recent work experience.</p>
             <div className="input-group">
                 <label >Job Title</label>
-                <input type="text" value={state.experience?.jobTitle} onChange={(e) => jobTitleChangeHandler(e)} />
+                <input type="text" 
+                value={state.experience?.jobTitle}
+                placeholder="e.g Frontend Developer"   
+                onChange={(e) => jobTitleChangeHandler(e)} />
             </div>
             <div className="input-group">
                 <label >Employer</label>
-                <input type="text" value={state.experience?.employer} onChange={(e) => employerChangeHandler(e)} />
+                <input type="text" 
+                value={state.experience?.employer}
+                placeholder="e.g google"   
+                onChange={(e) => employerChangeHandler(e)} />
             </div>
             <div className="input-row">
                 <div className="input-group half-width">
                     <label >City</label>
-                    <input type="text" value={state.experience?.city} onChange={(e) => cityChangeHandler(e)} />
+                    <input type="text" 
+                    value={state.experience?.city} onChange={(e) => cityChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input half-width">
                     <label >State</label>
@@ -467,7 +497,7 @@ export function ReviewExperience({ addNewExperience, pathLinkHandler }) {
     const [state, dispatch] = useStateValue()
     useEffect(() => {
         const holder = [...state.experiences];
-        const isNotEmpty = Object.getOwnPropertyNames(state.experience).length > 0 ? true:false;
+        const isNotEmpty = Object.getOwnPropertyNames(state.experience).length > 0 ? true : false;
         console.log(isNotEmpty)
         if (!holder.includes(state.experience) && isNotEmpty) {
             dispatch({
@@ -507,7 +537,7 @@ export function ReviewExperience({ addNewExperience, pathLinkHandler }) {
                     let holder;
                     if (item.jobTitle) {
                         holder = (
-                            <div className="review position-relative" draggable key={Math.random()+item}>
+                            <div className="review position-relative" draggable key={Math.random() + item}>
                                 <div className="review-buttons">
                                     <span onClick={() => editInformations(item)}><i className="bi bi-pencil-fill"></i></span>
                                     <span onClick={() => (deleteButtonHandler(item))}><i className="bi bi-trash-fill"></i></span>
@@ -650,16 +680,25 @@ export function Education() {
             <p>Where did you go to school?</p>
             <div className="input-group">
                 <label >School Name</label>
-                <input type="text" required value={state.education?.schoolName} onChange={(e) => schoolNameChangeHandler(e)} />
+                <input type="text" required 
+                value={state.education?.schoolName} 
+                placeholder="e.g Herat University"  
+                onChange={(e) => schoolNameChangeHandler(e)} />
             </div>
             <div className="input-row">
                 <div className="input-group ">
                     <label >City</label>
-                    <input type="text" value={state.education?.city} onChange={(e) => cityChangeHandler(e)} />
+                    <input type="text" 
+                    value={state.education?.city}
+                    placeholder="e.g herat"   
+                    onChange={(e) => cityChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input">
                     <label >Country</label>
-                    <input type="text" value={state.education?.country} onChange={(e) => countryChangeHandler(e)} />
+                    <input type="text" 
+                    value={state.education?.country} 
+                    placeholder="e.g Afghanistan"  
+                    onChange={(e) => countryChangeHandler(e)} />
                 </div>
             </div>
             <div className="input-group">
@@ -685,10 +724,13 @@ export function Education() {
             </div>
             <div className="input-group">
                 <label >Field of Study</label>
-                <input type="text" value={state.education?.fieldOfStudy} onChange={(e) => fieldOfStudyChangeHandler(e)} />
+                <input type="text" 
+                value={state.education?.fieldOfStudy}
+                placeholder="e.g Computer science"  
+                onChange={(e) => fieldOfStudyChangeHandler(e)} />
             </div>
             <div className="input-row ">
-                <label className="multi-input">Graduation Date</label>
+                <label >Graduation Date</label>
                 <select className="multi-input" required value={state.education?.graduationMonth} onChange={(e) => graduationMonthChangeHandler(e)}>
                     <option>Month</option>
                     <option>Jan</option>
@@ -768,11 +810,11 @@ export function ReviewEducation({ addNewEducation, pathLinkHandler }) {
 
     useEffect(() => {
         const holder = [...state.educations];
-        const isNotEmpty = Object.getOwnPropertyNames(state.education).length > 0 ? true:false;;
+        const isNotEmpty = Object.getOwnPropertyNames(state.education).length > 0 ? true : false;;
         if (!holder.includes(state.education) && isNotEmpty) {
             dispatch({
                 type: actions.ADD_EDUCATIONS,
-                item: {...state.education}
+                item: { ...state.education }
             })
             dispatch({
                 type: actions.ADD_EDUCATION,
@@ -809,7 +851,7 @@ export function ReviewEducation({ addNewEducation, pathLinkHandler }) {
                     let holder;
                     if (item.schoolName) {
                         holder = (
-                            <div className="review position-relative" key={Math.random()+item}>
+                            <div className="review position-relative" key={Math.random() + item}>
                                 <div className="review-buttons">
                                     <span onClick={() => editInformations(item)}><i className="bi bi-pencil-fill"></i></span>
                                     <span onClick={() => deleteButtonHandler(item)}><i className="bi bi-trash-fill"></i></span>
