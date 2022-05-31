@@ -6,7 +6,7 @@
     background-color: #dfab4b;
     animation-name: top-bottom-animate;
     animation-duration: .4s;
-    height: 100%;
+    min-height: 100vh;
 }
 .intro{
     margin-top: 50px;

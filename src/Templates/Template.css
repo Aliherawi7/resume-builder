@@ -8,7 +8,7 @@
     font-size: 10px;
     font-family: var(--font);
     font-weight: 400;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     display: flex;
     align-items: center;
 }
@@ -48,6 +48,4 @@
     /* fill: var(--color); */
     width: 13px;
 }
-.template svg path{
-    fill: #000
-}
+

@@ -10,7 +10,6 @@ nav{
 .nav-links{
     display: flex;
     align-items: center;
-     
 }
 nav .nav-brand{
     width: 120px;

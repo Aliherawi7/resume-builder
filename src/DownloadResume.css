@@ -1,20 +1,41 @@
 .download-resume {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     padding: 20px;
     background-color: #edf1f3;
     min-height: 100vh;
+    flex-grow: 100;
 }
 /* edit panel */
 .download-resume .edit-panel{
+    padding: 20px;
+    margin: 0 30px;
     margin-top: 30px;
     height: 100%;
-    width: 200px;
+    min-width: 200px;
+    background-color: #fff;
+    text-align: center;
+
 }
-.edit-panel .download-button button{
-    width: 140px;
+.edit-menu{
+    visibility: hidden;
+    position: absolute;
+    top: 130px;
+    right: 20px;
+    width: 40px;
     height: 40px;
+    background-color: #00c293;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 25px;
+}
+.edit-panel .button-container button{
+    min-width: 140px;
+    min-height: 40px;
+    margin: 0 10px 10px 10px;
     cursor: pointer;
     background-color: #05daa4;
     outline: none;
@@ -26,7 +47,7 @@
     padding: 10px 15px;
 
 }
-.edit-panel .download-button button:hover{
+.edit-panel .button-container button:hover{
     background-color: #00c293;
 }
 
@@ -37,14 +58,14 @@
 .download-resume .style-panel {
     margin:0 30px;
     margin-top: 30px;
-    width: 420px;
+    min-width: 210px;
 }
 
 .download-resume .document-preview {
-    margin:0 30px;
+    margin:0 auto;
     margin-top: 30px;
     box-shadow: 1px 1px 46px 10px rgba(0, 0, 0, 0.25);
-    height: min-content;   
+    height: min-content;  
 }
 
 .download-resume .change-template {
@@ -156,4 +177,15 @@
     top: -285px;
     left: -187px;
     
+}
+
+/* responsive */
+
+@media(max-width: 768px){
+    .download-resume{
+        flex-direction: column;
+    }
+    .download-resume .style-panel .panel-container div{
+        margin: auto;
+    }
 }

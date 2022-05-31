@@ -9,6 +9,7 @@
     padding-top: 20px;
     padding-bottom: 10px;
     padding-left: 20px;
+    padding-right: 10px;
     width: 35%;
     height: 100%;
     background-color: var(--backgroundColor);
@@ -20,7 +21,8 @@
     width: 15px;
 }
 .template1 svg path{
-    fill: #fff !important
+    fill: #fff !important;
+    color: #fff !important;
 }
 .template1 .section h2{
     font-size : 18px;

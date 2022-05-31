@@ -94,7 +94,7 @@
     padding: 10px;
     height: max-content;
 }
-.template2 i{
+.template2 svg path{
     margin-right: 6px;
     color: var(--color);
 }

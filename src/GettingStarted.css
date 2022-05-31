@@ -1,13 +1,19 @@
 .getting-started .container {
+    margin-left: 20px;
+    padding: 0 30px;
     padding-top: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.getting-started .container .template-tools h2{
+    margin-bottom: 10px;
+}
 .getting-started .container .template-tools{
     margin-bottom: 30px;
     animation-name: right-to-left;
     animation-duration: .9s;
+    max-width: 400px;
 }
 .getting-started .container .template-slider{
     animation-name: left-to-right;

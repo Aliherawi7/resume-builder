@@ -3,7 +3,7 @@ import React from 'react'
 function Layout(props) {
     const styles = {
         with:"100%",
-        height:"100vh",
+        minHeight: "100vh",
         paddingTop:"75px",
         
     }

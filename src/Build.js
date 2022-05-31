@@ -51,6 +51,14 @@ function Build() {
     return (
         <div className="build">
             <div className="build-path">
+                <div className='path-name-medium'>
+                    <span className={counter == 0 ? "active" : ""}>get started</span>
+                    <span className={(counter == 1 ) ? "active" : ""}>Contact</span>
+                    <span className={(counter >= 2 && counter < 5) ? "active" : ""}>Experience</span>
+                    <span className={(counter >= 5 && counter < 8) ? "active" : ""}>Education</span>
+                    <span className={(counter >= 8 && counter < 10) ? "active" : ""}>Skills</span>
+                    <span className={(counter >= 10) ? "active" : ""}>Summery</span>
+                </div>
                 <ul className="links">
                     <li className={counter >= 0 ? "active" : ""} onClick={() => (pathLinkHandler(0))}><span>get started</span></li>
                     <li className={counter >= 1 ? "active" : ""} onClick={() => (pathLinkHandler(1))}><span>Contact</span></li>

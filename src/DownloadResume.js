@@ -1,9 +1,6 @@
 import React, { useRef, useState } from 'react'
-import ReactDOMServer from 'react-dom/server'
-import jsPDF from 'jspdf'
-import html2canvas from 'html2canvas'
 import { PDFExport } from '@progress/kendo-react-pdf'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import './DownloadResume.css'
 import templates from './Templates/Templates'
 import { useStateValue } from './StateProvider'
@@ -14,6 +11,7 @@ import example from './Templates/example'
 
 
 function DownloadResume() {
+    const navigate = useNavigate()
     const [state, dispatch] = useStateValue()
     const { color, template } = useParams()
     const [Template, setTemplate] = useState({ component: templates[template] })
@@ -30,52 +28,28 @@ function DownloadResume() {
 
     // download button handler
     const download = () => {
-        const doc = new jsPDF('portrait', 'pt', 'a4');
-        //doc.addFont(font, font, 'normal')
-        doc.setFont("Times-Roman","TImes-Roman","normal")
-        console.log(doc.getFont())
-
-        const component = <Template.component
-            contactInformation={state.contactInformation}
-            experiences={state.experiences}
-            educations={state.educations}
-            skills={state.skills}
-            summery={state.summery}
-            experience={state.experience}
-            education={state.education}
-            color={stateColor}
-            font={font}
-        />
-        doc.html(ReactDOMServer.renderToStaticMarkup(component), {
-            callback: () => {
-                doc.save("myResume.pdf")
-            }
-        })
-    }
-    const download2 = () => {
-        html2canvas(document.querySelector(".template")).then(canvas => {
-            document.body.appendChild(canvas);
-            const imgData = canvas.toDataURL('document/pdf');
-            const pdf = new jsPDF();
-            pdf.addImage(imgData, 'pdf', 0, 0);
-            pdf.addFont(font, font, 'normal');
-            pdf.save("resume.pdf")
-        })
-    }
-    const download3 = () => {
         resume.save();
+    }
+    const go = ()=>{
+        const templateIndex = templates.findIndex(item =>{
+            return item == Template.component
+        })
+        if(templateIndex >=0)
+            navigate("/build/template&&color=" + stateColor.slice(1)+"&&font="+ font + "&&template=" + templateIndex)
     }
 
 
     return (
         <div className="download-resume">
             <div className='edit-panel'>
-                <div className='download-button'>
-                    <button onClick={download3}><i className='bi bi-download'></i> Download</button>
+                <div className='button-container'>
+                    <button onClick={download}><i className='bi bi-download'></i> Download</button>
+                    <button onClick={go}><i className='bi bi-pencil-fill'></i> edit information</button>
                 </div>
+
             </div>
             <div className='document-preview'>
-                <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r)=> resume=r}>
+                <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r) => resume = r} style={{fontFamily:font, color:color}}>
                     {<Template.component
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
@@ -88,57 +62,48 @@ function DownloadResume() {
                         font={font}
                     />}
                 </PDFExport>
-                {/* {<Template.component
-                    contactInformation={state.contactInformation}
-                    experiences={state.experiences}
-                    educations={state.educations}
-                    skills={state.skills}
-                    summery={state.summery}
-                    experience={state.experience}
-                    education={state.education}
-                    color={stateColor}
-                    font={font}
-                />} */}
-
             </div>
+            <span className='edit-menu'><i className='bi bi-three-dots-vertical'></i></span>
             <div className='style-panel'>
-                <div className='change-template'>
-                    <div className='change-templates-container' style={{ transform: showTemplates ? 'translateX(0)' : 'translateX(200vh)' }}>
-                        <div className='template-container'>
-                            <div className='header'>
-                                <h3>Change Template</h3>
-                                <span onClick={() => setShowTemplates(!showTemplates)}><i className='bi bi-x-lg'></i></span>
-                            </div>
-                            <div className='templates-gallery'>
-                                {templates.map((item) => {
-                                    const temp = {
-                                        component: item
-                                    }
-                                    return (
-                                        <div className='template-item' key={item} onClick={() => setTemplate({ component: item })}>
-                                            <temp.component
-                                                contactInformation={example.contactInformation}
-                                                skills={example.skills}
-                                                summery={example.summery}
-                                                experience={example.experience}
-                                                education={example.education}
-                                                color={stateColor}
-                                                font={font}
-                                            />
-                                        </div>
-                                    )
-                                })}
+                <div className='panel-container'>
+                    <div className='change-template'>
+                        <div className='change-templates-container' style={{ transform: showTemplates ? 'translateX(0)' : 'translateX(200vh)' }}>
+                            <div className='template-container'>
+                                <div className='header'>
+                                    <h3>Change Template</h3>
+                                    <span onClick={() => setShowTemplates(!showTemplates)}><i className='bi bi-x-lg'></i></span>
+                                </div>
+                                <div className='templates-gallery'>
+                                    {templates.map((item) => {
+                                        const temp = {
+                                            component: item
+                                        }
+                                        return (
+                                            <div className='template-item' key={item} onClick={() => setTemplate({ component: item })}>
+                                                <temp.component
+                                                    contactInformation={example.contactInformation}
+                                                    skills={example.skills}
+                                                    summery={example.summery}
+                                                    experience={example.experience}
+                                                    education={example.education}
+                                                    color={stateColor}
+                                                    font={font}
+                                                />
+                                            </div>
+                                        )
+                                    })}
 
+                                </div>
                             </div>
                         </div>
+                        <button className='choose-template' onClick={() => setShowTemplates(!showTemplates)}>Change Template</button>
                     </div>
-                    <button className='choose-template' onClick={() => setShowTemplates(!showTemplates)}>Change Template</button>
-                </div>
-                <div className='color-component styling-component'>
-                    {<ColorBox spanColor={spanColor} />}
-                </div>
-                <div className='font-component styling-component'>
-                    {<Fonts fontChange={(fontName) => setFont(fontName)} />}
+                    <div className='color-component styling-component'>
+                        {<ColorBox spanColor={spanColor} />}
+                    </div>
+                    <div className='font-component styling-component'>
+                        {<Fonts fontChange={(fontName) => setFont(fontName)} />}
+                    </div>
                 </div>
             </div>
         </div>
