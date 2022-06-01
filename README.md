@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# eshop-store
+<!-- creator: Ali Herawi -->
+<!-- github: https://github.com/Aliherawi7 -->
+<!-- Email: Aliherawi7@gmail.com -->
+<!-- Linked in : https://linkedin.com/in/ali-herawi -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+resume-builder developed and build with **React (v17.0.2)**, **JavaScript**, **jspdf(^2.5.1)**, **kendo-react-pdf(^5.3.0)** and **React Router v6**. For Styles, is used **CSS**.
 
-## Available Scripts
+# Demo
 
-In the project directory, you can run:
+Visit: [Project eshop demo](https://resume-builder.netlify.app/)
 
-### `npm start`
+![Figma eshop sketch](src/assets/resume-builder-sketch.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Responsive layout
+* React Hooks
+* React Context
+* React Router v6
+* PDFEXPORT
+* Modern and various Template
+* Great Templates style
+* Bootstrap icon
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Pages
 
-### `npm run build`
+* home
+* Templates
+* Build
+* Download Page
+* Getting-started
+* 404 Error(not found)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**1. Clone from Github**
 
-### `npm run eject`
+`git clone https://github.com/Aliherawi7/resume-builder.git`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**2. Run `npm install` or `yarn install`**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This will install both run-time project dependencies and developer tools listed in package.json file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**3. Run `npm start` or `yarn install`**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Runs the app in the development mode.
 
-## Learn More
+      
+**4. Run `npm build` or `yarn build`**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Builds the app for production to the build folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The build is minified and the filenames include the hashes. Your app is ready to be deployed!
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Would you mind support me?
 
-### Analyzing the Bundle Size
+* Star GitHub repo
+* Create pull requests, submit bugs, suggest new features or documentation updates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
