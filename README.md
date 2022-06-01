@@ -1,4 +1,4 @@
-# eshop-store
+# resume-builder
 <!-- creator: Ali Herawi -->
 <!-- github: https://github.com/Aliherawi7 -->
 <!-- Email: Aliherawi7@gmail.com -->
@@ -8,9 +8,9 @@ resume-builder developed and build with **React (v17.0.2)**, **JavaScript**, **j
 
 # Demo
 
-Visit: [Project eshop demo](https://resume-builder.netlify.app/)
+<!-- Visit: [Project resume-builder demo](https://resume-builder.netlify.app/) -->
 
-![Figma eshop sketch](src/assets/resume-builder-sketch.png)
+![Figma resume-builder sketch](src/assets/resume-builder-sketch.png)
 
 # Features
 
