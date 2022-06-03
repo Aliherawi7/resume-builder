@@ -59,8 +59,9 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                     <div className='column'>
                     </div>
                     <div className='section-label'>
+                        <span className='top-shadow'></span>
                         <h2 style={styles}>Education</h2>
-                        <span></span>
+                        <span className='bottom-shadow'></span>
                     </div>
 
                     <div className='information'>
@@ -70,7 +71,7 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                                     <div style={styles} key={item} className="experience-container">
                                         <div className='information-header'>
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path style={{ fill: color }} d="M500.3 227.7C515.9 243.3 515.9 268.7 500.3 284.3L284.3 500.3C268.7 515.9 243.3 515.9 227.7 500.3L11.72 284.3C-3.905 268.7-3.905 243.3 11.72 227.7L227.7 11.72C243.3-3.905 268.7-3.905 284.3 11.72L500.3 227.7z" /></svg>
-                                            <p className="normal-title mb-5">{(item?.degree ? item.degree : '') + (item?.fieldOfStudy ? ' : ' + item.fieldOfStudy : '')}</p>
+                                            <p className="normal-title">{(item?.degree ? item.degree : '') + (item?.fieldOfStudy ? ' : ' + item.fieldOfStudy : '')}</p>
                                         </div>
                                         <p className="normal-paragraph">{item?.schoolName ? item.schoolName : ''}</p>
                                         <p className="normal-paragraph">{(item?.city ? item.city : "") + (item?.state ? ", " + item?.state : '')}</p>
@@ -82,7 +83,7 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                                 <div style={styles} className="experience-container">
                                     <div className='information-header'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path style={{ fill: color }} d="M500.3 227.7C515.9 243.3 515.9 268.7 500.3 284.3L284.3 500.3C268.7 515.9 243.3 515.9 227.7 500.3L11.72 284.3C-3.905 268.7-3.905 243.3 11.72 227.7L227.7 11.72C243.3-3.905 268.7-3.905 284.3 11.72L500.3 227.7z" /></svg>
-                                        <p className="normal-title mb-5">{(education?.degree ? education.degree : '') + (education?.fieldOfStudy ? " : " + education.fieldOfStudy : '')}</p>
+                                        <p className="normal-title">{(education?.degree ? education.degree : '') + (education?.fieldOfStudy ? " : " + education.fieldOfStudy : '')}</p>
                                     </div>
                                     <p className="normal-paragraph">{education?.schoolName ? education.schoolName : ''}</p>
                                     <p className="normal-paragraph">{(education?.city ? education.city : "") + (education?.state ? ", " + education?.state : '')}</p>
@@ -98,7 +99,9 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                     <div className='column'>
                     </div>
                     <div className='section-label'>
+                        <span className='top-shadow'></span>
                         <h2 style={styles}>Experience</h2>
+                        <span className='bottom-shadow'></span>
                     </div>
                     <div className="experience subtitle section">
                         {experiences?.length > 0 ? experiences?.map((item) => {
@@ -106,7 +109,7 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                                 <div style={styles} key={item} className="experience-container">
                                     <div className='information-header'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path style={{ fill: color }} d="M500.3 227.7C515.9 243.3 515.9 268.7 500.3 284.3L284.3 500.3C268.7 515.9 243.3 515.9 227.7 500.3L11.72 284.3C-3.905 268.7-3.905 243.3 11.72 227.7L227.7 11.72C243.3-3.905 268.7-3.905 284.3 11.72L500.3 227.7z" /></svg>
-                                        <p className="normal-title mb-5">{item?.jobTitle ? item.jobTitle : ''}</p>
+                                        <p className="normal-title">{item?.jobTitle ? item.jobTitle : ''}</p>
                                     </div>
                                     <p className="normal-paragraph">{item?.employer ? item.employer : ''}</p>
                                     <p className="normal-paragraph">{(item?.city ? item.city : "") + (item?.state ? ", " + item?.state : '')}</p>
@@ -117,7 +120,7 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                         }) : <div style={styles}>
                             <div className='information-header'>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path style={{ fill: color }} d="M500.3 227.7C515.9 243.3 515.9 268.7 500.3 284.3L284.3 500.3C268.7 515.9 243.3 515.9 227.7 500.3L11.72 284.3C-3.905 268.7-3.905 243.3 11.72 227.7L227.7 11.72C243.3-3.905 268.7-3.905 284.3 11.72L500.3 227.7z" /></svg>
-                                <p className="normal-title mb-5">{experience?.jobTitle ? experience.jobTitle : ''}</p>
+                                <p className="normal-title">{experience?.jobTitle ? experience.jobTitle : ''}</p>
                             </div>
                             <p className="normal-paragraph">{experience?.employer ? experience.employer : ''}</p>
                             <p className="normal-paragraph">{experience?.city ? experience.city : "" + ", " + experience?.state ? experience.state : ''}</p>
@@ -129,7 +132,9 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                     <div className='column'>
                     </div>
                     <div className='section-label'>
+                        <span className='top-shadow'></span>
                         <h2 style={styles}>Skills</h2>
+                        <span className='bottom-shadow'></span>
                     </div>
                     <div className="skills subtitle section">
                         <ul className="skill-list">
@@ -147,7 +152,10 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                     <div className='column' style={backgroundColor}>
                     </div>
                     <div className='section-label'>
+                        <span className='top-shadow'></span>
                         <h2 style={styles}>social networks</h2>
+                        <span className='bottom-shadow'></span>
+
                     </div>
                     <div style={styles} className='social-network subtitle section' >
                         <p className='normal-text'>

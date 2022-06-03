@@ -1,55 +1,57 @@
-.main-container{
+.template3 .main-container{
     background-color: #002b34 !important;
     width: 100%;
     height: max-content;
     display: flex;
     flex-direction: column;
 }
-.main-container *{
+.template3 .main-container *{
     font-family: inherit;
 }
 
 /* custuming text  */
-.main-container h2{
+.template3 .main-container h2{
     font-size: 15px !important;
 }
-.main-container p,
-.main-container h2,
-.main-container li{
+.template3 .main-container p,
+.template3 .main-container h2,
+.template3 .main-container li{
     color: #fff !important;
     margin: 0;
     font-family: inherit;
 }
-.main-container .normal-title{
-    display: inline;
-    margin-bottom: 0;
-    margin-left: 2px;
-}
-.main-container .normal-text{
-    margin-bottom: 4px;
-}
-.main-container .profesion-summery .normal-paragraph{
-    margin-left: 0;
-}
-.main-container .normal-paragraph{
-    margin-left: 20px;
-}
-.main-container .information-header{
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-}
-.main-container p{
+.template3 .main-container p{
     font-size: 10px;
     font-weight: 200;
     margin-left: 2px;
 }
-.main-container .social-networks h2{
+.template3 .normal-title{
+    display: inline;
+    margin-bottom: 0;
+    margin-left: 2px;
+}
+.template3 .normal-text{
+    margin-bottom: 4px !important;
+
+}
+.template3 .profesion-summery .normal-paragraph{
+    margin-left: 0 !important;
+}
+.template3  .normal-paragraph{
+    margin-left: 20px !important;
+}
+.template3  .information-header{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.template3 .social-networks h2{
     font-size: 12px!important;
 }
 
 /* end  custuming text  */ 
-.main-container .contact .image-container{
+.template3 .contact .image-container{
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.411);
     width: 170px;
@@ -64,13 +66,13 @@
     z-index: 1000;
 }
 
-.main-container .contact img{
+.template3 .contact img{
     width: 165px;
     height: 165px;
     z-index: 100;
     transform: rotate(-45deg);
 }
-.main-container .image{
+.template3 .image{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,17 +88,17 @@
     z-index: 101;
     overflow: hidden;
 }
-.main-container .info-container{
+.template3 .info-container{
     position: relative;
     margin: 0 30px;
     padding-left: 185px;
     min-height: 150px;
 }
-.main-container .contact{
+.template3 .contact{
     min-height: 250px;
 }
 
-.main-container .info-container::after{
+.template3 .info-container::after{
     content: '';
     width: 380px;
     height: 1px;
@@ -107,23 +109,23 @@
     margin-bottom: 15px;
 
 }
-.main-container .info-container .info-section{
+.template3 .info-container .info-section{
     max-width: 350px;
 }
-.main-container .info-section .contact-name{
+.template3 .info-section .contact-name{
     font-size: 17px;
     margin-top: 30px;
 }
-.main-container .info-section .contact-name,
-.main-container .info-section .contact-info{
+.template3 .info-section .contact-name,
+.template3 .info-section .contact-info{
     width: 50%;
 }
-.main-container .info-container .section{
+.template3 .info-container .section{
     margin-top: 30px;
     padding-bottom: 10px;
     margin-left: 10px;
 }
-.main-container .column{
+.template3 .column{
     position: absolute;
     width: 100px;
     height: 100%;
@@ -134,19 +136,19 @@
     padding: 20px 0;
     overflow: hidden;
 }
-.main-container .info-container .contact-information{
+.template3 .info-container .contact-information{
     padding-top: 15px;
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
 }
-.main-container .contact-information .contact-name{
+.template3 .contact-information .contact-name{
     padding-right:15px ;
 }
-.main-container .profesion-summery{
+.template3 .profesion-summery{
     padding-bottom: 20px;
 }
-.main-container .section-label{
+.template3 .section-label{
     background-color: var(--backgroundColor);
     position: absolute;
     left: 22px;
@@ -162,28 +164,28 @@
     border-top-right-radius: 50px;
     z-index: 100
 }
-.main-container .skills .section-label h2{
+.template3 .skills .section-label h2{
     padding-left: 20px;
 }
-.main-container .section-label::after{
-    content: " ";
+.template3 .section-label .top-shadow{
+    content: "";
     position: absolute;
     top: -14px;
     left: 6%;
     margin-left: -11px;
     border-width: 10px;
     border-style: solid;
-    border-color: transparent #97979788 #8b8b8b88 transparent;
+    border-color: transparent #97979767 #8b8b8b69 transparent;
     transform: scaleY(0.4) scaleX(.95);
 }
-.main-container .section-label::before{
-    content: " ";
+.template3 .section-label .bottom-shadow{
+    content: "";
     position: absolute;
     bottom: -17px;
     left: 44%;
     margin-left: -12px;
     border-width: 10px;
     border-style: solid;
-    border-color: #97979788 #8b8b8b88 transparent transparent;
+    border-color: #97979771 #8b8b8b70 transparent transparent;
     transform: scaleY(0.7) scaleX(5);
 }
