@@ -2,6 +2,8 @@
 .template1{
     display: flex;
     position: relative;
+    background-color: #fff;
+    min-height: 842px!important;
 }
 .template1 .container-A{
     display: flex;
@@ -11,7 +13,6 @@
     padding-left: 20px;
     padding-right: 10px;
     width: 35%;
-    height: 100%;
     background-color: var(--backgroundColor);
 }
 .template1 .container-A h1,
@@ -35,7 +36,7 @@
     padding-left: 20px;
     padding-right: 80px;
     width: 65%;
-    height: 100%;
+    height: max-content;
     background-color: #fff;
 
 }

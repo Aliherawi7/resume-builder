@@ -16,7 +16,7 @@ function Template1({ contactInformation, experiences, experience, educations, ed
         color:color
     }
     return (
-        <div className="template template1 a4" style={fontStyles}>
+        <div className="a4 template template1 " style={fontStyles}>
             <div className="container-A" style={backgroundColor}>
                 <div className="contact-info section">
                     <div className='profile-picture' >
