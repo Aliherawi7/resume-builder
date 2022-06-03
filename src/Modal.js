@@ -7,7 +7,7 @@ function Modal(props) {
                 <div className="page-container">
                     {props.children}
                 </div>
-                <span onClick={props.close}><i className="bi bi-x-lg"></i></span>
+                <span onClick={props.close}><i className="bi bi-x-lg close-btn"></i></span>
             </div>
         </div>
     ) 

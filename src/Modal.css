@@ -11,7 +11,7 @@
     padding-top: 160px;
     overflow-y: auto;
 } 
-.modal span{
+.modal .close-btn{
     cursor: pointer;
     background-color: #d40e0e;
     width: 40px; 
