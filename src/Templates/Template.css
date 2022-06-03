@@ -1,6 +1,12 @@
 .a4{
     width: 595px;
-    height: 842px;
+    min-height: 842px;
+}
+.main-container{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
 }
 
 .template .normal-text,
