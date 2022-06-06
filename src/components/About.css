@@ -3,23 +3,40 @@
 }
 
 .about-container{
-    width: 100%;
     height: 100vh;
+    width: max-content;
+    margin: auto;
     background-color: rgba(255, 255, 255, 0.527);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+.logo-main img{
+    width: 300px;
+    margin-bottom: 50px;
+    margin-top: -100px;
+    animation-name: right-to-left;
+    animation-duration: .3s;
+}
 
+.about-container span{
+    text-align: left;
+    font-weight: 700;
+    width: 100%;
+    color: #45505b;
+    justify-self: start!important;
+    animation-name: left-to-right;
+    animation-duration: .3s;
+}
 .about-container h1{
     margin: 0;
     font-size: 64px;
     font-weight: 700;
     line-height: 56px;
     color: #45505b;
-    animation-name: top-bottom-animate;
-    animation-duration: .3s;
+    animation-name: bottom-top-animate;
+    animation-duration: .5s;
 }
 .about-container .contact-me{
     margin-top: 30px;
@@ -35,7 +52,7 @@
     line-height: 1;
     transition: 0.3s;
     animation-name: bottom-top-animate;
-    animation-duration: .3s;
+    animation-duration: .5s;
 }
 .about-container .contact-me a:hover{
     color: var(--color);
@@ -44,20 +61,31 @@
     width: 100%;
     background-color: #000;
     color: #fff;
-    height: 140px;
+    height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 .about footer .copyright{
     padding: 20px;
     text-align: center;
 }
+footer .footer-logo img{
+    width: 180px;
+}
 footer .credits a{
     color: #8cc63e;
 }
 @media(max-width:540px){
+    .logo-main img{
+        width: 150px;
+        margin-bottom: 50px;
+        margin-top: -100px;
+        animation-name: right-to-left;
+        animation-duration: .3s;
+    }
     .about-container h1{
         font-size: 44px;
     }

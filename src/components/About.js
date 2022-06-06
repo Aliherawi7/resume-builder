@@ -4,6 +4,10 @@ function About() {
     return (
         <div className='about'>
             <div className='about-container'>
+                <div className='logo-main'>
+                    <img src='./image/logo2.png' />
+                </div>
+                <span>Designed by:</span>
                 <h1>Ali Herawi</h1>
                 <div className='contact-me'>
                     <a href='http://twitter.com/aliherawi7' style={{ "--color": "#158aed" }}><i className='bi bi-twitter'></i></a>
@@ -14,7 +18,9 @@ function About() {
                 </div>
             </div>
             <footer>
-                <h1>Resume Builder</h1>
+                <div className='footer-logo'>
+                    <img src='./image/logo2.png' />
+                </div>
                 <div class="copyright">
                     © Copyright <strong><span>Resume-Builder</span></strong>. All Rights Reserved
                 </div>
