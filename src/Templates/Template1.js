@@ -29,7 +29,7 @@ function Template1({ contactInformation, experiences, experience, educations, ed
                     <p className='normal-text'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path style={{fill:"#fff"}} d="M448 64H64C28.65 64 0 92.65 0 128v256c0 35.35 28.65 64 64 64h384c35.35 0 64-28.65 64-64V128C512 92.65 483.3 64 448 64zM64 112h384c8.822 0 16 7.178 16 16v22.16l-166.8 138.1c-23.19 19.28-59.34 19.27-82.47 .0156L48 150.2V128C48 119.2 55.18 112 64 112zM448 400H64c-8.822 0-16-7.178-16-16V212.7l136.1 113.4C204.3 342.8 229.8 352 256 352s51.75-9.188 71.97-25.98L464 212.7V384C464 392.8 456.8 400 448 400z"/></svg>
                     {contactInformation?.email ? contactInformation.email : ''}</p>
-                    <p className='normal-text'>
+                    <p className='normal-text location'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path style={{fill:"#fff"}} d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
                         {(contactInformation?.address ? contactInformation.address + ", " : '') +
                             (contactInformation?.city ? contactInformation.city + ", " : '') +
@@ -76,7 +76,7 @@ function Template1({ contactInformation, experiences, experience, educations, ed
                             <div key={Math.random()} className="experience-container">
                                 <p className="normal-title mb-5">{item?.jobTitle ? item.jobTitle : ''}</p>
                                 <p className="normal-paragraph">{item?.employer ? item.employer : ''}</p>
-                                <p className="normal-paragraph">{(item?.city ? item.city : "") + (item?.state ? ", " + item?.state : '')}</p>
+                                <p className="normal-paragraph location">{(item?.city ? item.city : "") + (item?.country ? ", " + item?.country : '')}</p>
                                 <p className="normal-paragraph">{(item?.startDate ? item.startDate : '') + (item?.endDate ? " - " + item.endDate : '')}</p>
                                 <p className="normal-paragraph">{' '}</p>
                             </div>
@@ -84,7 +84,7 @@ function Template1({ contactInformation, experiences, experience, educations, ed
                     }) : <div>
                         <p className="normal-title mb-5">{experience?.jobTitle ? experience.jobTitle : ''}</p>
                         <p className="normal-paragraph">{experience?.employer ? experience.employer : ''}</p>
-                        <p className="normal-paragraph">{experience?.city ? experience.city : "" + ", " + experience?.state ? experience.state : ''}</p>
+                        <p className="normal-paragraph location">{experience?.city ? experience.city : "" + ", " + experience?.state ? experience.state : ''}</p>
                         <p className="normal-paragraph">{(experience?.startDate ? experience.startDate : '') + (experience?.endDate ? " - " + experience.endDate : '')}</p>
                     </div>}
                 </div>
@@ -95,7 +95,7 @@ function Template1({ contactInformation, experiences, experience, educations, ed
                             <div key={Math.random() + item} className="experience-container">
                                 <p className="normal-title mb-5">{(item?.degree ? item.degree : '') + (item?.fieldOfStudy ? ' : ' + item.fieldOfStudy : '')}</p>
                                 <p className="normal-paragraph">{item?.schoolName ? item.schoolName : ''}</p>
-                                <p className="normal-paragraph">{(item?.city ? item.city : "") + (item?.state ? ", " + item?.state : '')}</p>
+                                <p className="normal-paragraph location">{(item?.city ? item.city : "") + (item?.state ? ", " + item?.state : '')}</p>
                                 <p className="normal-paragraph">{(item?.graduationMonth ? item.graduationMonth : '') + (item?.graduationYear ? " " + item.graduationYear : '')}</p>
                                 <p className="normal-paragraph">{' '}</p>
                             </div>
@@ -104,7 +104,7 @@ function Template1({ contactInformation, experiences, experience, educations, ed
                         <div className="experience-container">
                             <p className="normal-title mb-5">{(education?.degree ? education.degree : '') + (education?.fieldOfStudy ? " : " + education.fieldOfStudy : '')}</p>
                             <p className="normal-paragraph">{education?.schoolName ? education.schoolName : ''}</p>
-                            <p className="normal-paragraph">{(education?.city ? education.city : "") + (education?.state ? ", " + education?.state : '')}</p>
+                            <p className="normal-paragraph location">{(education?.city ? education.city : "") + (education?.state ? ", " + education?.state : '')}</p>
                             <p className="normal-paragraph">{(education?.graduationMonth ? education.graduationMonth : '') + (education?.graduationYear ? " " + education.graduationYear : '')}</p>
                             <p className="normal-paragraph">{' '}</p>
                         </div>

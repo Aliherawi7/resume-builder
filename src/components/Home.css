@@ -38,4 +38,14 @@
 .intro button:hover{
     background-color: #79ac37;
 }
+@media (max-width: 768px){
+    .intro h2{
+        font-size: 35px;
+        padding: 10px ;
+    }
+    .intro button{
+        padding: 8px 20px;
+        font-size: 18px;
+    }
+}
 

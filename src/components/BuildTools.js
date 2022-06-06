@@ -1,12 +1,13 @@
 import React, { useState, useEffect, createElement, Suspense } from 'react'
 import './BuildTools.css'
-import { useStateValue } from './StateProvider'
-import { actions } from './reducer'
+import { useStateValue } from '../StateProvider'
+import { actions } from '../reducer'
 
 export function GetStarted() {
     return (
         <div className="get-started animation">
-            <h1>This is first step </h1>
+            <h1>Are you ready?<br/>
+                Let's build your resume!</h1>
         </div>
     )
 }
@@ -353,8 +354,8 @@ export function Experience() {
                 jobTitle: e.target.value,
                 employer: state.experience?.employer,
                 city: state.experience?.city,
-                state: state.experience?.state,
-                startDate: state.experience?.stateDate,
+                country: state.experience?.country,
+                startDate: state.experience?.startDate,
                 endDate: state.experience?.endDate
 
             }
@@ -367,8 +368,8 @@ export function Experience() {
                 jobTitle: state.experience?.jobTitle,
                 employer: e.target?.value,
                 city: state.experience?.city,
-                state: state.experience?.state,
-                startDate: state.experience?.stateDate,
+                country: state.experience?.country,
+                startDate: state.experience?.startDate,
                 endDate: state.experience?.endDate
 
             }
@@ -381,22 +382,22 @@ export function Experience() {
                 jobTitle: state.experience?.jobTitle,
                 employer: state.experience?.employer,
                 city: e.target.value,
-                state: state.experience?.state,
-                startDate: state.experience?.stateDate,
+                country: state.experience?.country,
+                startDate: state.experience?.startDate,
                 endDate: state.experience?.endDate
 
             }
         })
     }
-    const stateChangeHandler = (e) => {
+    const countryChangeHandler = (e) => {
         dispatch({
             type: actions.ADD_EXPERIENCE,
             item: {
                 jobTitle: state.experience?.jobTitle,
                 employer: state.experience?.employer,
                 city: state.experience?.city,
-                state: e.target.value,
-                startDate: state.experience?.stateDate,
+                country: e.target.value,
+                startDate: state.experience?.startDate,
                 endDate: state.experience?.endDate
 
             }
@@ -409,7 +410,7 @@ export function Experience() {
                 jobTitle: state.experience?.jobTitle,
                 employer: state.experience?.employer,
                 city: state.experience?.city,
-                state: state.experience?.state,
+                country: state.experience?.country,
                 startDate: e.target?.value,
                 endDate: state.experienc?.endDate
 
@@ -423,7 +424,7 @@ export function Experience() {
                 jobTitle: state.experience?.jobTitle,
                 employer: state.experience?.employer,
                 city: state.experience?.city,
-                state: state.experience?.state,
+                country: state.experience?.country,
                 startDate: state.experience?.startDate,
                 endDate: e.target?.value
 
@@ -438,7 +439,7 @@ export function Experience() {
                 jobTitle: state.experience?.jobTitle,
                 employer: state.experience?.employer,
                 city: state.experience?.city,
-                state: state.experience?.state,
+                country: state.experience?.country,
                 startDate: state.experience?.startDate,
                 endDate: e.target.checked ? 'current' : ''
             }
@@ -470,20 +471,20 @@ export function Experience() {
                     value={state.experience?.city} onChange={(e) => cityChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input half-width">
-                    <label >State</label>
-                    <input type="text" value={state.experience?.state} onChange={(e) => stateChangeHandler(e)} />
+                    <label >Country</label>
+                    <input type="text" value={state.experience?.country} onChange={(e) => countryChangeHandler(e)} />
                 </div>
             </div>
 
             <div className="input-row">
                 <div className="input-group half-width">
                     <label >start date</label>
-                    <input type="date" value={state.experience?.startDate} onChange={(e) => startDateChangeHandler(e)} />
+                    <input type="month" value={state.experience?.startDate} onChange={(e) => startDateChangeHandler(e)} />
                 </div>
                 <div className="input-group multi-input half-width position-relative">
                     <span className={state.experience.endDate == 'current' ? 'deactive' : ''}></span>
                     <label >end date</label>
-                    <input type="date" value={state.experience?.endDate} onChange={(e) => endDateChangeHandler(e)} />
+                    <input type="month" value={state.experience?.endDate} onChange={(e) => endDateChangeHandler(e)} />
                 </div>
             </div>
             <div className="input-check">
@@ -876,9 +877,6 @@ export function ReviewEducation({ addNewEducation, pathLinkHandler }) {
 
 
 
-
-
-
 export function SkillsInfo() {
 
     return (
@@ -960,7 +958,7 @@ export function Summery() {
             <h1>Professional Summary</h1>
             <p>Finish your resume with short summary</p>
             <div className="input-group">
-                <label >summery:</label>
+                <label >summary:</label>
                 <textarea
                     placeholder="Click here to write your professional summary."
                     value={summery}

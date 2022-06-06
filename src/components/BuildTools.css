@@ -58,7 +58,7 @@
 }
 .common-input-style input[type=text],
 .common-input-style input[type=email],
-.common-input-style input[type=date]{
+.common-input-style input[type=month]{
     height: 40px;
     width: 100%;
     display: block;

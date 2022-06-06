@@ -84,3 +84,10 @@
     right: 24px;
 }
 
+@media(max-width:768px){
+    .getting-started .template-slider{
+        transform:scale(.5);
+        margin-top: -100px;
+    }
+}
+

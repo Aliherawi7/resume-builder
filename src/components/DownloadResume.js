@@ -2,11 +2,11 @@ import React, { useRef, useState } from 'react'
 import { PDFExport } from '@progress/kendo-react-pdf'
 import { useNavigate, useParams } from 'react-router-dom'
 import './DownloadResume.css'
-import templates from './Templates/Templates'
-import { useStateValue } from './StateProvider'
-import ColorBox from './UI/ColorBox'
-import Fonts from './UI/Fonts'
-import example from './Templates/example'
+import templates from '../Templates/Templates'
+import { useStateValue } from '../StateProvider'
+import ColorBox from '../UI/ColorBox'
+import Fonts from '../UI/Fonts'
+import example from '../Templates/example'
 
 
 

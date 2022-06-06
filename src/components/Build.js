@@ -1,31 +1,37 @@
 import React, { useState } from 'react'
 import "./Build.css"
 import { useNavigate, useParams } from 'react-router-dom'
-import Modal from './Modal'
+import Modal from '../UI/Modal'
 import buildTools from './BuildTools'
-import templates from './Templates/Templates'
-import { useStateValue } from './StateProvider'
-import { actions } from './reducer'
+import templates from '../Templates/Templates'
+import { useStateValue } from '../StateProvider'
 
-//this step next and back controller
+//this is  next and back buttons controller
 let counter = 0;
 function Build() {
     const { color, template, font } = useParams()
     const navigate = useNavigate()
     const [showPage, setShowPage] = useState(false)
+
     const [state, dispatch] = useStateValue()
+
+    // keep the build step component e.g contact, experience
     const [BuildComponent, setBuildComponent] = useState({ component: buildTools[0] })
+
+    // keep the paper template while adding information
     const [TemplateComponent, setTemplateComponent] = useState({ component: templates[template] })
 
+    // go to te next build step
     const handleNextButton = () => {
         if (counter >= buildTools.length - 1) {
             navigate("/download-resume&&template=" + template + "&color=" + color)
             counter = 0
             return
-        }  // we will do more here e.g : going to the download page
+        }
         counter++
         setBuildComponent({ component: buildTools[counter] })
     }
+    // go to te previous build step
     const handleBackButton = () => {
         if (counter <= 0) {
             navigate('/build/getting-started')
@@ -34,20 +40,23 @@ function Build() {
         counter--
         setBuildComponent({ component: buildTools[counter] })
     }
+    // handle path links clicks
     const pathLinkHandler = (x) => {
         counter = x
         console.log(state, "in path link func")
         setBuildComponent({ component: buildTools[counter] })
     }
+
+    // take the user to the adding experience page
     const addNewExperience = () => {
         counter = 3;
         pathLinkHandler(counter)
     }
+    // take the user to the adding education page
     const addNewEducation = () => {
         counter = 6;
         pathLinkHandler(counter)
     }
-    console.log(state)
     return (
         <div className="build">
             <div className="build-path">
@@ -57,7 +66,7 @@ function Build() {
                     <span className={(counter >= 2 && counter < 5) ? "active" : ""}>Experience</span>
                     <span className={(counter >= 5 && counter < 8) ? "active" : ""}>Education</span>
                     <span className={(counter >= 8 && counter < 10) ? "active" : ""}>Skills</span>
-                    <span className={(counter >= 10) ? "active" : ""}>Summery</span>
+                    <span className={(counter >= 10) ? "active" : ""}>Summary</span>
                 </div>
                 <ul className="links">
                     <li className={counter >= 0 ? "active" : ""} onClick={() => (pathLinkHandler(0))}><span>get started</span></li>
@@ -65,7 +74,7 @@ function Build() {
                     <li className={counter >= 2 ? "active" : ""} onClick={() => (pathLinkHandler(3))}><span>Experience</span></li>
                     <li className={counter >= 5 ? "active" : ""} onClick={() => (pathLinkHandler(6))}> <span>Education</span></li>
                     <li className={counter >= 8 ? "active" : ""} onClick={() => (pathLinkHandler(9))}><span>Skills</span></li>
-                    <li className={counter >= 10 ? "active" : ""} onClick={() => (pathLinkHandler(11))}> <span>Summery</span></li>
+                    <li className={counter >= 10 ? "active" : ""} onClick={() => (pathLinkHandler(11))}> <span>Summary</span></li>
                 </ul>
             </div>
 
