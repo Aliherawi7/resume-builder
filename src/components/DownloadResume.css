@@ -17,7 +17,10 @@
     text-align: center;
 
 }
-
+.download-file{
+    position: absolute;
+    bottom: 300vh;
+}
 .edit-menu {
     visibility: hidden;
     position: absolute;
