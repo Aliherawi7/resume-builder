@@ -4,7 +4,7 @@ function Layout(props) {
     const styles = {
         with:"100%",
         minHeight: "100vh",
-        paddingTop:"75px",
+        paddingTop:"40px",
         
     }
   return (
