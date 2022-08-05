@@ -21,10 +21,10 @@ function About() {
                 <div className='footer-logo'>
                     <img src='./image/logo2.png' />
                 </div>
-                <div class="copyright">
+                <div className="copyright">
                     © Copyright <strong><span>Resume-Builder</span></strong>. All Rights Reserved
                 </div>
-                <div class="credits">
+                <div className="credits">
                     Designed by <a href="https://linkedin.com/ali-herawi">Ali herawi</a>
                 </div>
             </footer>
