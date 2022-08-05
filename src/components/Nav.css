@@ -61,7 +61,7 @@ nav .nav-brand{
         flex-direction: column;
         position: absolute;
         visibility: hidden;
-        top: 80px;
+        top: 60px;
         background: #2e2e2e;
         width: 100%;
         left: 0;

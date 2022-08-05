@@ -208,19 +208,30 @@
     }
 
     .document-preview {
-        transform: scale(.5);
-        margin-top: -170px !important;
+        transform: scale(.7);
+        margin-top: -100px !important;
         margin-left: -100px;
+    }
+    .download-resume .style-panel{
+        margin-top: -100px;
+    }
+}
+@media(max-width:500px) {
+    .document-preview {
+        transform: scale(.6);
+        margin-left: -80px !important;
+        margin-top: -160px !important;
     }
 }
 
 @media(max-width:500px) {
     .document-preview {
+        transform: scale(.5);
         margin-left: -80px !important;
         margin-top: -160px !important;
     }
     .download-resume .style-panel{
-        margin-top: -110px;
+        margin-top: -170px;
     }
 }
 
@@ -230,7 +241,7 @@
         margin-top: -170px !important;
     }
     .download-resume .style-panel{
-        margin-top: -140px;
+        margin-top: -170px;
     }
 }
 @media(max-width:360px) {

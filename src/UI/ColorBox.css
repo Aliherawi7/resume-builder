@@ -37,3 +37,12 @@
 .color-box .colors span:hover {
     transform: scale(1.1);
 }
+
+@media(max-width:768px) {
+    .color-box .colors span {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+    }
+
+}
