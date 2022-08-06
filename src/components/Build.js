@@ -43,7 +43,6 @@ function Build() {
     // handle path links clicks
     const pathLinkHandler = (x) => {
         counter = x
-        console.log(state, "in path link func")
         setBuildComponent({ component: buildTools[counter] })
     }
 

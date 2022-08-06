@@ -1,0 +1,144 @@
+.template4{
+    padding-top: 50px;
+    overflow: hidden;
+}
+.template4 .main-container{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+   position: relative;
+}
+.template4 .main-container .personal-info{
+    position: relative;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.template4 .main-container .img-label{
+    position: absolute;
+    width: 140px;
+    height: 180px;
+    background-color: #ffc107;
+    left: 50px;
+    top: -20px;
+    z-index: 50;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    box-shadow: 0px 3px 0px 1px #00000047;
+}
+.template4 .main-container .img-label::after,
+.template4 .main-container .img-label::before{
+    content: '';
+    width: 14px;
+    height: 20px;
+    background-color: #9b7d23;
+    border-top-left-radius: 8px;
+    position: absolute;
+    left: -14px;
+}
+.template4 .main-container .img-label::after{
+    right: -14px;
+    left: unset;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 8px;
+}
+.template4 .main-container .personal-info .profile-img-container img{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 60px;
+    bottom: 0px;
+    border-radius: 100px;
+    box-shadow: 0px 3px 17px -3px rgb(0 0 0 / 79%);
+    z-index: 100;
+}
+.template4 .main-container .personal-info .contact-name{
+    display: flex;
+    align-items: center;
+    margin-right:40px;
+}
+.template4 .main-container .personal-info .contact-name h1{
+    position: relative;
+    font-size: 35px;
+    color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #fff;
+    min-width: 200px;
+}
+.template4 .main-container .personal-info .contact-name h1::after,
+.template4 .main-container .personal-info .contact-name h1::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    bottom: -8px;
+    left: -12px;
+}
+.template4 .section{
+    margin-bottom: 20px;
+}
+.template4 .main-container .personal-info .contact-name h1::before{
+    left: unset;
+    right: -12px;
+}
+
+.template4 .info-container{
+    padding: 30px;
+    padding-top: 40px;
+    background-color: #fff;
+    border-top-right-radius: 20px;
+    width: 350px;
+    min-height: 700px;
+}
+
+
+/* contact info */
+.template4 .contact-information{
+    position: absolute;
+    padding-right: 20px;
+    right: 20px;
+    width: 210px;
+    top: 220px;
+
+
+}
+/* .template4 .right-side-blank{
+    content: '';
+    width: 30px;
+    border-top-left-radius: 20px;
+    background-color: #fff;
+    height: 77.3%;
+    position: absolute;
+    top: 150px;
+    right: 0px;
+} */
+.template4 .contact-information h2{
+    position: relative;
+    padding: 5px;
+    margin-left: -30px;
+    background-color: #ffc107;
+    padding-left: 40px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0px;
+    box-shadow: 0px 2px 0px 1px #00000047;
+}
+.template4 .contact-information h2::after{
+    content: '';
+    position: absolute;
+    height: 10px;
+    background-color: #9b7d23;
+    width: 17px;
+    border-bottom-left-radius: 5px;
+    left: -1px;
+    z-index: -1;
+    bottom: -10px;
+    z-index: 10;
+}
