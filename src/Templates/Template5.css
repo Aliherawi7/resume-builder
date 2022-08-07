@@ -1,0 +1,48 @@
+.template5 .main-container{
+    background-color: #f0eeef;
+    flex-direction: row !important;
+    padding: 20px 0;
+}
+.template5 .container-A{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 55%;
+    min-height: 805px;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 120px;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+    background-color: #ed023d;
+    margin:0 25px;
+    padding-left: 15px;
+    padding-top: 100px;
+
+}
+.template5 .container-A .profile-picture{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 5px;
+    margin: 10px;
+    background-color: rgb(230, 215, 11);
+    border-radius: 100px;
+}
+.template5 .container-A .profile-picture img{
+    width: 160px;
+    margin: 10px;
+    border-radius: 100px;
+}
+.template5 .container-A .contact-name{
+    font-size: 35px;
+}
+.template5 .section{
+    margin-bottom: 25px !important;
+}
+.template5 .subtitle h2,
+.template5 .section h2{
+    font-size: 20px;
+}
+
