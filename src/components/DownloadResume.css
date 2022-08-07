@@ -168,6 +168,8 @@
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 80vh;
+    overflow-y: scroll;
 
 }
 
