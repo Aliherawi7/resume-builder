@@ -206,10 +206,6 @@
         flex-direction: column;
     }
 
-    .download-resume .style-panel .panel-container div {
-        margin: auto;
-    }
-
     .document-preview {
         transform: scale(.7);
         margin-top: -100px !important;
