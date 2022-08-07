@@ -1,0 +1,64 @@
+.template5 .main-container{
+    background-color: #f0eeef;
+    flex-direction: row !important;
+    padding: 20px 0;
+}
+.template5 .container-A{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 180px;
+    min-height: 805px;
+    border-top-left-radius: 120px;
+    border-top-right-radius: 120px;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+    margin:0 25px;
+    padding: 15px;
+    padding-top: 190px;
+    padding-bottom: 50px;
+
+}
+.template5 .container-A .profile-picture{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 3px;
+    margin: 10px;
+    background-color: #f7de9e;
+    border-radius: 100px;
+}
+.template5 .container-A .profile-picture img{
+    width: 134px;;
+    margin: 10px;
+    border-radius: 100px;
+}
+.template5 .container-A .contact-name{
+    width: 100% !important;
+    font-size: 30px;
+    letter-spacing: 2px;
+    line-height: 30px;
+}
+.template5 .section{
+    margin-bottom: 25px !important;
+}
+.template5 .subtitle h2,
+.template5 .section h2{
+    font-size: 20px;
+}
+.template5 .container-B{
+    width: 350px;
+}
+
+.template5 .container-B .subtitle h2{
+    border-top-left-radius: 30px;
+    background-color: var(--color) !important;
+    width: 100% !important;
+    color: #fff !important;
+    padding:5px 20px;
+    letter-spacing: 4px;
+}
+.template5 .container-B .professional-summary{
+    max-width: 90%;
+}

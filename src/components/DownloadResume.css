@@ -168,6 +168,8 @@
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 80vh;
+    overflow-y: scroll;
 
 }
 
@@ -178,6 +180,7 @@
     height: 275px;
     background-color: #ddd;
     margin: 10px;
+    overflow: hidden;
 }
 
 .change-templates-container .template-container .templates-gallery .template-item:hover {
@@ -201,10 +204,6 @@
 
     .download-resume {
         flex-direction: column;
-    }
-
-    .download-resume .style-panel .panel-container div {
-        margin: auto;
     }
 
     .document-preview {

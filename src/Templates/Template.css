@@ -18,10 +18,12 @@
     margin-bottom: 7px;
     display: flex;
     align-items: center;
+    word-break: break-word;
 }
 .template .normal-title{
     font-size: 14px;
     margin-left: 5px;
+    word-break: break-word;
 }
 
 .template .normal-paragraph{
@@ -30,16 +32,17 @@
 }
 .template h1{
     font-size: 25px;
-    line-height: 28px;
+
 }
 .template .subtitle h2{
     font-size: 14px;
-    line-height: 19px;
 }
 .template  h1, .template  h2{
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    line-height: 28px;
+    word-break: break-word;
 }
 .template .mb-5{
     margin-bottom: 5px !important;

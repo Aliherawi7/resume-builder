@@ -1,10 +1,11 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import './GettingStarted.css'
 import Templates,{templatesName} from '../Templates/Templates'
 import example from '../Templates/example'
 import { Link } from 'react-router-dom'
 import ColorBox from '../UI/ColorBox'
 import Fonts from '../UI/Fonts'
+
 
 // controll build path
 let counter = 0
