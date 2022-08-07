@@ -180,6 +180,7 @@
     height: 275px;
     background-color: #ddd;
     margin: 10px;
+    overflow: hidden;
 }
 
 .change-templates-container .template-container .templates-gallery .template-item:hover {
