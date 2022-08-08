@@ -40,6 +40,10 @@
     letter-spacing: 2px;
     line-height: 30px;
 }
+.template5 .container-A .normal-text,
+.template5 .container-A .normal-paragraph{
+    color: #fff !important;
+}
 .template5 .section{
     margin-bottom: 25px !important;
 }
