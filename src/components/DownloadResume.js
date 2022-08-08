@@ -49,17 +49,17 @@ function DownloadResume() {
 
             </div>
             <div className='document-preview'>
-                    {<Template.component
-                        contactInformation={state.contactInformation}
-                        experiences={state.experiences}
-                        educations={state.educations}
-                        skills={state.skills}
-                        summery={state.summery}
-                        experience={state.experience}
-                        education={state.education}
-                        color={stateColor}
-                        font={font}
-                    />}
+                {<Template.component
+                    contactInformation={state.contactInformation}
+                    experiences={state.experiences}
+                    educations={state.educations}
+                    skills={state.skills}
+                    summery={state.summery}
+                    experience={state.experience}
+                    education={state.education}
+                    color={stateColor}
+                    font={font}
+                />}
             </div>
             <div className='download-file'>
                 <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r) => resume = r} style={{ fontFamily: font, color: color }}>
