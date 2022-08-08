@@ -1,15 +1,14 @@
 
-.template6{
-
-}
 .template6 .main-container{
     display: flex;
     flex-direction: row !important;
+    width: 100%;
     min-height: 842px;
+    background-color: #fff;
 }
 
 .template6 .main-container .container-A{
-    width: 360px;
+    width: 35%;
     background-color: #000;
     display: flex;
     flex-direction: column;
@@ -26,7 +25,7 @@
     text-align: center;
     width: 100%;
     color: #fff;
-    background-color: #faa82b;
+    background-color: var(--backgroundColor);
     margin-top: -8px;
     margin-bottom: 30px;
 }
@@ -37,11 +36,19 @@
     padding-right: 20px;
     width: 100%;
 }
+.template6 .main-container .container-B{
+    width: 65%;
+}
+.template6 .container-A .normal-text,
+.template6 .container-A .normal-paragraph{
+    color: #fff !important;
+}
 .template6 .main-container .container-A .section h2,
 .template6 .main-container .container-B .section h2{
-    font-size: 18px;
+    font-size: 16px;
     border: 2px solid var(--color);
     text-align: center;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
+
