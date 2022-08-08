@@ -9,7 +9,7 @@ function Template2({ contactInformation, experiences, experience, educations, ed
     }
     const fontStyles = {
         fontFamily: font,
-        color: color
+        color: "#000"
     }
     const styles = {
         fontWeight:"900",
