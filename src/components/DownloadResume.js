@@ -62,7 +62,7 @@ function DownloadResume() {
                 />}
             </div>
             <div className='download-file'>
-                <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r) => resume = r} style={{ fontFamily: font, color: color }}>
+                <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r) => resume = r} style={{ fontFamily: font+" !imprtant", color: color }}>
                     {<Template.component
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
