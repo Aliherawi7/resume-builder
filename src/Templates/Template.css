@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     word-break: break-word;
+    text-align: justify;
 }
 .template .normal-title{
     font-size: 14px;
