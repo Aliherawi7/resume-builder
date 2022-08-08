@@ -39,6 +39,10 @@
     position: absolute;
     left: -14px;
 }
+.template4 .contact-information .normal-text,
+.template4 .contact-information .normal-paragraph{
+    color: #fff !important;
+}
 .template4 .main-container .img-label::after{
     right: -14px;
     left: unset;
