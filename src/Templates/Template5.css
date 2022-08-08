@@ -26,7 +26,7 @@
     left: 0px;
     padding: 3px;
     margin: 10px;
-    background-color: #f7de9e;
+    background-color: #ffffff6b;
     border-radius: 100px;
 }
 .template5 .container-A .profile-picture img{
@@ -39,6 +39,10 @@
     font-size: 30px;
     letter-spacing: 2px;
     line-height: 30px;
+}
+.template5 .container-A .normal-text,
+.template5 .container-A .normal-paragraph{
+    color: #fff !important;
 }
 .template5 .section{
     margin-bottom: 25px !important;

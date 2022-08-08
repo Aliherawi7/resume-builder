@@ -27,14 +27,13 @@ function Template4({ contactInformation, experiences, experience, educations, ed
                         <img src={contactInformation.image ? URL.createObjectURL(contactInformation.image) : "/image/yyyy.png"} alt='' />
                     </div>
                     <div className='contact-name'>
-                        <h1 >{contactInformation.name}</h1>
+                        <h1 style={styles}>{contactInformation.name}</h1>
                     </div>
                 </div>
                 {/* profession information */}
                 <div className='info-container'>
-                    <div className="professional-summary subtitle section">
+                    <div className="professional-summary subtitle section" style={fontStyles}>
                         <h2 style={fontStyles}>professional summary</h2>
-                        <div ></div>
                         {summery?.map((item) => {
                             return item != "" ? <p className="summery normal-paragraph" key={Math.random()}>{item}</p> : null
 
@@ -44,7 +43,7 @@ function Template4({ contactInformation, experiences, experience, educations, ed
                         <h2 style={fontStyles}>Experience</h2>
                         {experiences?.length > 0 ? experiences?.map((item) => {
                             return (
-                                <div key={Math.random()} className="experience-container">
+                                <div key={Math.random()} className="experience-container" style={fontStyles}>
                                     <p className="normal-title mb-5">{item?.jobTitle ? item.jobTitle : ''}</p>
                                     <p className="normal-paragraph">{item?.employer ? item.employer : ''}</p>
                                     <p className="normal-paragraph location">{(item?.city ? item.city : "") + (item?.country ? ", " + item?.country : '')}</p>
@@ -52,7 +51,7 @@ function Template4({ contactInformation, experiences, experience, educations, ed
                                     <p className="normal-paragraph">{' '}</p>
                                 </div>
                             )
-                        }) : <div>
+                        }) : <div style={fontStyles}>
                             <p className="normal-title mb-5">{experience?.jobTitle ? experience.jobTitle : ''}</p>
                             <p className="normal-paragraph">{experience?.employer ? experience.employer : ''}</p>
                             <p className="normal-paragraph location">{experience?.city ? experience.city : "" + ", " + experience?.state ? experience.state : ''}</p>
@@ -63,7 +62,7 @@ function Template4({ contactInformation, experiences, experience, educations, ed
                         <h2 style={fontStyles}>Education</h2>
                         {educations?.length > 0 ? educations?.map((item) => {
                             return (
-                                <div key={Math.random() + item} className="experience-container">
+                                <div key={Math.random() + item} className="experience-container" style={fontStyles}>
                                     <p className="normal-title mb-5">{(item?.degree ? item.degree : '') + (item?.fieldOfStudy ? ' : ' + item.fieldOfStudy : '')}</p>
                                     <p className="normal-paragraph">{item?.schoolName ? item.schoolName : ''}</p>
                                     <p className="normal-paragraph location">{(item?.city ? item.city : "") + (item?.state ? ", " + item?.state : '')}</p>
@@ -72,7 +71,7 @@ function Template4({ contactInformation, experiences, experience, educations, ed
                                 </div>
                             )
                         }) :
-                            <div className="experience-container">
+                            <div className="experience-container" style={fontStyles}>
                                 <p className="normal-title mb-5">{(education?.degree ? education.degree : '') + (education?.fieldOfStudy ? " : " + education.fieldOfStudy : '')}</p>
                                 <p className="normal-paragraph">{education?.schoolName ? education.schoolName : ''}</p>
                                 <p className="normal-paragraph location">{(education?.city ? education.city : "") + (education?.state ? ", " + education?.state : '')}</p>
@@ -93,10 +92,10 @@ function Template4({ contactInformation, experiences, experience, educations, ed
                         <p className='normal-text'>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path style={{ fill: "#fff" }} d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" /></svg>
                             {contactInformation?.phone ? contactInformation.phone : ''} </p>
-                        <p className='normal-text'>
+                        <p className='normal-text' >
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path style={{ fill: "#fff" }} d="M448 64H64C28.65 64 0 92.65 0 128v256c0 35.35 28.65 64 64 64h384c35.35 0 64-28.65 64-64V128C512 92.65 483.3 64 448 64zM64 112h384c8.822 0 16 7.178 16 16v22.16l-166.8 138.1c-23.19 19.28-59.34 19.27-82.47 .0156L48 150.2V128C48 119.2 55.18 112 64 112zM448 400H64c-8.822 0-16-7.178-16-16V212.7l136.1 113.4C204.3 342.8 229.8 352 256 352s51.75-9.188 71.97-25.98L464 212.7V384C464 392.8 456.8 400 448 400z" /></svg>
                             {contactInformation?.email ? contactInformation.email : ''}</p>
-                        <p className='normal-text location'>
+                        <p className='normal-text location' >
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path style={{ fill: "#fff" }} d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" /></svg>
                             {(contactInformation?.address ? contactInformation.address + ", " : '') +
                                 (contactInformation?.city ? contactInformation.city + ", " : '') +
@@ -113,7 +112,7 @@ function Template4({ contactInformation, experiences, experience, educations, ed
                             }) : null}
                         </ul>
                     </div>
-                    <div className='social-network section'>
+                    <div className='social-network section' style={styles}>
                         <h2 style={styles}>Social Network</h2>
                         <p className='normal-text'>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path style={{ fill: "#fff" }} d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" /></svg>

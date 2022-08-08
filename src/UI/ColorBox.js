@@ -7,7 +7,7 @@ function ColorBox({spanColor}) {
                         <label>colors</label>
                         <div className='colors'>
                             <span style={{ "--color": "#000" }} onClick={(e) => spanColor(e)}></span>
-                            <span style={{ "--color": "#436975" }} onClick={(e) => spanColor(e)}></span>
+                            <span style={{ "--color": "#ffc702" }} onClick={(e) => spanColor(e)}></span>
                             <span style={{ "--color": "#305fec" }} onClick={(e) => spanColor(e)}></span>
                             <span style={{ "--color": "#0e9fc1" }} onClick={(e) => spanColor(e)}></span>
                             <span style={{ "--color": "#7ebca3" }} onClick={(e) => spanColor(e)}></span>
@@ -20,7 +20,7 @@ function ColorBox({spanColor}) {
                             <span style={{ "--color": "#002661" }} onClick={(e) => spanColor(e)}></span>
                             <span style={{ "--color": "#633aa2" }} onClick={(e) => spanColor(e)}></span>
                             <span style={{ "--color": "#e80505" }} onClick={(e) => spanColor(e)}></span>
-                            <span style={{ "--color": "#360940" }} onClick={(e) => spanColor(e)}></span>
+                            <span style={{ "--color": "#87c03d" }} onClick={(e) => spanColor(e)}></span>
                             <span style={{ "--color": "#776483" }} onClick={(e) => spanColor(e)}></span>
                             <span style={{ "--color": "#0396ff" }} onClick={(e) => spanColor(e)}></span>
                             <span style={{ "--color": "#f55555" }} onClick={(e) => spanColor(e)}></span>

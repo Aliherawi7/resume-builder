@@ -1,5 +1,7 @@
 import React from 'react'
+import "./Template.css"
 import "./Template5.css"
+
 
 function Template5({ contactInformation, experiences, experience, educations, education, skills, summery, color, font }) {
     const backgroundColor = {

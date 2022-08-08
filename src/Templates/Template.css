@@ -17,8 +17,11 @@
     font-weight: 400;
     margin-bottom: 7px;
     display: flex;
+    color: #000;
     align-items: center;
     word-break: break-word;
+    text-align: justify;
+    font-family: inherit;
 }
 .template .normal-title{
     font-size: 14px;
@@ -35,7 +38,7 @@
 
 }
 .template .subtitle h2{
-    font-size: 14px;
+    font-size: 16px;
 }
 .template  h1, .template  h2{
     margin-bottom: 10px;
@@ -60,6 +63,7 @@
     margin-bottom: 3px;
     align-items: center;
     justify-content: flex-start;
+    font-family: inherit;
 }
 .template svg{
     margin-right: 6px;
