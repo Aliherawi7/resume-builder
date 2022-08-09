@@ -4,7 +4,7 @@ nav{
     height: 60px;
     display: flex;
     padding: 10px;
-    background-color: #2e2e2e;
+    background-color: #fff;
     z-index: 500;
 }
 nav a{
@@ -15,7 +15,7 @@ nav a{
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #fff;
+    color: #8cc63e;
 }
 
 .nav-links{
