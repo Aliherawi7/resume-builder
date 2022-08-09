@@ -1,4 +1,4 @@
-.home{
+.home {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,25 +10,29 @@
     animation-duration: .4s;
     min-height: 80vh;
 }
-.intro{
-    font-family: Maler;
+
+.intro {
+    font-family: Nexa;
     margin-top: 50px;
     max-width: 700px;
     padding-bottom: 85px;
-    
-} 
-.intro h2{
+
+}
+
+.intro h2 {
     color: #fff;
     font-size: 45px;
-    margin:-5px 0 ;
-    TEXT-SHADOW:0px 2px 2px #000;
+    margin: -5px 0;
+    TEXT-SHADOW: 0px 2px 2px #000;
 }
-.intro h3{ 
+
+.intro h3 {
     font-weight: 900;
     font-size: 25px;
     color: #000;
 }
-.intro h1{
+
+.intro h1 {
     font-size: 95px;
     font-weight: 900;
     color: #fff;
@@ -36,8 +40,9 @@
     letter-spacing: 5px;
     line-height: 80px;
     TEXT-SHADOW: 0px 8px 5px #000;
- }
-.intro button{
+}
+
+.intro button {
     margin-top: 20px;
     outline: none;
     border: none;
@@ -50,18 +55,76 @@
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-.intro button:hover{
+
+.intro button:hover {
     background-color: #ffffff;
     color: #8cc63e;
 }
-@media (max-width: 768px){
-    .intro h2{
+
+.popular-templates {
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 80vh;
+}
+
+.popular-templates .temp-item {
+    position: relative;
+    border-radius: 25px;
+    min-width: 340px;
+    height: 290px;
+    margin: 10px 5px;
+    background: #ddd;
+}
+.temp-item .template{
+    box-shadow: 1px 1px 20px 10px #000;
+}
+.temp-item .template4 {
+    padding-top: 0px;
+}
+
+.popular-templates .temp-item .template {
+    position: absolute;
+    transform: scale(.3);
+    top: -275px;
+    left: -190px;
+}
+.xlarg{
+    width: 40% !important;
+}
+.details{
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+}
+.browse-btn {
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 8px 15px;
+    background-color: #fff;
+    color: var(--color);
+    transition: background-color 0.3s , color 0.3s;
+
+}
+.browse-btn:hover{
+    background-color: var(--color);
+    color: #fff;
+    box-shadow: 1px 1px 10px 5px #000;
+}
+@media (max-width: 768px) {
+    .intro h2 {
         font-size: 35px;
-        padding: 10px ;
+        padding: 10px;
     }
-    .intro button{
+    .popular-templates .temp-item {
+        flex:1 1
+    }
+    .intro button {
         padding: 8px 20px;
         font-size: 18px;
     }
 }
-
