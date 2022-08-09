@@ -3,7 +3,8 @@ import "./Home.css"
 import { Link } from 'react-router-dom'
 import Templates from '../Templates/Templates.js'
 import example ,{templateColor} from '../Templates/example'
-import templates from '../Templates/Templates.js'
+import templates,{templatesName} from '../Templates/Templates.js'
+
 function Home() {
     return (
         <main className='m-LR'>
@@ -37,6 +38,7 @@ function Home() {
                                 font={"Maler"}
                             />}
                             <div className='details'>
+                                <h2>{templatesName[index].name}</h2>
                                 <Link to={"/build/getting-started&&color="+color.substring(1)+"&&template="+index}>
                                 <button className='browse-btn ' style={{"--color":color}}>Browse</button>
                                 </Link>
