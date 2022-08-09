@@ -40,7 +40,11 @@
 body {
   font-family: 'OpenSans';
 }
-
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
 *::-webkit-scrollbar {
   visibility: hidden;
   width: 8px;
@@ -157,7 +161,8 @@ body {
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
+  animation-iteration-count: 2;
+  animation-delay: .4;
 }
 /* ======================
    == end button hover ==
