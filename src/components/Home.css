@@ -3,40 +3,56 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #dfab4b;
+    background-color: #dcdcdc;
+    margin-top: 20px;
+    border-radius: 25px;
     animation-name: top-bottom-animate;
     animation-duration: .4s;
-    min-height: 100vh;
+    min-height: 80vh;
 }
 .intro{
+    font-family: Maler;
     margin-top: 50px;
     max-width: 700px;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
     padding-bottom: 85px;
+    
 } 
-.intro h2{ 
-    font: 600 46px/50px Montserrat,Arial,sans-serif;
-    font-family: Montserrat,Arial,sans-serif;
-    margin-bottom: 20px;
-    margin-top: 0;
+.intro h2{
     color: #fff;
+    font-size: 45px;
+    margin:-5px 0 ;
+    TEXT-SHADOW:0px 2px 2px #000;
 }
+.intro h3{ 
+    font-weight: 900;
+    font-size: 25px;
+    color: #000;
+}
+.intro h1{
+    font-size: 95px;
+    font-weight: 900;
+    color: #fff;
+    margin: 20px 0;
+    letter-spacing: 5px;
+    line-height: 80px;
+    TEXT-SHADOW: 0px 8px 5px #000;
+ }
 .intro button{
+    margin-top: 20px;
     outline: none;
     border: none;
-    border-radius: 2px;
-    padding: 15px 40px;
+    border-radius: 10px;
+    padding: 10px 20px;
     font-size: 20px;
     font-weight: 600;
     color: #fff;
     background-color: #8cc63e;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .intro button:hover{
-    background-color: #79ac37;
+    background-color: #ffffff;
+    color: #8cc63e;
 }
 @media (max-width: 768px){
     .intro h2{
