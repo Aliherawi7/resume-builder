@@ -83,8 +83,8 @@ function Build() {
                         {<BuildComponent.component addNewExperience={addNewExperience} pathLinkHandler={pathLinkHandler} addNewEducation={addNewEducation} />}
                     </div>
                     <div className="control-buttons">
-                        <button className="back" onClick={handleBackButton}>Back</button>
-                        <button className="save-next" onClick={handleNextButton}>Save & Next</button>
+                        <button className="back hvr-shadow-radial" onClick={handleBackButton}>Back</button>
+                        <button className="save-next hvr-shadow-radial" onClick={handleNextButton}>Save & Next</button>
                     </div>
                 </div>
                 <div className="page-preview">
