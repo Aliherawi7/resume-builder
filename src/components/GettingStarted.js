@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import './GettingStarted.css'
 import Templates,{templatesName} from '../Templates/Templates'
 import example from '../Templates/example'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate,useParams } from 'react-router-dom'
 import ColorBox from '../UI/ColorBox'
 import Fonts from '../UI/Fonts'
 
@@ -10,10 +10,12 @@ import Fonts from '../UI/Fonts'
 // controll build path
 let counter = 0
 function GettingStarted() {
-
-    const [Template, setTemplate] = useState({component:Templates[0]})
+    const { color, template } = useParams();
+    console.log(color)
+    console.log(template)
+    const [Template, setTemplate] = useState({component:Templates[template]})
     const [font, setFont] = useState('AlegreyaSans');
-    const [color, setColor] = useState('#87c03d')
+    const [tempColor, setColor] = useState("#"+color)
 
     //set the template color
     const spanColor = e => {
@@ -42,7 +44,7 @@ function GettingStarted() {
                     <div className='color-box'>
                         {<ColorBox spanColor={spanColor} />}
                         <Fonts fontChange={(fontName)=> setFont(fontName)} />
-                        <Link to={"/build/template&&color=" + color.slice(1)+"&&font="+ font + "&&template=" + counter} className='btn-select-template'>
+                        <Link to={"/build/template&&color=" + tempColor.slice(1)+"&&font="+ font + "&&template=" + counter} className='btn-select-template'>
                             SELECT THIS TEMPLATE
                         </Link>
                         <p><b>Can’t decide?</b> Don’t sweat it, you can always change your template later.</p>
@@ -59,7 +61,7 @@ function GettingStarted() {
                             summery={example.summery}
                             experience={example.experience}
                             education={example.education}
-                            color ={color}
+                            color ={tempColor}
                             font={font}
                         />}
                     </div>
