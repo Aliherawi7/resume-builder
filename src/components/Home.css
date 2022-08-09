@@ -35,11 +35,11 @@
 .intro h1 {
     font-size: 95px;
     font-weight: 900;
-    color: #fff;
+    color: #8cc63e;
     margin: 20px 0;
     letter-spacing: 5px;
     line-height: 80px;
-    TEXT-SHADOW: 0px 8px 5px #000;
+    TEXT-SHADOW: 5px 1px 5px #000;
 }
 
 .intro button {
@@ -78,6 +78,11 @@
     height: 290px;
     margin: 10px 5px;
     background: #ddd;
+    transition: transform .3s, box-shadow .3s;
+}
+.popular-templates .temp-item:hover {
+    box-shadow: 0px 0px 8px 4px #9b9b9b;
+    transform: scale(1.03);
 }
 .temp-item .template{
     box-shadow: 1px 1px 20px 10px #000;
@@ -99,6 +104,14 @@
     position: absolute;
     right: 20px;
     bottom: 50px;
+    text-align: right;
+}
+.details h2{
+    margin-bottom: 50px;
+    color: #fff;
+    font-weight: 900;
+    width: 110px;
+    word-break: break-word;
 }
 .browse-btn {
     font-size: 12px;
@@ -115,6 +128,8 @@
     color: #fff;
     box-shadow: 1px 1px 10px 5px #000;
 }
+
+
 @media (max-width: 768px) {
     .intro h2 {
         font-size: 35px;
