@@ -4,7 +4,7 @@ nav{
     height: 60px;
     display: flex;
     padding: 10px;
-    background-color: #2e2e2e;
+    background-color: #fff;
     z-index: 500;
 }
 nav a{
@@ -15,7 +15,7 @@ nav a{
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #fff;
+    color: #000;
 }
 
 .nav-links{
@@ -25,7 +25,6 @@ nav a{
 nav .nav-brand{
     width: 90px;
     margin-right: 50px;
-    margin-left: 60px;
     cursor: pointer;
 } 
 .nav-links a:hover{
@@ -35,7 +34,7 @@ nav .nav-brand{
     display: none;
     align-items: center;
     font-size: 50px;
-    color: #fff;
+    color: #8cc63e;
     justify-self: flex-end;
 }
 
@@ -59,16 +58,15 @@ nav .nav-brand{
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
-        position: absolute;
-        visibility: hidden;
+        position: fixed;
         top: 60px;
-        background: #2e2e2e;
+        background: #fff;
         width: 100%;
         left: 0;
         padding: 10px 30px;
         transform: scaleY(0);
         transform-origin: top;
-        transition: transform .3s, visibility .1s ;
+        transition: transform .2s ease-in;
         z-index: -600;
     }
     .nav-toggle-links a{

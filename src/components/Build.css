@@ -75,7 +75,7 @@
     background-color: #8cc63e;
 }
 
-.links .active a{
+.links .active span{
     color: #8cc63e;
 }
 .links .active:before{

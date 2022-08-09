@@ -1,3 +1,5 @@
+import templates from "./Templates"
+
 const example = {
     contactInformation : {
         name: 'Contact Name',
@@ -27,5 +29,5 @@ const example = {
     skills: ['react', 'spring boot', 'java', 'javascript', 'html', 'css', 'git'],
     summery: ['Successful sales professional with 10+ years experience in large-scale food and retail environments.']
 }
-
+export const templateColor = ["#ffc702","#305fec","#f55555","#9f44d3","#0396ff","#87c03d"];
 export default example

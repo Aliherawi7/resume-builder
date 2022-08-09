@@ -5,7 +5,7 @@ import "./Nav.css"
 function Nav() {
     const [state, setState] = useState(false)
     return (
-        <nav>
+        <nav className='m-LR'>
             <Link to="/">
                 <img className="nav-brand" src="/image/logo2.png" alt="logo" />
             </Link>
@@ -20,8 +20,7 @@ function Nav() {
                 <i className='bi bi-list'></i>
             </div>
             <div className="nav-toggle-links" style={{
-                transform: state ? "translateY(0)" : "translateY(-30px)",
-                visibility: state ? "visible":"hidden",
+                transform: state ? "translateY(0)" : "translateY(-300px)"
             }}>
                 <Link to="/"><i className='bi bi-house-fill'></i> Home</Link>
                 <Link to="/templates"><i className='bi bi-file-text-fill'></i> Templates</Link>
