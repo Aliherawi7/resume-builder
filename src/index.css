@@ -31,7 +31,9 @@
   src: url('./assets/fonts/NexaTextDemo-Light.woff');
   src: url('./assets/fonts/NexaTextDemo-Bold.woff');
 }
-
+body{
+  font-family: 'OpenSans';
+}
 *::-webkit-scrollbar{
   visibility: hidden;
   width: 8px;
