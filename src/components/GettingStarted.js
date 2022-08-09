@@ -13,7 +13,7 @@ function GettingStarted() {
 
     const [Template, setTemplate] = useState({component:Templates[0]})
     const [font, setFont] = useState('AlegreyaSans');
-    const [color, setColor] = useState('#000')
+    const [color, setColor] = useState('#87c03d')
 
     //set the template color
     const spanColor = e => {
@@ -51,7 +51,7 @@ function GettingStarted() {
                     
                 </div>
                 <div className='template-slider'>
-                    <button className='btn-left' onClick={nextHandler}><i className='bi bi-chevron-left'></i></button>
+                    <button className='btn-left hvr-shrink ' onClick={nextHandler}><i className='bi bi-chevron-left'></i></button>
                     <div className='page-preview'>
                        {<Template.component
                             contactInformation={example.contactInformation}
@@ -63,7 +63,7 @@ function GettingStarted() {
                             font={font}
                         />}
                     </div>
-                    <button className='btn-right' onClick={prevHandler}><i className='bi bi-chevron-right'></i></button>
+                    <button className='btn-right hvr-shrink ' onClick={prevHandler}><i className='bi bi-chevron-right'></i></button>
                 </div>
             </div>
         </div>
