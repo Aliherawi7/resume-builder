@@ -44,7 +44,7 @@ function GettingStarted() {
                     <div className='color-box'>
                         {<ColorBox spanColor={spanColor} />}
                         <Fonts fontChange={(fontName)=> setFont(fontName)} />
-                        <Link to={"/build/template&&color=" + tempColor.slice(1)+"&&font="+ font + "&&template=" + counter} className='btn-select-template'>
+                        <Link to={"/build/template&&color=" + tempColor.slice(1)+"&&font="+ font + "&&template=" + counter} className='btn-select-template hvr-shadow-radial'>
                             SELECT THIS TEMPLATE
                         </Link>
                         <p><b>Can’t decide?</b> Don’t sweat it, you can always change your template later.</p>
