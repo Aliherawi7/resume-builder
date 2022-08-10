@@ -67,17 +67,17 @@ function Template5({ contactInformation, experiences, experience, educations, ed
                 <div className="container-B">
                     <div className=" subtitle section">
                         <h2 style={fontStyles}>professional summary</h2>
-                        <div className='professional-summary'>
+                        <div className='professional-summary' style={fontStyles}>
                             {summery?.map((item) => {
                                 return item != "" ? <p className="summery normal-paragraph" key={Math.random()}>{item}</p> : null
                             })}
                         </div>
                     </div>
-                    <div className="experience subtitle section">
+                    <div className="experience subtitle section" style={fontStyles}>
                         <h2 style={fontStyles}>Experience</h2>
                         {experiences?.length > 0 ? experiences?.map((item) => {
                             return (
-                                <div key={Math.random()} className="experience-container">
+                                <div key={Math.random()} className="experience-container" >
                                     <p className="normal-title mb-5">{item?.jobTitle ? item.jobTitle : ''}</p>
                                     <p className="normal-paragraph">{item?.employer ? item.employer : ''}</p>
                                     <p className="normal-paragraph location">{(item?.city ? item.city : "") + (item?.country ? ", " + item?.country : '')}</p>
@@ -85,14 +85,14 @@ function Template5({ contactInformation, experiences, experience, educations, ed
                                     <p className="normal-paragraph">{' '}</p>
                                 </div>
                             )
-                        }) : <div>
+                        }) : <div >
                             <p className="normal-title mb-5">{experience?.jobTitle ? experience.jobTitle : ''}</p>
                             <p className="normal-paragraph">{experience?.employer ? experience.employer : ''}</p>
                             <p className="normal-paragraph location">{experience?.city ? experience.city : "" + ", " + experience?.state ? experience.state : ''}</p>
                             <p className="normal-paragraph">{(experience?.startDate ? experience.startDate : '') + (experience?.endDate ? " - " + experience.endDate : '')}</p>
                         </div>}
                     </div>
-                    <div className="education subtitle section">
+                    <div className="education subtitle section" style={fontStyles}>
                         <h2 style={fontStyles}>Education</h2>
                         {educations?.length > 0 ? educations?.map((item) => {
                             return (

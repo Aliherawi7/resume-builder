@@ -146,3 +146,6 @@
     bottom: -10px;
     z-index: 10;
 }
+.template4 .social-network h2{
+    font-family: inherit;
+}
