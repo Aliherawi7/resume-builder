@@ -43,8 +43,8 @@ function DownloadResume() {
         <div className="download-resume">
             <div className='edit-panel'>
                 <div className='button-container'>
-                    <button onClick={download}><i className='bi bi-download'></i> Download</button>
-                    <button onClick={backToBuildPage}><i className='bi bi-pencil-fill'></i> edit information</button>
+                    <button onClick={download} className="hvr-shrink"><i className='bi bi-download '></i> Download</button>
+                    <button onClick={backToBuildPage} className="hvr-shrink"><i className='bi bi-pencil-fill'></i> edit information</button>
                 </div>
 
             </div>
@@ -109,7 +109,7 @@ function DownloadResume() {
                                 </div>
                             </div>
                         </div>
-                        <button className='choose-template' onClick={() => setShowTemplates(!showTemplates)}>Change Template</button>
+                        <button className='choose-template hvr-shrink' onClick={() => setShowTemplates(!showTemplates)}>Change Template</button>
                     </div>
                     <div className='color-component styling-component'>
                         {<ColorBox spanColor={spanColor} />}
