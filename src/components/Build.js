@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import "./Build.css"
 import { useNavigate, useParams } from 'react-router-dom'
 import Modal from '../UI/Modal'
@@ -9,10 +9,15 @@ import { useStateValue } from '../StateProvider'
 //this is  next and back buttons controller
 let counter = 0;
 function Build() {
+
+    //get the necessary parameter from route url
     const { color, template, font } = useParams()
     const navigate = useNavigate()
+
+    // show a quick preview of the current template in modal
     const [showPage, setShowPage] = useState(false)
 
+    // get the data from data layer for Template
     const [state, dispatch] = useStateValue()
 
     // keep the build step component e.g contact, experience
@@ -21,6 +26,10 @@ function Build() {
     // keep the paper template while adding information
     const [TemplateComponent, setTemplateComponent] = useState({ component: templates[template] })
 
+    // When the next or previous button clicked the page scrolls to top
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, [BuildComponent])
     // go to te next build step
     const handleNextButton = () => {
         if (counter >= buildTools.length - 1) {
@@ -34,7 +43,7 @@ function Build() {
     // go to te previous build step
     const handleBackButton = () => {
         if (counter <= 0) {
-            navigate('/build/getting-started')
+            navigate("/build/getting-started&&color="+color+"&&template="+template)
             return
         }
         counter--
@@ -57,7 +66,7 @@ function Build() {
         pathLinkHandler(counter)
     }
     return (
-        <div className="build">
+        <div className="build fade-in m-LR">
             <div className="build-path">
                 <div className='path-name-medium'>
                     <span className={counter == 0 ? "active" : ""}>get started</span>
