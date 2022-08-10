@@ -1,8 +1,6 @@
 .build{
     display: flex;
     flex-direction: column;
-    animation-name: right-to-left;
-    animation-duration: .4s;
     padding-bottom: 20px;
 }
 
@@ -11,8 +9,7 @@
     width: 100%;
     z-index: 1;
     border-bottom: 1px solid #d9d9d9;
-    padding: 5px 20px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 .build-path .path-name-medium span{
     display: none;
@@ -22,7 +19,6 @@
     list-style: none;
     width: 100%;
     padding: 5px 0;
-    counter-reset: step;
 }
 
 .links li {
@@ -150,9 +146,7 @@
 /* build tools */
 .build-tools{
     display: flex;
-    width: 595px;
     height: max-content;
-    margin-left: 70px;
     flex-direction: column;
     overflow: hidden;
 }
@@ -205,16 +199,13 @@
     .build-container{
         justify-content: center;
     }
-    .build-container .build-tools{
-        margin:0  30px;
-    }
     
 }
 @media(max-width: 768px){
     .build-path {
         display: flex;
         justify-content: space-between;
-        margin-top: 20px;
+        margin-top: 40px;
     }
     .build-path .links{
         width: 60%;
