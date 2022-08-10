@@ -1,6 +1,4 @@
 .getting-started .container {
-    margin-left: 20px;
-    padding: 0 30px;
     padding-top: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -83,11 +81,24 @@
     top: 45%;
     right: 24px;
 }
+.getting-started {
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+  }
 
-@media(max-width:768px){
+@media(max-width: var(--breakpoint-md)){
+    .getting-started .template-slider{
+        transform:scale(.7);
+        margin-top: -190px;
+    }
+}
+
+@media(max-width:576px){
     .getting-started .template-slider{
         transform:scale(.5);
-        margin-top: -100px;
+        margin-top: -190px;
     }
 }
 
