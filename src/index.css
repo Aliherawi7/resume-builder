@@ -34,6 +34,7 @@
 
 body {
   font-family: 'OpenSans';
+  scroll-behavior: smooth;
 }
 button {
   outline: none;
@@ -77,7 +78,7 @@ button {
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
-.hvr-push:hover, .hvr-push:focus, .hvr-push:active {
+.hvr-push:hover{
   -webkit-animation-name: hvr-push;
   animation-name: hvr-push;
   -webkit-animation-duration: 0.3s;
@@ -100,7 +101,7 @@ button {
 }
 .hvr-shrink:hover {
   -webkit-transform: scale(0.9);
-  transform: scale(0.9);
+  transform: scale(0.97);
 }
 
 .hvr-shadow-radial {
@@ -167,6 +168,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/*========= all the aniations ============= */
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: .6s;
+  animation-timing-function: cubic-bezier(0.55, 0.01, 0.12, 0.97);
+}
+.bottom-to-top {
+  animation-name: bottom-to-top;
+  animation-duration: .8s;
+  animation-timing-function: cubic-bezier(0.55, 0.01, 0.12, 0.97);
+}
+
 @keyframes hvr-buzz-out {
   10% {
     -webkit-transform: translateX(3px) rotate(2deg);
@@ -210,7 +225,6 @@ code {
   }
 }
 
-/* all the aniations */
 @keyframes top-bottom-animate {
   from {
     transform: translateY(-100vh);
@@ -257,9 +271,27 @@ code {
     transform: scale(0);
 
   }
-
   to {
     transform-origin: top;
     transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bottom-to-top {
+  from {
+    transform: translateY(-100vh);
+  }
+
+  to {
+    transform: translateY(0);
   }
 }
