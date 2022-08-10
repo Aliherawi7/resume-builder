@@ -6,8 +6,6 @@
     background-color: #dcdcdc;
     margin-top: 20px;
     border-radius: 25px;
-    animation-name: top-bottom-animate;
-    animation-duration: .4s;
     min-height: 80vh;
 }
 
@@ -124,7 +122,7 @@
 
 }
 .browse-btn:hover{
-    background-color: var(--color);
+    background-color: transparent;
     color: #fff;
     box-shadow: 1px 1px 10px 5px #000;
 }
