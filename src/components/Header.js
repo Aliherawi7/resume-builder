@@ -42,13 +42,13 @@ function Header() {
                 <Link to={"/templates"} onClick={() => setActive("/works")}>
                     <span className={state.includes("/templates") ? "active" : ""}>Templates</span>
                 </Link>
-                <Link to={"/blog"} onClick={() => setActive("/blog")}>
-                    <span className={state.includes("/blog") ? "active" : ""}>About</span>
+                <Link to={"/about"} onClick={() => setActive("/blog")}>
+                    <span className={state.includes("/about") ? "active" : ""}>About</span>
                 </Link>
             </nav>
             <div className='toggle-menu'>
-                <input type="checkbox" onChange={() => setShowMenu(!showMenu)} class="toggle" />
-                <div class="burger">
+                <input type="checkbox" onChange={() => setShowMenu(!showMenu)} className="toggle" />
+                <div className="burger">
                     <div></div>
                 </div>
             </div>

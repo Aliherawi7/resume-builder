@@ -23,6 +23,9 @@
     border: 1px solid #fff;
     font-weight: 700;
 }
+.header nav span:hover{
+    color: #8cc63e;
+}
 
 .header nav .active{
     color: #8cc63e;
