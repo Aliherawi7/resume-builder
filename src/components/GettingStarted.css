@@ -47,7 +47,7 @@
 }
 
 .getting-started .page-preview {
-    margin-top: -65px;
+    margin-top: 20px;
     box-shadow: 1px 1px 20px 10px rgb(0 0 0 / 25%);
     transform: scale(.84);
 }
@@ -81,14 +81,9 @@
     top: 45%;
     right: 24px;
 }
-.getting-started {
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-  }
 
-@media(max-width: var(--breakpoint-md)){
+
+@media(max-width: 768px){
     .getting-started .template-slider{
         transform:scale(.7);
         margin-top: -190px;
