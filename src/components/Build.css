@@ -1,19 +1,21 @@
-.build{
+.build {
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
 }
 
 /* build path */
-.build-path{
+.build-path {
     width: 100%;
     z-index: 1;
     border-bottom: 1px solid #d9d9d9;
     margin-top: 40px;
 }
-.build-path .path-name-medium span{
+
+.build-path .path-name-medium span {
     display: none;
 }
+
 .build-path .links {
     display: flex;
     list-style: none;
@@ -28,17 +30,19 @@
     text-align: center;
     cursor: pointer;
 }
-.build-path span{
+
+.build-path span {
     font-weight: 700;
     text-transform: uppercase;
     color: #000;
 }
-.links li:hover span{
+
+.links li:hover span {
     color: #8cc63e;
 }
 
-.links li:before{
-    content:'';
+.links li:before {
+    content: '';
     width: 13px;
     height: 13px;
     border: 2px solid #d9d9d9;
@@ -50,47 +54,51 @@
     color: #d9d9d9;
     text-align: center;
     font-weight: bold;
-    transition: border-color 0.4s, background-color 0.4s ;
+    transition: border-color 0.4s, background-color 0.4s;
 }
-.links li:after{
+
+.links li:after {
     content: '';
     position: absolute;
-    width:100%;
+    width: 100%;
     height: 3px;
     background: #d9d9d9;
     top: 8px;
     left: -50%;
     z-index: -1;
-    transition:background-color 0.4s ;
+    transition: background-color 0.4s;
 }
 
-.links li:first-child::after{
+.links li:first-child::after {
     display: none;
 }
-.links .active:after{
+
+.links .active:after {
     background-color: #8cc63e;
 }
 
-.links .active span{
+.links .active span {
     color: #8cc63e;
 }
-.links .active:before{
+
+.links .active:before {
     border-color: #8cc63e;
     background-color: #8cc63e;
     color: #fff;
 }
+
 /* end build path */
 
-.build-container{
+.build-container {
     position: relative;
     display: flex;
     padding-top: 30px;
     justify-content: space-between;
-    color : #333;
+    color: #333;
 }
 
 /* page preview */
-.build-container .page-preview{
+.build-container .page-preview {
     position: relative;
     flex-shrink: 0;
     box-shadow: 1px 1px 46px 10px rgb(0 0 0 / 25%);
@@ -102,14 +110,16 @@
     transform: scale(0.6);
 
 }
-.document{
+
+.document {
     top: 0;
     left: 0;
     position: absolute;
     width: 595px;
     height: min-content;
 }
-.expand{
+
+.expand {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -121,7 +131,8 @@
     height: 100%;
     z-index: 200;
 }
-.expand span{
+
+.expand span {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,32 +145,39 @@
     cursor: pointer;
     z-index: 201;
 }
-.expand:hover span{
+
+.expand:hover span {
     transform: scale(1.8);
 }
-.expand span i{
+
+.expand span i {
     color: #fff;
     font-size: 35px;
 }
+
 /*end page preview */
 
 /* build tools */
-.build-tools{
+.build-tools {
     display: flex;
     height: max-content;
     flex-direction: column;
     overflow: hidden;
+    min-width: 50%;
 }
-.control-buttons{
+
+.control-buttons {
     margin-top: 40px;
     align-self: flex-end;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
-.control-buttons button{
+
+.control-buttons button {
     cursor: pointer;
-    font-family: "Source Sans Pro",Arial,sans-serif;;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    ;
     border: none;
     font-size: 16px;
     font-weight: 700;
@@ -171,51 +189,63 @@
     text-align: center;
     margin-bottom: 10px;
 }
-.control-buttons .back{
+
+.control-buttons .back {
     background-color: #fafafa;
     color: #333;
     border: 1px solid #ddd;
 }
-.control-buttons .back:hover{
+
+.control-buttons .back:hover {
     border-color: #aaa;
     background: #f2f2f2;
     color: #333;
 }
-.control-buttons .save-next{
+
+.control-buttons .save-next {
     background-color: #8cc63e;
     color: #fff;
 }
-.control-buttons .save-next:hover{
+
+.control-buttons .save-next:hover {
     background-color: #6db115;
 }
 
 /* end build tools */
 
 /* resposive and breakpoints */
-@media(max-width : 920px){
-    .build-container .page-preview{
+@media(max-width : 920px) {
+    .build-container .page-preview {
         display: none;
     }
-    .build-container{
+
+    .build-container {
         justify-content: center;
     }
-    
+    .build-tools {
+        width: 100%;
+    }
 }
-@media(max-width: 768px){
+
+@media(max-width: 768px) {
+    
+
     .build-path {
         display: flex;
         justify-content: space-between;
-        margin-top: 40px;
+        margin-top: 20px;
     }
-    .build-path .links{
+
+    .build-path .links {
         width: 60%;
     }
 
-    .build-path .path-name-medium .active{
+    .build-path .path-name-medium .active {
         display: inline;
         font-size: 14px;
     }
-    .build-path .links span{
+
+    .build-path .links span {
         display: none;
     }
 }
