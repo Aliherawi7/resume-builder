@@ -27,7 +27,7 @@
 }
 
 .btn-select-template {
-    background: #00c293;
+    background: #8cc63e;
     color: #fff;
     cursor: pointer;
     font-size: 16px;
@@ -41,7 +41,7 @@
 }
 
 .btn-select-template:hover {
-    background-color: #059470;
+    background-color: #6db115;
 }
 
 .color-box p {
@@ -50,7 +50,7 @@
 
 .getting-started .page-preview {
     margin-top: -65px;
-    box-shadow: 1px 1px 46px 10px rgb(0 0 0 / 25%);
+    box-shadow: 1px 1px 20px 10px rgb(0 0 0 / 25%);
     transform: scale(.84);
 }
 
