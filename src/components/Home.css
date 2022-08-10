@@ -5,7 +5,7 @@
     flex-direction: column;
     background-color: #dcdcdc;
     margin-top: 20px;
-    border-radius: 25px;
+    border-radius: 15px;
     min-height: 80vh;
 }
 
@@ -66,12 +66,11 @@
     align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 80vh;
 }
 
 .popular-templates .temp-item {
     position: relative;
-    border-radius: 25px;
+    border-radius: 15px;
     min-width: 340px;
     height: 290px;
     margin: 10px 5px;
@@ -110,6 +109,7 @@
     font-weight: 900;
     width: 110px;
     word-break: break-word;
+    text-shadow: 0px 2px 5px #000;
 }
 .browse-btn {
     font-size: 12px;
@@ -128,16 +128,35 @@
 }
 
 
-@media (max-width: 768px) {
-    .intro h2 {
-        font-size: 35px;
-        padding: 10px;
-    }
-    .popular-templates .temp-item {
-        flex:1 1
-    }
+@media(max-width:576px){
     .intro button {
-        padding: 8px 20px;
-        font-size: 18px;
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    .intro h2 {
+        font-size: 25px;
+    }
+    
+    .intro h3 {
+        font-size: 20px;
+    }
+    .intro h1 {
+        font-size: 40px;
+        margin:0;
+        letter-spacing: 2px;
+        line-height: 70px;
+        TEXT-SHADOW: 5px 1px 5px #000;
+    }
+    .popular-templates .temp-item .template {
+        position: absolute;
+        transform: scale(.25);
+        top: -275px;
+        left: -210px;
+    }
+}
+@media (max-width: 768px) {
+    .popular-templates .temp-item {
+        flex:1 1;
+        min-width: 250px;
     }
 }
