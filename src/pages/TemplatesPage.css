@@ -1,0 +1,67 @@
+.getting-started .container {
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.getting-started .container .template-tools h2{
+    margin-bottom: 10px;
+}
+.getting-started .container .template-tools{
+    margin-bottom: 30px;
+    animation-name: right-to-left;
+    animation-duration: .9s;
+    max-width: 400px;
+}
+.getting-started .container .template-slider{
+    animation-name: left-to-right;
+    animation-duration: .9s;
+    flex-direction: row-reverse;
+}
+.color-box {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-select-template {
+    background: #8cc63e;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    justify-self: center;
+    text-align: center;
+}
+
+.btn-select-template:hover {
+    background-color: #6db115;
+}
+
+.color-box p {
+    margin-top: 20px;
+}
+
+.getting-started .page-preview {
+    margin-top: -65px;
+    box-shadow: 1px 1px 20px 10px rgb(0 0 0 / 25%);
+    transform: scale(.84);
+}
+
+@media(max-width: 768px){
+    .getting-started .template-slider{
+        transform:scale(.7);
+        margin-top: -130px;
+    }
+}
+
+@media(max-width:576px){
+    .getting-started .template-slider{
+        transform:scale(.5);
+        margin-top: -190px;
+    }
+}
