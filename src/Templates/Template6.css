@@ -18,7 +18,8 @@
     width: 100%;
 }
 .template6 .main-container .profile-picture img{
-    width: 100%
+    width: 100%;
+    max-height: 210px;
 }
 .template6 .main-container .contact-name{
     padding: 15px;

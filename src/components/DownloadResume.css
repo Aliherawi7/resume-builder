@@ -28,7 +28,7 @@
     right: 20px;
     width: 40px;
     height: 40px;
-    background-color: #00c293;
+    background-color: #8cc63e;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -42,7 +42,7 @@
     min-height: 40px;
     margin: 0 10px 10px 10px;
     cursor: pointer;
-    background-color: #05daa4;
+    background-color: #8cc63e;
     outline: none;
     border: none;
     border-radius: 5px;
@@ -54,7 +54,7 @@
 }
 
 .edit-panel .button-container button:hover {
-    background-color: #00c293;
+    background-color: #6db115;
 }
 
 
@@ -87,7 +87,7 @@
 }
 
 .download-resume .choose-template {
-    background: #00c293;
+    background: #8cc63e;
     color: #fff;
     cursor: pointer;
     font-size: 16px;
@@ -103,7 +103,7 @@
 }
 
 .choose-template:hover {
-    background-color: #059470;
+    background-color: #6db115;
 }
 
 .download-resume .styling-component {

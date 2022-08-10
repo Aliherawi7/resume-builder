@@ -1,12 +1,21 @@
- .m-LR{
+ .m-LR {
      margin-left: 30px;
      margin-right: 30px;
  }
 
+ .p-LR {
+     padding-left: 30px;
+     padding-right: 30px;
+ }
 
- @media(max-width:768px){
-    .m-LR{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+ @media(max-width:768px) {
+     .m-LR {
+         margin-left: 20px;
+         margin-right: 20px;
+     }
+
+     .p-LR {
+         padding-left: 20px;
+         padding-right: 20px;
+     }
  }

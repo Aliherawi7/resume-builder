@@ -1,8 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import './GettingStarted.css'
 import Templates,{templatesName} from '../Templates/Templates'
 import example from '../Templates/example'
-import { Link, useNavigate,useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import ColorBox from '../UI/ColorBox'
 import Fonts from '../UI/Fonts'
 
@@ -11,12 +11,16 @@ import Fonts from '../UI/Fonts'
 let counter = 0
 function GettingStarted() {
     const { color, template } = useParams();
-    console.log(color)
-    console.log(template)
     const [Template, setTemplate] = useState({component:Templates[template]})
     const [font, setFont] = useState('AlegreyaSans');
     const [tempColor, setColor] = useState("#"+color)
-
+    
+    // scroll top on laoding the component
+    useEffect(() => {
+        setTimeout(()=>{
+            window.scrollTo(0,0);
+        },1000)
+    }, [])
     //set the template color
     const spanColor = e => {
         let selectedColor = "#" + (e.target.outerHTML.split('#')[1].split(';')[0])
@@ -36,7 +40,7 @@ function GettingStarted() {
         setTemplate({component:Templates[counter]})
     }
     return (
-        <div className="getting-started">
+        <div className="getting-started m-LR">
             <div className='container'>
                 <div className="template-tools">
                     <h2>{templatesName[counter].name}</h2>
@@ -44,7 +48,7 @@ function GettingStarted() {
                     <div className='color-box'>
                         {<ColorBox spanColor={spanColor} />}
                         <Fonts fontChange={(fontName)=> setFont(fontName)} />
-                        <Link to={"/build/template&&color=" + tempColor.slice(1)+"&&font="+ font + "&&template=" + counter} className='btn-select-template'>
+                        <Link to={"/build/template&&color=" + tempColor.slice(1)+"&&font="+ font + "&&template=" + counter} className='btn-select-template hvr-shadow-radial'>
                             SELECT THIS TEMPLATE
                         </Link>
                         <p><b>Can’t decide?</b> Don’t sweat it, you can always change your template later.</p>

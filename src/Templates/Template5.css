@@ -30,7 +30,8 @@
     border-radius: 100px;
 }
 .template5 .container-A .profile-picture img{
-    width: 134px;;
+    width: 134px;
+    height: 134px;
     margin: 10px;
     border-radius: 100px;
 }
