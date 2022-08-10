@@ -7,9 +7,9 @@ import templates,{templatesName} from '../Templates/Templates.js'
 
 function Home() {
     return (
-        <main className='m-LR'>
+        <main className='m-LR fade-in'>
             <div className="home">
-                <div className="intro">
+                <div className="intro ">
                     <h3>BUILD</h3>
                     <h2>YOUR</h2>
                     <h1>RESUME</h1>
@@ -40,7 +40,7 @@ function Home() {
                             <div className='details'>
                                 <h2>{templatesName[index].name}</h2>
                                 <Link to={"/build/getting-started&&color="+color.substring(1)+"&&template="+index}>
-                                <button className='browse-btn ' style={{"--color":color}}>Browse</button>
+                                <button className='browse-btn'>Browse</button>
                                 </Link>
                             </div>
                         </div>
