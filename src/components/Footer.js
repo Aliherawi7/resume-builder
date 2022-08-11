@@ -15,8 +15,8 @@ function Footer() {
                     </p>
                     <div className='social-network'>
                         <Link to="" style={{ "--color": "#e91e63" }}><i className='bi bi-instagram'></i></Link>
-                        <Link to="" ><i className='bi bi-github'></i></Link>
-                        <Link to="" style={{ "--color": "#0d99dc" }}><i className='bi bi-linkedin'></i></Link>
+                        <Link to="https://github.com/Aliherawi7/resume-builder.git" ><i className='bi bi-github'></i></Link>
+                        <Link to="https://linkedin.com/in/ali-herawi" style={{ "--color": "#0d99dc" }}><i className='bi bi-linkedin'></i></Link>
                         <Link to="" style={{ "--color": "#0396ff" }}><i className='bi bi-twitter'></i></Link>
                     </div>
                 </div>
