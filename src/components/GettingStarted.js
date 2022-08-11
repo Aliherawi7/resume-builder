@@ -45,7 +45,7 @@ function GettingStarted() {
     return (
         <div className="getting-started m-LR">
             <div className='container'>
-                <div className="template-tools">
+                <div className="template-tools right-to-left">
                     <h2>{templatesName[counter===undefined? Number.parseInt(template):counter].name}</h2>
                     <p className='template-description'>{templatesName[counter===undefined? Number.parseInt(template):counter].description}</p>
                     <div className='color-box'>
@@ -59,7 +59,7 @@ function GettingStarted() {
                     </div>
                     
                 </div>
-                <div className='template-slider'>
+                <div className='template-slider left-to-right'>
                     <button className='btn-left hvr-shrink ' onClick={nextHandler}><i className='bi bi-chevron-left'></i></button>
                     <div className='page-preview'>
                        {<Template.Component
