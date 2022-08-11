@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./TemplatesPage.css"
 import Templates, { templatesName } from '../Templates/Templates'
 import example, { templateColor } from '../Templates/example'
@@ -15,7 +15,9 @@ function TemplatesPage() {
     const [template, setTemplate] = useState({ component: Templates[index] })
     const [font, setFont] = useState('AlegreyaSans');
     const [tempColor, setTemColor] = useState("#000");
-
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    },[])
 
     //set the template color
     const spanColor = e => {
@@ -32,7 +34,7 @@ function TemplatesPage() {
         <div className='templates-page fade-in m-LR'>
             <div className='getting-started'>
                 <div className='container'>
-                    <div className="template-tools">
+                    <div className="template-tools right-to-left">
                         <h2>{templatesName[index].name}</h2>
                         <p className='template-description'>{templatesName[index].description}</p>
                         <div className='color-box'>
@@ -46,7 +48,7 @@ function TemplatesPage() {
                         </div>
 
                     </div>
-                    <div className='template-slider'>
+                    <div className='template-slider left-to-right'>
                         <div className='page-preview'>
                             {<template.component
                                 contactInformation={example.contactInformation}
