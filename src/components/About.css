@@ -57,27 +57,7 @@
 .about-container .contact-me a:hover{
     color: var(--color);
 }
-.about footer{
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-.about footer .copyright{
-    padding: 20px;
-    text-align: center;
-}
-footer .footer-logo img{
-    width: 180px;
-}
-footer .credits a{
-    color: #8cc63e;
-}
+
 @media(max-width:540px){
     .logo-main img{
         width: 150px;
@@ -88,9 +68,6 @@ footer .credits a{
     }
     .about-container h1{
         font-size: 44px;
-    }
-    footer h1{
-        font-size: 20px;
     }
     .copyright{
         font-size: 12px;
