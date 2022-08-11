@@ -2,7 +2,7 @@ import React from 'react'
 import "./About.css"
 function About() {
     return (
-        <div className='about'>
+        <div className='about fade-in m-LR'>
             <div className='about-container'>
                 <div className='logo-main'>
                     <img src='./image/logo2.png' alt='resume-builder' />
@@ -20,5 +20,4 @@ function About() {
         </div>
     )
 }
-
 export default About
