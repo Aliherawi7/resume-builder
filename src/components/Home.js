@@ -1,9 +1,14 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import "./Home.css"
 import { Link } from 'react-router-dom'
 import PopularTemplate from "./PopularTemplate"
 
 function Home() {
+    useEffect(() => {
+        setTimeout(()=>{
+            window.scrollTo(0,0);
+        },10)
+    }, [])
     return (
         <main className='m-LR fade-in'>
             <div className="home">
