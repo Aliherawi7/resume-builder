@@ -184,6 +184,29 @@ code {
   animation-duration: .8s;
   animation-timing-function: cubic-bezier(0.55, 0.01, 0.12, 0.97);
 }
+.right-to-left{
+  animation-name: right-to-left;
+  animation-duration: .9s;
+}
+.left-to-right{
+  animation-name: left-to-right;
+  animation-duration: .9s;
+}
+
+
+@media(max-width:768px){
+  .bottom-to-top,
+  .right-to-left,
+  .left-to-right{
+    animation-name: fade-in;
+    animation-duration: .6s;
+    animation-timing-function: cubic-bezier(0.55, 0.01, 0.12, 0.97);
+  }
+
+}
+
+
+
 
 @keyframes hvr-buzz-out {
   10% {
