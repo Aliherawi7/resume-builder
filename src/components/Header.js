@@ -33,7 +33,7 @@ function Header() {
     return (
         <header className='header p-LR'>
             <Link to="/" onClick={goHome}>
-                <img src="/image/logo2.png" className='nav-brand' />
+                <img src="/image/logo2.png" className='nav-brand' alt='resume-builder' />
             </Link>
             <nav style={{ right: showMenu ? "0" : "-250px" }}>
                 <Link to={"/"} onClick={() => setActive("/")}>
