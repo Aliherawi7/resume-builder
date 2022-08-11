@@ -9,13 +9,9 @@
 }
 .getting-started .container .template-tools{
     margin-bottom: 30px;
-    animation-name: right-to-left;
-    animation-duration: .9s;
     max-width: 400px;
 }
 .getting-started .container .template-slider{
-    animation-name: left-to-right;
-    animation-duration: .9s;
     flex-direction: row-reverse;
 }
 .color-box {

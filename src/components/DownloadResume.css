@@ -141,6 +141,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    position: fixed;
     padding: 25px 30px;
     border-bottom: 1px solid #ddd;
     margin-bottom: 20px;
@@ -170,7 +171,7 @@
     justify-content: space-around;
     height: 80vh;
     overflow-y: scroll;
-
+    margin-top: 90px;
 }
 
 .change-templates-container .template-container .templates-gallery .template-item {

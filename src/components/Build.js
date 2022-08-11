@@ -12,6 +12,7 @@ function Build() {
 
     //get the necessary parameter from route url
     const { color, template, font } = useParams()
+    console.log(template, "in build path")
     const navigate = useNavigate()
 
     // show a quick preview of the current template in modal
@@ -21,10 +22,10 @@ function Build() {
     const [state, dispatch] = useStateValue()
 
     // keep the build step component e.g contact, experience
-    const [BuildComponent, setBuildComponent] = useState({ component: buildTools[0] })
+    const [BuildComponent, setBuildComponent] = useState({ Component: buildTools[0] })
 
     // keep the paper template while adding information
-    const [TemplateComponent, setTemplateComponent] = useState({ component: templates[template] })
+    const [TemplateComponent, setTemplateComponent] = useState({ Component: templates[template] })
 
     // When the next or previous button clicked the page scrolls to top
     useEffect(() => {
@@ -38,7 +39,7 @@ function Build() {
             return
         }
         counter++
-        setBuildComponent({ component: buildTools[counter] })
+        setBuildComponent({ Component: buildTools[counter] })
     }
     // go to te previous build step
     const handleBackButton = () => {
@@ -47,12 +48,12 @@ function Build() {
             return
         }
         counter--
-        setBuildComponent({ component: buildTools[counter] })
+        setBuildComponent({ Component: buildTools[counter] })
     }
     // handle path links clicks
     const pathLinkHandler = (x) => {
         counter = x
-        setBuildComponent({ component: buildTools[counter] })
+        setBuildComponent({ Component: buildTools[counter] })
     }
 
     // take the user to the adding experience page
@@ -69,8 +70,8 @@ function Build() {
         <div className="build fade-in m-LR">
             <div className="build-path">
                 <div className='path-name-medium'>
-                    <span className={counter == 0 ? "active" : ""}>get started</span>
-                    <span className={(counter == 1 ) ? "active" : ""}>Contact</span>
+                    <span className={counter === 0 ? "active" : ""}>get started</span>
+                    <span className={(counter === 1 ) ? "active" : ""}>Contact</span>
                     <span className={(counter >= 2 && counter < 5) ? "active" : ""}>Experience</span>
                     <span className={(counter >= 5 && counter < 8) ? "active" : ""}>Education</span>
                     <span className={(counter >= 8 && counter < 10) ? "active" : ""}>Skills</span>
@@ -89,7 +90,7 @@ function Build() {
             <div className="build-container">
                 <div className="build-tools">
                     <div className="build-form">
-                        {<BuildComponent.component addNewExperience={addNewExperience} pathLinkHandler={pathLinkHandler} addNewEducation={addNewEducation} />}
+                        {<BuildComponent.Component addNewExperience={addNewExperience} pathLinkHandler={pathLinkHandler} addNewEducation={addNewEducation} />}
                     </div>
                     <div className="control-buttons">
                         <button className="back hvr-shadow-radial" onClick={handleBackButton}>Back</button>
@@ -103,7 +104,7 @@ function Build() {
                         </span>
                     </div>
                     <div className="document" id='document'>
-                        <TemplateComponent.component
+                        <TemplateComponent.Component
                             contactInformation={state.contactInformation}
                             experiences={state.experiences}
                             educations={state.educations}
@@ -119,7 +120,7 @@ function Build() {
             </div>
             <Modal show={showPage} close={() => setShowPage(!showPage)}>
                 <div className="document">
-                    <TemplateComponent.component
+                    <TemplateComponent.Component
                         image={state.image}
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}

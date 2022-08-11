@@ -1,11 +1,13 @@
 .about{
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .about-container{
-    height: 100vh;
     width: max-content;
-    margin: auto;
+    margin: 0 20px;
     background-color: rgba(255, 255, 255, 0.527);
     display: flex;
     justify-content: center;
@@ -16,18 +18,13 @@
     width: 300px;
     margin-bottom: 50px;
     margin-top: -100px;
-    animation-name: right-to-left;
-    animation-duration: .3s;
 }
-
 .about-container span{
     text-align: left;
     font-weight: 700;
     width: 100%;
     color: #45505b;
     justify-self: start!important;
-    animation-name: left-to-right;
-    animation-duration: .3s;
 }
 .about-container h1{
     margin: 0;
@@ -35,8 +32,6 @@
     font-weight: 700;
     line-height: 56px;
     color: #45505b;
-    animation-name: bottom-top-animate;
-    animation-duration: .5s;
 }
 .about-container .contact-me{
     margin-top: 30px;
@@ -51,34 +46,12 @@
     color: #45505b;
     line-height: 1;
     transition: 0.3s;
-    animation-name: bottom-top-animate;
-    animation-duration: .5s;
 }
 .about-container .contact-me a:hover{
     color: var(--color);
 }
-.about footer{
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-.about footer .copyright{
-    padding: 20px;
-    text-align: center;
-}
-footer .footer-logo img{
-    width: 180px;
-}
-footer .credits a{
-    color: #8cc63e;
-}
-@media(max-width:540px){
+
+@media(max-width:768px){
     .logo-main img{
         width: 150px;
         margin-bottom: 50px;
@@ -86,19 +59,5 @@ footer .credits a{
         animation-name: right-to-left;
         animation-duration: .3s;
     }
-    .about-container h1{
-        font-size: 44px;
-    }
-    footer h1{
-        font-size: 20px;
-    }
-    .copyright{
-        font-size: 12px;
-    }
-    .about-container .contact-me{
-        width: 210px;
-    }
-    .about-container .contact-me a{
-        font-size: 20px;
-    }
+
 }

@@ -2,10 +2,10 @@ import React from 'react'
 import "./About.css"
 function About() {
     return (
-        <div className='about'>
+        <div className='about fade-in m-LR'>
             <div className='about-container'>
                 <div className='logo-main'>
-                    <img src='./image/logo2.png' />
+                    <img src='./image/logo2.png' alt='resume-builder' />
                 </div>
                 <span>Designed by:</span>
                 <h1>Ali Herawi</h1>
@@ -17,19 +17,7 @@ function About() {
                     <a href='' style={{ "--color": "#dc3545" }}><i className='bi bi-envelope'></i></a>
                 </div>
             </div>
-            <footer>
-                <div className='footer-logo'>
-                    <img src='./image/logo2.png' />
-                </div>
-                <div className="copyright">
-                    © Copyright <strong><span>Resume-Builder</span></strong>. All Rights Reserved
-                </div>
-                <div className="credits">
-                    Designed by <a href="https://linkedin.com/ali-herawi">Ali herawi</a>
-                </div>
-            </footer>
         </div>
     )
 }
-
 export default About

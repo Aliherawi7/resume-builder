@@ -14,12 +14,12 @@ Visit: [Project resume-builder demo](https://resume-builder-af.netlify.app/)
 
 # Features
 
-* Responsive layout
+* Full Responsive
 * React Hooks
 * React Context
 * React Router v6
 * PDFEXPORT
-* Modern and various Template
+* Modern and various Templates
 * Great Templates style
 * Bootstrap icon
 
