@@ -39,7 +39,7 @@ function Build() {
             return
         }
         counter++
-        setBuildComponent({ component: buildTools[counter] })
+        setBuildComponent({ Component: buildTools[counter] })
     }
     // go to te previous build step
     const handleBackButton = () => {
@@ -48,12 +48,12 @@ function Build() {
             return
         }
         counter--
-        setBuildComponent({ component: buildTools[counter] })
+        setBuildComponent({ Component: buildTools[counter] })
     }
     // handle path links clicks
     const pathLinkHandler = (x) => {
         counter = x
-        setBuildComponent({ component: buildTools[counter] })
+        setBuildComponent({ Component: buildTools[counter] })
     }
 
     // take the user to the adding experience page
