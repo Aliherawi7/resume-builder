@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import "./App.css"
+import Footer from './components/Footer';
 import Header from './components/Header'
 import Loading from './UI/Loading';
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/*" element={<h1 style={{ textAlign: 'center', marginTop: '60px', fontWeight: '900' }}>Not Found</h1>} />
           </Routes>
+        <Footer />
       </Router>
     </Suspense>
   );
