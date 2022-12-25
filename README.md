@@ -12,8 +12,18 @@ Visit: [Project resume-builder demo](https://resume-builder-af.netlify.app/)
 
 ![Figma resume-builder sketch](src/assets/resume-builder-figma-v1.1.png)
 
-# Features
+# For Users
+    => Replace all the placeholder with your information
+    => Select the template
+    => Click on download button after summary level at the download page
+    => paper size: A4
+    => orientation: portrait
 
+# Features
+* Completely Free
+* No Advertising
+* No User Tracking
+* No Login/Signup
 * Full Responsive
 * React Hooks
 * React Context
@@ -35,7 +45,7 @@ Visit: [Project resume-builder demo](https://resume-builder-af.netlify.app/)
 * 404 Error(not found)
 
 
-# Getting Started
+# For Developers
 
 **1. Clone from Github**
 
@@ -59,7 +69,7 @@ The build is minified and the filenames include the hashes. Your app is ready to
 
 # Would you mind support me?
 
-* Star GitHub repo
+* Star Github repo
 * Create pull requests, submit bugs, suggest new features or documentation updates.
 
 
