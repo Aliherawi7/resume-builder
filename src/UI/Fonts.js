@@ -11,7 +11,7 @@ function Fonts( {fontChange}) {
                 <span style={{"--font":"Dosis",fontFamily:'var(--font'}} onClick={e=>fontChange("Dosis")}><p>Dosis</p></span>
                 <span style={{"--font":"Titillium",fontFamily:'var(--font'}} onClick={e=>fontChange("Titillium")}><p>Titillium</p></span>
                 <span style={{"--font":"Helvetica",fontFamily:'var(--font'}} onClick={e=>fontChange("Helvetica")}><p>Helvetica</p></span>
-                <span style={{"--font":"Nexa",fontFamily:'var(--font'}} onClick={e=>fontChange("Nexa")}><p>Nexa</p></span>
+                <span style={{"--font":"poppins",fontFamily:'var(--font'}} onClick={e=>fontChange("poppins")}><p>Poppins</p></span>
             </div>
         </div>
     )
