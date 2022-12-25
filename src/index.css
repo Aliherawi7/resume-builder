@@ -27,15 +27,15 @@
 }
 
 @font-face {
-  font-family: 'Nexa';
-  src: url('./assets/fonts/NexaTextDemo-Light.woff');
-  src: url('./assets/fonts/NexaTextDemo-Bold.woff');
+  font-family: "poppins";
+  src: url("./assets/fonts/Poppins-Bold.ttf");
+  src: url("./assets/fonts/Poppins-Regular.ttf");
 }
 html{
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'OpenSans';
+  font-family: 'poppins';
   scroll-behavior: smooth;
 }
 button {
