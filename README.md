@@ -9,8 +9,13 @@ resume-builder developed and build with **React (v17.0.2)**, **JavaScript**, **j
 # Demo
 
 Visit: [Project resume-builder demo](https://resume-builder-af.netlify.app/)
-
+## Responsive UI
 ![Figma resume-builder sketch](src/assets/resume-builder-v2.1.png)
+
+## UI
+
+![Figma resume-builder sketch](src/assets/download-page.png)
+
 
 # For Users
     => Replace all the placeholder with your information
