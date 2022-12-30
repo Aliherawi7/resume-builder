@@ -14,8 +14,8 @@ Visit: [Project resume-builder demo](https://resume-builder-af.netlify.app/)
 
 ## UI
 
-![Figma resume-builder sketch](src/assets/download-page.png)
-![Figma resume-builder sketch](src/assets/build-page.png)
+![Figma resume-builder download-page](src/assets/download-page.png)
+![Figma resume-builder build-page](src/assets/build-page.png)
 
 # For Users
     => Replace all the placeholder with your information
