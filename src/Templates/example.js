@@ -1,6 +1,5 @@
-import templates from "./Templates"
 
-const example = {
+const Example = {
     contactInformation : {
         name: 'Contact Name',
         address: 'shahre-naw',
@@ -30,4 +29,4 @@ const example = {
     summery: ['Successful sales professional with 10+ years experience in large-scale food and retail environments.']
 }
 export const templateColor = ["#ffc702","#305fec","#f55555","#9f44d3","#0396ff","#87c03d"];
-export default example
+export default Example

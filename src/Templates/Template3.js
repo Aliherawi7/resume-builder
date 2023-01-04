@@ -23,7 +23,7 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                         <div className='image-container'></div>
                     </div>
                     <div className='image' style={{ borderColor: color }}>
-                        <img src={contactInformation.image ? URL.createObjectURL(contactInformation.image) : "/image/yyyy.png"} />
+                    <img src={contactInformation.image ? URL.createObjectURL(contactInformation.image) : "/image/yyyy.png"}  alt={contactInformation?.name}/>
                     </div>
                     <div className='contact-information info-section'>
                         <h1 className='contact-name' style={styles}>{contactInformation.name}</h1>
@@ -49,7 +49,7 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                         <h2 style={styles}>professional summary</h2>
                         <div >
                             {summery?.map((item) => {
-                                return item != "" ? <p className="summery normal-paragraph" key={item}>{item}</p> : null
+                                return item !== "" ? <p className="summery normal-paragraph" key={item}>{item}</p> : null
                             })}
                         </div>
                     </div>
@@ -139,7 +139,7 @@ function Template3({ contactInformation, experiences, experience, educations, ed
                     <div className="skills subtitle section">
                         <ul className="skill-list">
                             {skills?.map((item) => {
-                                return item != "" ? <li style={fontStyles} key={Math.random()}>
+                                return item !== "" ? <li style={fontStyles} key={Math.random()}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path style={{ fill: color }} d="M500.3 227.7C515.9 243.3 515.9 268.7 500.3 284.3L284.3 500.3C268.7 515.9 243.3 515.9 227.7 500.3L11.72 284.3C-3.905 268.7-3.905 243.3 11.72 227.7L227.7 11.72C243.3-3.905 268.7-3.905 284.3 11.72L500.3 227.7z" /></svg>
                                     {item}
                                 </li> : null

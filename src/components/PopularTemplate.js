@@ -1,7 +1,7 @@
 import React from 'react'
 import "./PopularTemplate.css"
 import Templates, { templatesName } from '../Templates/Templates.js'
-import example, { templateColor } from '../Templates/example'
+import Example, { templateColor } from '../Templates/Example'
 import { useNavigate } from 'react-router-dom'
 
 function PopularTemplate({ navigate }) {
@@ -12,24 +12,24 @@ function PopularTemplate({ navigate }) {
             {Templates.map((item) => {
                 const temp = { template: item }
                 const index = Templates.findIndex((input) => {
-                    return input == item
+                    return input === item
                 });
                 const color = templateColor[index];
                 return (
-                    <div className={'temp-item' + (index == 2 || index == 3 ? " xlarg" : " ")} key={item.name} style={{ backgroundColor: color }}>
+                    <div className={'temp-item' + (index === 2 || index === 3 ? " xlarg" : " ")} key={item.name} style={{ backgroundColor: color }}>
                         {<temp.template
-                            contactInformation={example.contactInformation}
-                            skills={example.skills}
-                            summery={example.summery}
-                            experience={example.experience}
-                            education={example.education}
+                            contactInformation={Example.contactInformation}
+                            skills={Example.skills}
+                            summery={Example.summery}
+                            experience={Example.experience}
+                            education={Example.education}
                             color={color}
                             font={"Maler"}
                         />}
                         <div className='details'>
                             <h2>{templatesName[index].name}</h2>
                             <button className='browse-btn'
-                                onClick={navigate == "" ?
+                                onClick={navigate === "" ?
                                     (() => nav("/build/getting-started&&color=" + color.substring(1) + "&&template=" + index))
                                     :()=> navigate(index)
                                 }>

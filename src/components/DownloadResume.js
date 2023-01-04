@@ -6,15 +6,15 @@ import templates from '../Templates/Templates'
 import { useStateValue } from '../StateProvider'
 import ColorBox from '../UI/ColorBox'
 import Fonts from '../UI/Fonts'
-import example from '../Templates/example'
+import Example from '../Templates/Example'
 
 
 
 function DownloadResume() {
     const navigate = useNavigate()
-    const [state, dispatch] = useStateValue()
+    const [state, ] = useStateValue()
     const { color, template } = useParams()
-    const [Template, setTemplate] = useState({ component: templates[template] })
+    const [Template, setTemplate] = useState({ Component: templates[template] })
     const [showTemplates, setShowTemplates] = useState(false)
     const [stateColor, setColor] = useState('#' + color)
     const [font, setFont] = useState('AlegreyaSans');
@@ -32,7 +32,7 @@ function DownloadResume() {
     }
     const backToBuildPage = () => {
         const templateIndex = templates.findIndex(item => {
-            return item == Template.component
+            return item === Template.Component
         })
         if (templateIndex >= 0)
             navigate("/build/template&&color=" + stateColor.slice(1) + "&&font=" + font + "&&template=" + templateIndex)
@@ -49,7 +49,7 @@ function DownloadResume() {
 
             </div>
             <div className='document-preview'>
-                {<Template.component
+                {<Template.Component
                     contactInformation={state.contactInformation}
                     experiences={state.experiences}
                     educations={state.educations}
@@ -63,7 +63,7 @@ function DownloadResume() {
             </div>
             <div className='download-file'>
                 <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r) => resume = r} style={{ fontFamily: font+" !imprtant", color: color }}>
-                    {<Template.component
+                    {<Template.Component
                         contactInformation={state.contactInformation}
                         experiences={state.experiences}
                         educations={state.educations}
@@ -94,11 +94,11 @@ function DownloadResume() {
                                         return (
                                             <div className='template-item' key={item} onClick={() => setTemplate({ component: item })}>
                                                 <temp.component
-                                                    contactInformation={example.contactInformation}
-                                                    skills={example.skills}
-                                                    summery={example.summery}
-                                                    experience={example.experience}
-                                                    education={example.education}
+                                                    contactInformation={Example.contactInformation}
+                                                    skills={Example.skills}
+                                                    summery={Example.summery}
+                                                    experience={Example.experience}
+                                                    education={Example.education}
                                                     color={stateColor}
                                                     font={font}
                                                 />

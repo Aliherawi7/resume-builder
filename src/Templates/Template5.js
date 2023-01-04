@@ -44,7 +44,7 @@ function Template5({ contactInformation, experiences, experience, educations, ed
                         <h2 style={styles}>Skills</h2>
                         <ul className="skill-list">
                             {skills?.length > 0 ? skills.map((item) => {
-                                return item != "" ? <li style={styles} key={Math.random() + item}>
+                                return item !== "" ? <li style={styles} key={Math.random() + item}>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path style={{ fill: "#fff" }} d="M500.3 227.7C515.9 243.3 515.9 268.7 500.3 284.3L284.3 500.3C268.7 515.9 243.3 515.9 227.7 500.3L11.72 284.3C-3.905 268.7-3.905 243.3 11.72 227.7L227.7 11.72C243.3-3.905 268.7-3.905 284.3 11.72L500.3 227.7z" /></svg>
                                     {item}
                                 </li> : null
@@ -69,7 +69,7 @@ function Template5({ contactInformation, experiences, experience, educations, ed
                         <h2 style={fontStyles}>professional summary</h2>
                         <div className='professional-summary' style={fontStyles}>
                             {summery?.map((item) => {
-                                return item != "" ? <p className="summery normal-paragraph" key={Math.random()}>{item}</p> : null
+                                return item !== "" ? <p className="summery normal-paragraph" key={Math.random()}>{item}</p> : null
                             })}
                         </div>
                     </div>

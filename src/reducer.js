@@ -1,4 +1,3 @@
-import { StateContext } from "./StateProvider"
 
 export const initialState = {
     contactInformation: {},
@@ -103,7 +102,7 @@ const reducer = (state, action) => {
         }
         case actions.EDIT_EXPERIENCE: {
             const index = state.experiences.findIndex((item) => {
-                return item == action.item
+                return item === action.item
             })
             return {
                 ...state,

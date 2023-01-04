@@ -37,7 +37,7 @@ function Header() {
             </Link>
             <nav style={{ right: showMenu ? "0" : "-250px" }}>
                 <Link to={"/"} onClick={() => setActive("/")}>
-                    <span className={state == "/" ? "active" : ""}>Home</span>
+                    <span className={state === "/" ? "active" : ""}>Home</span>
                 </Link>
                 <Link to={"/templates"} onClick={() => setActive("/works")}>
                     <span className={state.includes("/templates") ? "active" : ""}>Templates</span>

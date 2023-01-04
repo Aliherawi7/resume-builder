@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./TemplatesPage.css"
 import Templates, { templatesName } from '../Templates/Templates'
-import example, { templateColor } from '../Templates/example'
+import Example, { templateColor } from '../Templates/Example'
 import { Link } from 'react-router-dom'
 import ColorBox from "../UI/ColorBox"
 import Fonts from "../UI/Fonts"
@@ -51,11 +51,11 @@ function TemplatesPage() {
                     <div className='template-slider left-to-right'>
                         <div className='page-preview'>
                             {<template.component
-                                contactInformation={example.contactInformation}
-                                skills={example.skills}
-                                summery={example.summery}
-                                experience={example.experience}
-                                education={example.education}
+                                contactInformation={Example.contactInformation}
+                                skills={Example.skills}
+                                summery={Example.summery}
+                                experience={Example.experience}
+                                education={Example.education}
                                 color={tempColor}
                                 font={font}
                             />}

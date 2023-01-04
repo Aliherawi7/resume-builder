@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import './GettingStarted.css'
 import Templates,{templatesName} from '../Templates/Templates'
-import example from '../Templates/example'
+import Example from '../Templates/Example'
 import { Link, useParams } from 'react-router-dom'
 import ColorBox from '../UI/ColorBox'
 import Fonts from '../UI/Fonts'
@@ -63,11 +63,11 @@ function GettingStarted() {
                     <button className='btn-left hvr-shrink ' onClick={nextHandler}><i className='bi bi-chevron-left'></i></button>
                     <div className='page-preview'>
                        {<Template.Component
-                            contactInformation={example.contactInformation}
-                            skills={example.skills}
-                            summery={example.summery}
-                            experience={example.experience}
-                            education={example.education}
+                            contactInformation={Example.contactInformation}
+                            skills={Example.skills}
+                            summery={Example.summery}
+                            experience={Example.experience}
+                            education={Example.education}
                             color ={tempColor}
                             font={font}
                         />}

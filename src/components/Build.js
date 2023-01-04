@@ -12,20 +12,19 @@ function Build() {
 
     //get the necessary parameter from route url
     const { color, template, font } = useParams()
-    console.log(template, "in build path")
     const navigate = useNavigate()
 
     // show a quick preview of the current template in modal
     const [showPage, setShowPage] = useState(false)
 
     // get the data from data layer for Template
-    const [state, dispatch] = useStateValue()
+    const [state, ] = useStateValue()
 
     // keep the build step component e.g contact, experience
     const [BuildComponent, setBuildComponent] = useState({ Component: buildTools[0] })
 
     // keep the paper template while adding information
-    const [TemplateComponent, setTemplateComponent] = useState({ Component: templates[template] })
+    const [TemplateComponent, ] = useState({ Component: templates[template] })
 
     // When the next or previous button clicked the page scrolls to top
     useEffect(() => {
