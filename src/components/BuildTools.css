@@ -47,7 +47,7 @@
 .file-input span i{
     margin-right: 10px;
     font-size: 30px;
-    color: #8cc63e;
+    color: var(--main_color);
 }
 .file-input input{
     cursor: pointer;
@@ -122,7 +122,7 @@
     font-size: 15px;
 }
 .common-input-style input:focus{
-    border-color: #3aac5d;
+    border-color: var(--main_color);
 }
 .input-check{
     display: flex;
@@ -223,8 +223,8 @@
     line-height: 0;
     text-transform: capitalize;
     background: #fff;
-    color: #8cc63e;
-    border: 3px solid #8cc63e;
+    color: var(--main_color);
+    border: 3px solid var(--main_color);
     padding: 12px 15px;
     font-weight: 700;
 }
@@ -265,7 +265,7 @@
     margin: 2px;
 }
 .review-buttons span:hover{
-    background-color: #8cc63e;
+    background-color: var(--main_color);
 }
 
 /* entering animation */
