@@ -32,7 +32,7 @@
 .intro h1 {
     font-size: 95px;
     font-weight: 900;
-    color: #8cc63e;
+    color: var(--main_color);
     margin: 20px 0;
     letter-spacing: 5px;
     line-height: 80px;
@@ -48,14 +48,14 @@
     font-size: 20px;
     font-weight: 600;
     color: #fff;
-    background-color: #8cc63e;
+    background-color: var(--main_color);
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .intro button:hover {
     background-color: #ffffff;
-    color: #8cc63e;
+    color: var(--main_color);
 }
 
 
