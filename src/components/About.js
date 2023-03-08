@@ -1,11 +1,12 @@
 import React from 'react'
+import { BRAND_IMAGE } from '../Constants/UIConstants'
 import "./About.css"
 function About() {
     return (
         <div className='about fade-in m-LR'>
             <div className='about-container'>
                 <div className='logo-main'>
-                    <img src='./image/logo2.png' alt='resume-builder' />
+                    <img src={BRAND_IMAGE} alt='resume-builder' />
                 </div>
                 <span>Designed by:</span>
                 <h1>Ali Herawi</h1>
