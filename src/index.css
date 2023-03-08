@@ -31,6 +31,10 @@
   src: url("./assets/fonts/Poppins-Bold.ttf");
   src: url("./assets/fonts/Poppins-Regular.ttf");
 }
+
+:root{
+  --main_color: #8cc63e;
+}
 html{
   scroll-behavior: smooth;
 }
@@ -70,6 +74,9 @@ button {
   -moz-osx-font-smoothing: grayscale;
   text-decoration: none;
 }
+
+
+
 /* ==================
    == button hover ==
    ================== */
