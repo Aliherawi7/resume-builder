@@ -1,4 +1,5 @@
 import React from 'react'
+import { AVATAR } from '../Constants/UIConstants'
 import "./Template.css"
 import "./Template4.css"
 
@@ -22,9 +23,9 @@ function Template4({ contactInformation, experiences, experience, educations, ed
         <div className='template template4 a4'>
             <div className='main-container' style={backgroundColor}>
                 <div className='personal-info'>
-                    <div className='profile-img-container'>
+                    <div className='profile-picture profile-img-container'>
                         <span className='img-label' ></span>
-                        <img src={contactInformation.image ? URL.createObjectURL(contactInformation.image) : "/image/yyyy.png"} alt='' />
+                        <img src={contactInformation.image ? URL.createObjectURL(contactInformation.image) : AVATAR} alt='' />
                     </div>
                     <div className='contact-name'>
                         <h1 style={styles}>{contactInformation.name}</h1>

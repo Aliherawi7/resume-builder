@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Template1.css"
 import "./Template.css"
+import { AVATAR } from '../Constants/UIConstants'
 
 function Template1({ contactInformation, experiences, experience, educations, education, skills, summery, color, font }) {
     const backgroundColor = {
@@ -20,7 +21,7 @@ function Template1({ contactInformation, experiences, experience, educations, ed
             <div className="container-A" style={backgroundColor}>
                 <div className="contact-info section">
                     <div className='profile-picture' >
-                        <img src={contactInformation.image ? URL.createObjectURL(contactInformation.image) : "/image/yyyy.png"} alt={contactInformation?.name}/>
+                        <img src={contactInformation.image ? URL.createObjectURL(contactInformation.image) : AVATAR} alt={contactInformation?.name}/>
                     </div>
                     <h1 style={styles} className='contact-name' >{contactInformation?.name}</h1>
                     <p className='normal-text'>
