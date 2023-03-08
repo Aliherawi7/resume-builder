@@ -23,11 +23,11 @@
     font-weight: 700;
 }
 .header nav span:hover{
-    color: #8cc63e;
+    color: var(--main_color);
 }
 
 .header nav .active{
-    color: #8cc63e;
+    color: var(--main_color);
 }
 
 /*=====================================
