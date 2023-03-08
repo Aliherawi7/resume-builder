@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
+import { BRAND_IMAGE } from '../Constants/UIConstants';
 import "./Header.css"
 
 function Header() {
@@ -14,35 +15,19 @@ function Header() {
         setState(navActive + "")
     }, [navActive])
 
-    //onclick function for nav links
-    const setActive = (path) => {
-        // dispatch({
-        //     type: actions.ACTIVE_NAV_LINK,
-        //     item: path
-        // })
-        setState(path)
-    }
-    //onclick function for nav-brand
-    const goHome = () => {
-        // dispatch({
-        //     type: actions.ACTIVE_NAV_LINK,
-        //     item: "/"
-        // })
-        navigate("/");
-    }
     return (
         <header className='header p-LR'>
-            <Link to="/" onClick={goHome}>
-                <img src="/image/logo2.png" className='nav-brand' alt='resume-builder' />
+            <Link to="/">
+                <img src={BRAND_IMAGE} className='nav-brand' alt='resume-builder' />
             </Link>
             <nav style={{ right: showMenu ? "0" : "-250px" }}>
-                <Link to={"/"} onClick={() => setActive("/")}>
+                <Link to={"/"} >
                     <span className={state === "/" ? "active" : ""}>Home</span>
                 </Link>
-                <Link to={"/templates"} onClick={() => setActive("/works")}>
+                <Link to={"/templates"}>
                     <span className={state.includes("/templates") ? "active" : ""}>Templates</span>
                 </Link>
-                <Link to={"/about"} onClick={() => setActive("/blog")}>
+                <Link to={"/about"} >
                     <span className={state.includes("/about") ? "active" : ""}>About</span>
                 </Link>
             </nav>
