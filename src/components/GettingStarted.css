@@ -21,7 +21,7 @@
 }
 
 .btn-select-template {
-    background: #8cc63e;
+    background: var(--main_color);
     color: #fff;
     cursor: pointer;
     font-size: 16px;
