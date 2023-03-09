@@ -29,13 +29,12 @@
     font-family: inherit;
 }
 .template .normal-title{
-    font-size: 14px;
+    font-size: 12px;
     margin-left: 5px;
     word-break: break-word;
 }
 
 .template .normal-paragraph{
-    font-size: 12px;
     margin-left: 5px;
 }
 .template h1{
@@ -44,6 +43,8 @@
 
 .a4 .section h2 {
     font-size: 12px !important;
+    --color: #0396ff;
+    line-height: 20px;
 }
 .template .subtitle h2{
     font-size: 16px;
