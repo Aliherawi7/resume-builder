@@ -4,7 +4,7 @@
 <!-- Email: Aliherawi7@gmail.com -->
 <!-- Linked in : https://linkedin.com/in/ali-herawi -->
 
-resume-builder developed and build with **React (v17.0.2)**, **JavaScript**, **jspdf(^2.5.1)**, **kendo-react-pdf(^5.3.0)** and **React Router v6**. For Styles, is used **CSS**.
+resume-builder has been developed and built with **React (v17.0.2)**, **JavaScript**, **jspdf(^2.5.1)**, **kendo-react-pdf(^5.3.0)** and **React Router v6**. For Styles, is used **CSS**.
 
 # Demo
 
