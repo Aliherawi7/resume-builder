@@ -1,7 +1,7 @@
 import React from 'react'
 import { AVATAR } from '../Constants/UIConstants'
-import "./Template.css"
 import "./Template2.css"
+import "./Template.css"
 
 
 function Template2({ contactInformation, experiences, experience, educations, education, skills, summery, color, font }) {
