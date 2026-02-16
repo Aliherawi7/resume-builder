@@ -1,6 +1,6 @@
 
 const Example = {
-    contactInformation : {
+    contactInformation: {
         name: 'Contact Name',
         address: 'shahre-naw',
         city: 'kabul',
@@ -23,10 +23,11 @@ const Example = {
         degree: 'degree',
         fieldOfStudy: 'field of study',
         graduationMonth: 'granduation date'
-        
+
     },
     skills: ['react', 'spring boot', 'java', 'javascript', 'html', 'css', 'git'],
     summery: ['Successful sales professional with 10+ years experience in large-scale food and retail environments.']
 }
-export const templateColor = ["#ffc702","#305fec","#f55555","#9f44d3","#0396ff","#87c03d"];
+export const templateColor = ["#ffc702", "#305fec", "#f55555", "#9f44d3", "#0396ff", "#87c03d"];
+
 export default Example

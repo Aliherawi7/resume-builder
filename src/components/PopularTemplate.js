@@ -1,7 +1,7 @@
 import React from 'react'
 import "./PopularTemplate.css"
 import Templates, { templatesName } from '../Templates/Templates.js'
-import Example, { templateColor } from '../Templates/Example'
+import Example, { templateColor } from '../Templates/Example.js'
 import { useNavigate } from 'react-router-dom'
 
 function PopularTemplate({ navigate }) {
@@ -31,7 +31,7 @@ function PopularTemplate({ navigate }) {
                             <button className='browse-btn'
                                 onClick={navigate === "" ?
                                     (() => nav("/build/getting-started&&color=" + color.substring(1) + "&&template=" + index))
-                                    :()=> navigate(index)
+                                    : () => navigate(index)
                                 }>
                                 Browse
                             </button>

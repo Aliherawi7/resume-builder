@@ -15,9 +15,9 @@ function TemplatesPage() {
     const [template, setTemplate] = useState({ component: Templates[index] })
     const [font, setFont] = useState('AlegreyaSans');
     const [tempColor, setTemColor] = useState("#000");
-    useEffect(()=>{
+    useEffect(() => {
         window.scrollTo(0, 0)
-    },[])
+    }, [])
 
     //set the template color
     const spanColor = e => {
