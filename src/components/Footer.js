@@ -37,7 +37,7 @@ function Footer() {
                 </div>
             </div>
             <div className='copyright'>
-                <p>© 2022 Resume Builder. All rights reserved - Designed and developed by <strong>Ali Herawi</strong></p>
+                <p>© 2021 Resume Builder. All rights reserved - Designed and developed by <strong>Ali Herawi</strong></p>
             </div>
         </footer>
     )
