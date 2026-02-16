@@ -1,7 +1,7 @@
 import React from 'react'
 import "./PopularTemplate.css"
 import Templates, { templatesName } from '../Templates/Templates.js'
-import Example, { templateColor } from '../Templates/Example.js'
+import { templateColor, Example } from '../Templates/Example.js'
 import { useNavigate } from 'react-router-dom'
 
 function PopularTemplate({ navigate }) {

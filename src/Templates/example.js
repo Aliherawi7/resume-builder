@@ -1,5 +1,5 @@
 
-const Example = {
+export const Example = {
     contactInformation: {
         name: 'Contact Name',
         address: 'shahre-naw',
@@ -30,4 +30,3 @@ const Example = {
 }
 export const templateColor = ["#ffc702", "#305fec", "#f55555", "#9f44d3", "#0396ff", "#87c03d"];
 
-export default Example

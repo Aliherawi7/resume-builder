@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./TemplatesPage.css"
 import Templates, { templatesName } from '../Templates/Templates'
-import Example, { templateColor } from '../Templates/Example'
+import { templateColor, Example } from '../Templates/Example'
 import { Link } from 'react-router-dom'
 import ColorBox from "../UI/ColorBox"
 import Fonts from "../UI/Fonts"

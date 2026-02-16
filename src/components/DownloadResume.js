@@ -6,13 +6,13 @@ import templates from '../Templates/Templates'
 import { useStateValue } from '../StateProvider'
 import ColorBox from '../UI/ColorBox'
 import Fonts from '../UI/Fonts'
-import Example from '../Templates/Example'
+import { Example } from '../Templates/Example'
 
 
 
 function DownloadResume() {
     const navigate = useNavigate()
-    const [state, ] = useStateValue()
+    const [state,] = useStateValue()
     const { color, template } = useParams()
     const [Template, setTemplate] = useState({ Component: templates[template] })
     const [showTemplates, setShowTemplates] = useState(false)
@@ -63,7 +63,7 @@ function DownloadResume() {
                 />}
             </div>
             <div className='download-file'>
-                <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r) => resume = r} style={{ fontFamily: font+" !imprtant", color: color }}>
+                <PDFExport fileName='resum1.pdf' title="" subject="" ref={(r) => resume = r} style={{ fontFamily: font + " !imprtant", color: color }}>
                     {<Template.Component
                         contactInformation={state?.contactInformation}
                         experiences={state?.experiences}
