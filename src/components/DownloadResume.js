@@ -6,7 +6,7 @@ import templates from '../Templates/Templates'
 import { useStateValue } from '../StateProvider'
 import ColorBox from '../UI/ColorBox'
 import Fonts from '../UI/Fonts'
-import { Example } from '../Templates/Example'
+import { Example } from '../Templates/Example.js'
 
 
 
